@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c8prbfapem2ta"]
+
+[ext_resource type="FontFile" uid="uid://uc3fhopw3jfp" path="res://themes/fonts/Paint/TMT-Paint-Regular.otf" id="1_6wa4e"]
+
+[resource]
+Label/font_sizes/font_size = 12
+Label/fonts/font = ExtResource("1_6wa4e")

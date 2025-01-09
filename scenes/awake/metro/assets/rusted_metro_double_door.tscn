@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=3 uid="uid://cp6eposjagq3s"]
+
+[ext_resource type="Script" path="res://scenes/awake/metro/assets/rusted_metro_double_door.gd" id="1_1dpu2"]
+[ext_resource type="PackedScene" uid="uid://b5t3ekulhinbx" path="res://scenes/awake/metro/assets/rusted_metro_doors.glb" id="1_llynn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o1tmg"]
+size = Vector3(0.00952148, 2.412, 0.897)
+
+[sub_resource type="Animation" id="Animation_d3sns"]
+resource_name = "Opening"
+length = 1.4
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("rusted_metro_doors:position:z")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2, 0, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.0444444, 0, -0.068, -0.0444444, 0, 0.155556, 0, -0.068, -0.25, 0, 0.267, -0.469, -0.682, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.133333, 0.6, 1.4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("rusted_metro_doors2:position:z")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(2, 2, 0, 0),
+"points": PackedFloat32Array(0, 0, 0, 0.0444444, 0, 0.068, -0.0444444, 0, 0.155556, 0, 0.068, -0.25, 0, 0.266667, 0.468866, 0.682, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.133333, 0.6, 1.4)
+}
+
+[sub_resource type="Animation" id="Animation_vnslf"]
+resource_name = "RESET"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("rusted_metro_doors2:position:z")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("rusted_metro_doors:position:z")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_43781"]
+_data = {
+"Opening": SubResource("Animation_d3sns"),
+"RESET": SubResource("Animation_vnslf")
+}
+
+[node name="RustedMetroDoubleDoor" type="Node3D"]
+script = ExtResource("1_1dpu2")
+
+[node name="rusted_metro_doors" parent="." instance=ExtResource("1_llynn")]
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="rusted_metro_doors"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rusted_metro_doors/AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20248, -0.446694)
+shape = SubResource("BoxShape3D_o1tmg")
+
+[node name="rusted_metro_doors2" parent="." instance=ExtResource("1_llynn")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="AnimatableBody3D2" type="AnimatableBody3D" parent="rusted_metro_doors2"]
+transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rusted_metro_doors2/AnimatableBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20248, -0.446694)
+shape = SubResource("BoxShape3D_o1tmg")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_43781")
+}

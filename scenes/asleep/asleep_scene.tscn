@@ -1,0 +1,97 @@
+[gd_scene load_steps=13 format=3 uid="uid://bdgg64gsfnru"]
+
+[ext_resource type="Script" path="res://scenes/asleep/asleep_scene.gd" id="1_sdt8w"]
+[ext_resource type="PackedScene" uid="uid://5m1g178ubchd" path="res://fps_controller/fps_player_character.tscn" id="2_46cu2"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wh8ij"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_mul4m"]
+sky_material = SubResource("ProceduralSkyMaterial_wh8ij")
+
+[sub_resource type="Environment" id="Environment_h0xno"]
+background_mode = 2
+sky = SubResource("Sky_mul4m")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yeif6"]
+albedo_color = Color(0.37559, 0.574228, 0.543286, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q1btj"]
+albedo_color = Color(0.664139, 0.430309, 0.651202, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yx2b3"]
+albedo_color = Color(0.795979, 0.503069, 0.0137238, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rikb4"]
+albedo_color = Color(1, 0.32, 0.32, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kx31v"]
+albedo_color = Color(0.496086, 0.563727, 0.808075, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojkn4"]
+albedo_color = Color(0.456554, 0.27773, 0.112649, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hvg34"]
+albedo_color = Color(0.520955, 0.629668, 0.142116, 1)
+
+[node name="AsleepScene" type="Node3D"]
+script = ExtResource("1_sdt8w")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_h0xno")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0415039, 0)
+use_collision = true
+size = Vector3(48.5176, 0.0830078, 48.0762)
+material = SubResource("StandardMaterial3D_yeif6")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76902, 0.885315, -9.41852)
+use_collision = true
+size = Vector3(1.84412, 2.77063, 2)
+material = SubResource("StandardMaterial3D_q1btj")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6912, 1.8718, 3.92986)
+use_collision = true
+size = Vector3(3.72095, 4.74359, 2)
+material = SubResource("StandardMaterial3D_yx2b3")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.77639, 1.8718, 9.05456)
+use_collision = true
+size = Vector3(5.40063, 4.74359, 6.91797)
+material = SubResource("StandardMaterial3D_rikb4")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(0.911346, 0, -0.411642, 0.117408, 0.958462, 0.259934, 0.394543, -0.28522, 0.87349, -12.2239, -0.219914, -8.06314)
+use_collision = true
+size = Vector3(5.40063, 4.74359, 6.91797)
+material = SubResource("StandardMaterial3D_kx31v")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(0.726434, -0.210266, -0.65428, 0.644811, 0.537862, 0.543068, 0.237724, -0.81639, 0.526303, 12.816, -6.33951, 8.32672)
+use_collision = true
+size = Vector3(11.3193, 15.1604, 6.91797)
+material = SubResource("StandardMaterial3D_ojkn4")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(0.751045, 0, 0.660251, 0, 1, 0, -0.660251, 0, 0.751045, -0.291127, 2.6164, 12.6926)
+use_collision = true
+size = Vector3(8.42444, 10.4162, 4.87781)
+material = SubResource("StandardMaterial3D_hvg34")
+
+[node name="Player" parent="." instance=ExtResource("2_46cu2")]
+mouse_sensitivity = 0.1
+shake_intensity = 0.0
+shake_noise_scale = 0.0
+shake_oscillation_speed = 0.0
+shake_oscillation_amplitude = 0.0

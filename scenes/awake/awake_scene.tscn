@@ -1,0 +1,353 @@
+[gd_scene load_steps=29 format=3 uid="uid://c4snmw7euut7v"]
+
+[ext_resource type="PackedScene" uid="uid://cftdheen3466e" path="res://scenes/awake/metro/rusted_metro.tscn" id="1_b21n0"]
+[ext_resource type="Script" path="res://scenes/awake/awake_scene.gd" id="1_p8hv6"]
+[ext_resource type="PackedScene" uid="uid://5m1g178ubchd" path="res://fps_controller/fps_player_character.tscn" id="2_8oyf3"]
+[ext_resource type="Shader" path="res://shaders/dithering.gdshader" id="3_jasn7"]
+[ext_resource type="Shader" path="res://shaders/gamma_correction.gdshader" id="4_ttayp"]
+[ext_resource type="Shader" path="res://shaders/color_correction.gdshader" id="4_v1e0c"]
+[ext_resource type="Script" path="res://scenes/awake/newspaper.gd" id="8_e6aqh"]
+[ext_resource type="PackedScene" uid="uid://bkcqayimx4rcc" path="res://global_assets/objects/newspaper_folded.glb" id="8_jm7ow"]
+[ext_resource type="Theme" uid="uid://bnwjft0phq0e0" path="res://themes/inspect_object_theme.tres" id="9_b3i4f"]
+[ext_resource type="Theme" uid="uid://c8prbfapem2ta" path="res://themes/input.tres" id="10_78cun"]
+[ext_resource type="Texture2D" uid="uid://85r7nioyh3lf" path="res://global_assets/textures/left_mouse_button.png" id="10_c3scj"]
+[ext_resource type="Texture2D" uid="uid://k2gcrsjsdim7" path="res://global_assets/textures/frame.png" id="11_uslxg"]
+[ext_resource type="Script" path="res://scenes/awake/rock_background.gd" id="13_18rsd"]
+[ext_resource type="Texture2D" uid="uid://dl64imk0tnuhb" path="res://global_assets/materials/rock_albedo.png" id="14_7fbul"]
+[ext_resource type="Texture2D" uid="uid://yp8x4y67j1ed" path="res://global_assets/materials/rock_orm.png" id="15_nmrlx"]
+[ext_resource type="Texture2D" uid="uid://ca4vn1antt73" path="res://global_assets/materials/rock_heightmap.png" id="16_7lrfh"]
+[ext_resource type="Texture2D" uid="uid://cejst4kk51nei" path="res://global_assets/materials/rock_normal.png" id="17_72sqo"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xpc56"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_l3v6g"]
+sky_material = SubResource("ProceduralSkyMaterial_xpc56")
+
+[sub_resource type="Environment" id="Environment_bt3tw"]
+background_mode = 1
+sky = SubResource("Sky_l3v6g")
+ambient_light_source = 2
+ambient_light_color = Color(0.623697, 0.74, 0.5698, 1)
+ambient_light_energy = 0.04
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b7g1y"]
+resource_local_to_scene = true
+shader = ExtResource("4_ttayp")
+shader_parameter/gamma = 1.45
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hakeb"]
+shader = ExtResource("4_v1e0c")
+shader_parameter/brightness = 0.044
+shader_parameter/contrast = 1.222
+shader_parameter/saturation = 0.614
+shader_parameter/redVal = 1.0
+shader_parameter/greenVal = 0.886
+shader_parameter/blueVal = 1.0
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/tint_effect_factor = 0.53
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ysxg"]
+resource_local_to_scene = true
+shader = ExtResource("3_jasn7")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 12
+shader_parameter/dither_size = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2jlp"]
+size = Vector3(0.519043, 0.485107, 2.57227)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gmi8q"]
+size = Vector3(0.505188, 0.0180359, 0.365387)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21g4f"]
+albedo_texture = ExtResource("14_7fbul")
+roughness_texture = ExtResource("15_nmrlx")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("17_72sqo")
+ao_enabled = true
+ao_texture = ExtResource("15_nmrlx")
+heightmap_enabled = true
+heightmap_scale = 12.5
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("16_7lrfh")
+uv1_scale = Vector3(0.125, 0.125, 0.125)
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_idg1l"]
+material = SubResource("StandardMaterial3D_21g4f")
+size = Vector2(23.55, 107.41)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_e6dhg"]
+material = SubResource("StandardMaterial3D_21g4f")
+size = Vector2(23.55, 107.41)
+
+[node name="AwakeScene" type="Node3D"]
+script = ExtResource("1_p8hv6")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bt3tw")
+
+[node name="RustedMetro" parent="." instance=ExtResource("1_b21n0")]
+
+[node name="Player" parent="." instance=ExtResource("2_8oyf3")]
+mouse_sensitivity = 0.1
+viewbobbing_frequency = 0.5
+viewbobbing_force = 0.05
+use_jump = false
+
+[node name="PostProcessing" type="Node" parent="."]
+
+[node name="Layer1" type="CanvasLayer" parent="PostProcessing"]
+
+[node name="GammaCorrection" type="ColorRect" parent="PostProcessing/Layer1"]
+material = SubResource("ShaderMaterial_b7g1y")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Layer2" type="CanvasLayer" parent="PostProcessing"]
+layer = 2
+
+[node name="ColorCorect" type="ColorRect" parent="PostProcessing/Layer2"]
+material = SubResource("ShaderMaterial_hakeb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="10" type="CanvasLayer" parent="PostProcessing"]
+layer = 10
+
+[node name="PsxDithering" type="ColorRect" parent="PostProcessing/10"]
+material = SubResource("ShaderMaterial_3ysxg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BenchInteraction" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.931034, 0.458042, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BenchInteraction"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0227051, 0.235229, 0)
+shape = SubResource("BoxShape3D_h2jlp")
+
+[node name="Newspaper" type="Area3D" parent="."]
+transform = Transform3D(-0.435938, 0, 0.899977, 0, 1, 0, -0.899977, 0, -0.435938, -0.909691, 0.509093, 5.47407)
+script = ExtResource("8_e6aqh")
+interaction_type = 1
+
+[node name="newspaper_folded" parent="Newspaper" instance=ExtResource("8_jm7ow")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.06)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Newspaper"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.002)
+shape = SubResource("BoxShape3D_gmi8q")
+
+[node name="InteractInfos" type="CanvasLayer" parent="Newspaper"]
+visible = false
+
+[node name="Control" type="Control" parent="Newspaper/InteractInfos"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_b3i4f")
+
+[node name="ObjectText" type="Panel" parent="Newspaper/InteractInfos/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.121528
+anchor_top = 0.0787037
+anchor_right = 0.878
+anchor_bottom = 0.921
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="Newspaper/InteractInfos/Control/ObjectText"]
+layout_mode = 1
+anchor_left = 0.092
+anchor_top = 0.069
+anchor_right = 0.908
+anchor_bottom = 0.931
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Newspaper/InteractInfos/Control/ObjectText/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Newspaper/InteractInfos/Control/ObjectText/Control/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 52
+
+[node name="ObjectTitle" type="Label" parent="Newspaper/InteractInfos/Control/ObjectText/Control/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+text = "Journal du 01/01/50"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Newspaper/InteractInfos/Control/ObjectText/Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ObjectBodyText" type="RichTextLabel" parent="Newspaper/InteractInfos/Control/ObjectText/Control/HBoxContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[indent][/indent][b]50e anniversaire de l'assombrissement.[/b]
+[color=#999] [fill]
+Nous a cette date, 50 annees jour pour jour de l'assombrissement, cet evenement cataclysmique que nous avons reussi a survivre en se cachant sous terre.
+
+Blah blah blah, trouver des trucs a dire pour raconter l'histoire et le background et tout ca.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id enim id nunc vestibulum accumsan a eu dolor. Nam et elementum lorem. Praesent eu enim condimentum, volutpat urna at, pharetra felis. Fusce sagittis sagittis tempor. Phasellus quis ligula egestas, placerat orci auctor, gravida enim. Nullam a convallis diam. Phasellus eu urna lorem."
+fit_content = true
+
+[node name="InputsTextures" type="CanvasLayer" parent="Newspaper"]
+visible = false
+
+[node name="Control" type="Control" parent="Newspaper/InputsTextures"]
+layout_mode = 3
+anchor_top = 0.0787037
+anchor_right = 1.0
+anchor_bottom = 0.919753
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Newspaper/InputsTextures/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -144.0
+offset_right = 181.0
+grow_vertical = 0
+mouse_filter = 2
+theme = ExtResource("10_78cun")
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Newspaper/InputsTextures/Control/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+alignment = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Newspaper/InputsTextures/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 11
+
+[node name="MarginContainer" type="MarginContainer" parent="Newspaper/InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="Newspaper/InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Newspaper/InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("11_uslxg")
+
+[node name="Label" type="Label" parent="Newspaper/InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Lire"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Newspaper/InputsTextures/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 11
+
+[node name="MarginContainer" type="MarginContainer" parent="Newspaper/InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="TextureRect" type="TextureRect" parent="Newspaper/InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer3/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("10_c3scj")
+
+[node name="TextureRect2" type="TextureRect" parent="Newspaper/InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer3/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("11_uslxg")
+
+[node name="Label" type="Label" parent="Newspaper/InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Inspecter"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Newspaper/InputsTextures/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 11
+
+[node name="MarginContainer2" type="MarginContainer" parent="Newspaper/InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="TextureRect" type="TextureRect" parent="Newspaper/InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("10_c3scj")
+flip_h = true
+
+[node name="TextureRect2" type="TextureRect" parent="Newspaper/InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("11_uslxg")
+
+[node name="Label2" type="Label" parent="Newspaper/InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Retour"
+
+[node name="RockBackground" type="Node3D" parent="."]
+script = ExtResource("13_18rsd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RockBackground"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -5.63359, 0, 0)
+mesh = SubResource("PlaneMesh_idg1l")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="RockBackground"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 5.66824, 0, 0)
+mesh = SubResource("PlaneMesh_e6dhg")
+skeleton = NodePath("../..")

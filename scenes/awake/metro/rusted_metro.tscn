@@ -1,0 +1,604 @@
+[gd_scene load_steps=20 format=3 uid="uid://cftdheen3466e"]
+
+[ext_resource type="PackedScene" uid="uid://dtieo028qoy71" path="res://scenes/awake/metro/assets/rusted_metro.glb" id="1_hpct2"]
+[ext_resource type="PackedScene" uid="uid://cp6eposjagq3s" path="res://scenes/awake/metro/assets/rusted_metro_double_door.tscn" id="2_n48jr"]
+[ext_resource type="PackedScene" uid="uid://b5t3ekulhinbx" path="res://scenes/awake/metro/assets/rusted_metro_doors.glb" id="3_64v0w"]
+[ext_resource type="AudioStream" uid="uid://dplxg55db8jec" path="res://scenes/awake/sounds/metro_environment_loop.wav" id="4_nm8av"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3x6tt"]
+size = Vector3(3.05688, 0.130737, 21.7744)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t5j64"]
+size = Vector3(2.38672, 0.257751, 21.7422)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yqpmw"]
+size = Vector3(0.0559082, 0.524994, 21.7229)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bwurd"]
+size = Vector3(0.056, 0.55, 21.7207)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7b1q5"]
+size = Vector3(0.0559082, 2.47444, 3.45215)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nxq2v"]
+size = Vector3(0.0559082, 2.47444, 2.15161)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fjcu7"]
+size = Vector3(2.99512, 2.96497, 0.0275879)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kyiu1"]
+size = Vector3(2.38965, 0.464111, 0.0275879)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_djukt"]
+size = Vector3(0.687866, 0.585693, 3.01068)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r57yv"]
+size = Vector3(0.813171, 2.98049, 0.0472412)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_85fxc"]
+size = Vector3(0.0328674, 0.715088, 2.99985)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b5aee"]
+size = Vector3(0.687866, 0.585693, 1.91393)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_57ofj"]
+size = Vector3(0.0328674, 0.715088, 1.91952)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wap3b"]
+size = Vector3(0.687866, 0.585693, 1.92223)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c6nmy"]
+size = Vector3(0.0328674, 0.715088, 1.92208)
+
+[node name="RustedMetro" type="Node3D"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+
+[node name="rustedMetroGltf" parent="." instance=ExtResource("1_hpct2")]
+
+[node name="MetroCollisions" type="AnimatableBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MetroCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0689087, 0)
+shape = SubResource("BoxShape3D_3x6tt")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="MetroCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.23682, 0)
+shape = SubResource("BoxShape3D_t5j64")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="MetroCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47429, 2.64326, 0)
+shape = SubResource("BoxShape3D_yqpmw")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="MetroCollisions"]
+transform = Transform3D(0.831615, -0.555353, 0, 0.555353, 0.831615, 0, 0, 0, 1, 1.325, 3.119, 0)
+shape = SubResource("BoxShape3D_bwurd")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="MetroCollisions"]
+transform = Transform3D(-0.831954, 0.554844, -8.74228e-08, 0.554844, 0.831954, 0, 7.27317e-08, -4.8506e-08, -1, -1.325, 3.119, 0)
+shape = SubResource("BoxShape3D_bwurd")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="MetroCollisions"]
+transform = Transform3D(-0.505868, 0.862611, -7.86345e-08, 0.862611, 0.505868, 3.82015e-08, 7.27317e-08, -4.8506e-08, -1, -0.984566, 3.03297, 0)
+shape = SubResource("BoxShape3D_bwurd")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="MetroCollisions"]
+transform = Transform3D(-0.914254, 0.405142, 8.74228e-08, 0.405142, 0.914254, 0, -7.99266e-08, 3.54186e-08, -1, -1.275, 2.696, 0)
+shape = SubResource("BoxShape3D_bwurd")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="MetroCollisions"]
+transform = Transform3D(0.914254, -0.405142, 0, 0.405142, 0.914254, 0, 0, 0, 1, 1.275, 2.696, 0)
+shape = SubResource("BoxShape3D_bwurd")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="MetroCollisions"]
+transform = Transform3D(0.506034, -0.862514, 0, 0.862514, 0.506034, 0, 0, 0, 1, 0.985, 3.033, 0)
+shape = SubResource("BoxShape3D_bwurd")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="MetroCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.474, 2.6478, 0)
+shape = SubResource("BoxShape3D_yqpmw")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="MetroCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.474, 1.16073, 0)
+shape = SubResource("BoxShape3D_7b1q5")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="MetroCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.474, 1.16073, 5.21782)
+shape = SubResource("BoxShape3D_7b1q5")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="MetroCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.474, 1.16073, -5.22074)
+shape = SubResource("BoxShape3D_7b1q5")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="MetroCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47431, 1.16073, 0)
+shape = SubResource("BoxShape3D_7b1q5")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="MetroCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47431, 1.16073, 5.21782)
+shape = SubResource("BoxShape3D_7b1q5")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="MetroCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47431, 1.16073, -5.22074)
+shape = SubResource("BoxShape3D_7b1q5")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="MetroCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47431, 1.16073, -9.78967)
+shape = SubResource("BoxShape3D_nxq2v")
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="MetroCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42184, 10.8488)
+shape = SubResource("BoxShape3D_fjcu7")
+
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="MetroCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13227, 10.8488)
+shape = SubResource("BoxShape3D_kyiu1")
+
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="MetroCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42184, -10.849)
+shape = SubResource("BoxShape3D_fjcu7")
+
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="MetroCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13227, -10.849)
+shape = SubResource("BoxShape3D_kyiu1")
+
+[node name="SeatsCollisions" type="AnimatableBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12324, 0.26532, -0.00149536)
+shape = SubResource("BoxShape3D_djukt")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06059, 1.46272, -1.50201)
+shape = SubResource("BoxShape3D_r57yv")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.061, 1.463, 1.502)
+shape = SubResource("BoxShape3D_r57yv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(0.991765, 0.128069, 0, -0.128069, 0.991765, 0, 0, 0, 1, 1.40868, 0.8612, 0.00114441)
+shape = SubResource("BoxShape3D_85fxc")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12324, 0.26532, -5.21611)
+shape = SubResource("BoxShape3D_djukt")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06059, 1.46272, -6.71813)
+shape = SubResource("BoxShape3D_r57yv")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.061, 1.463, -3.71411)
+shape = SubResource("BoxShape3D_r57yv")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(0.991765, 0.128069, 0, -0.128069, 0.991765, 0, 0, 0, 1, 1.40868, 0.8612, -5.22954)
+shape = SubResource("BoxShape3D_85fxc")
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12324, 0.26532, 5.21767)
+shape = SubResource("BoxShape3D_djukt")
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06059, 1.46272, 3.71566)
+shape = SubResource("BoxShape3D_r57yv")
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.061, 1.463, 6.71967)
+shape = SubResource("BoxShape3D_r57yv")
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(0.991765, 0.128069, 0, -0.128069, 0.991765, 0, 0, 0, 1, 1.40868, 0.8612, 5.20425)
+shape = SubResource("BoxShape3D_85fxc")
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12324, 0.26532, -9.89197)
+shape = SubResource("BoxShape3D_b5aee")
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.061, 1.463, -8.93348)
+shape = SubResource("BoxShape3D_r57yv")
+
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(0.991765, 0.128069, 0, -0.128069, 0.991765, 0, 0, 0, 1, 1.40868, 0.8612, -9.89205)
+shape = SubResource("BoxShape3D_57ofj")
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12324, 0.26532, 9.88598)
+shape = SubResource("BoxShape3D_wap3b")
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06059, 1.46272, 8.9314)
+shape = SubResource("BoxShape3D_r57yv")
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(0.991765, 0.128069, 0, -0.128069, 0.991765, 0, 0, 0, 1, 1.40868, 0.8612, 9.89726)
+shape = SubResource("BoxShape3D_c6nmy")
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.12345, 0.26532, -0.00115777)
+shape = SubResource("BoxShape3D_djukt")
+
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.06079, 1.46272, 1.49936)
+shape = SubResource("BoxShape3D_r57yv")
+
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.06121, 1.463, -1.50465)
+shape = SubResource("BoxShape3D_r57yv")
+
+[node name="CollisionShape3D22" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(-0.991765, -0.128069, -8.74228e-08, -0.128069, 0.991765, 0, 8.67029e-08, 1.11961e-08, -1, -1.40889, 0.8612, -0.00379751)
+shape = SubResource("BoxShape3D_85fxc")
+
+[node name="CollisionShape3D23" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.12345, 0.26532, 5.21346)
+shape = SubResource("BoxShape3D_djukt")
+
+[node name="CollisionShape3D24" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.06079, 1.46272, 6.71547)
+shape = SubResource("BoxShape3D_r57yv")
+
+[node name="CollisionShape3D25" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.06121, 1.463, 3.71146)
+shape = SubResource("BoxShape3D_r57yv")
+
+[node name="CollisionShape3D26" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(-0.991765, -0.128069, -8.74228e-08, -0.128069, 0.991765, 0, 8.67029e-08, 1.11961e-08, -1, -1.40889, 0.8612, 5.22689)
+shape = SubResource("BoxShape3D_85fxc")
+
+[node name="CollisionShape3D27" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.12345, 0.26532, -5.22033)
+shape = SubResource("BoxShape3D_djukt")
+
+[node name="CollisionShape3D28" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.06079, 1.46272, -3.71831)
+shape = SubResource("BoxShape3D_r57yv")
+
+[node name="CollisionShape3D29" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.06121, 1.463, -6.72233)
+shape = SubResource("BoxShape3D_r57yv")
+
+[node name="CollisionShape3D30" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(-0.991765, -0.128069, -8.74228e-08, -0.128069, 0.991765, 0, 8.67029e-08, 1.11961e-08, -1, -1.40889, 0.8612, -5.2069)
+shape = SubResource("BoxShape3D_85fxc")
+
+[node name="CollisionShape3D31" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.12345, 0.26532, 9.88932)
+shape = SubResource("BoxShape3D_b5aee")
+
+[node name="CollisionShape3D32" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.06121, 1.463, 8.93083)
+shape = SubResource("BoxShape3D_r57yv")
+
+[node name="CollisionShape3D33" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(-0.991765, -0.128069, -8.74228e-08, -0.128069, 0.991765, 0, 8.67029e-08, 1.11961e-08, -1, -1.40889, 0.8612, 9.88939)
+shape = SubResource("BoxShape3D_57ofj")
+
+[node name="CollisionShape3D34" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.12345, 0.26532, -9.88863)
+shape = SubResource("BoxShape3D_wap3b")
+
+[node name="CollisionShape3D35" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.0608, 1.46272, -8.93405)
+shape = SubResource("BoxShape3D_r57yv")
+
+[node name="CollisionShape3D36" type="CollisionShape3D" parent="SeatsCollisions"]
+transform = Transform3D(-0.991765, -0.128069, -8.74228e-08, -0.128069, 0.991765, 0, 8.67029e-08, 1.11961e-08, -1, -1.40889, 0.8612, -9.89991)
+shape = SubResource("BoxShape3D_c6nmy")
+
+[node name="Doors" type="Node3D" parent="."]
+
+[node name="RustedMetroDoubleDoor" parent="Doors" groups=["rusted_metro_double_doors_left"] instance=ExtResource("2_n48jr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48871, 0, -2.61365)
+script = null
+
+[node name="RustedMetroDoubleDoor3" parent="Doors" groups=["rusted_metro_double_doors_left"] instance=ExtResource("2_n48jr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.489, 0, 2.614)
+script = null
+
+[node name="RustedMetroDoubleDoor2" parent="Doors" groups=["rusted_metro_double_doors_left"] instance=ExtResource("2_n48jr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.48871, 0, -7.82207)
+script = null
+
+[node name="RustedMetroDoubleDoor4" parent="Doors" groups=["rusted_metro_double_doors_left"] instance=ExtResource("2_n48jr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.489, 0, 7.822)
+script = null
+
+[node name="RustedMetroDoubleDoor5" parent="Doors" groups=["rusted_metro_double_doors_right"] instance=ExtResource("2_n48jr")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.489, 0, 2.61379)
+script = null
+
+[node name="RustedMetroDoubleDoor6" parent="Doors" groups=["rusted_metro_double_doors_right"] instance=ExtResource("2_n48jr")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.489, 0, -2.61386)
+script = null
+
+[node name="RustedMetroDoubleDoor7" parent="Doors" groups=["rusted_metro_double_doors_right"] instance=ExtResource("2_n48jr")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.489, 0, 7.82221)
+script = null
+
+[node name="RustedMetroDoubleDoor8" parent="Doors" groups=["rusted_metro_double_doors_right"] instance=ExtResource("2_n48jr")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.489, 0, -7.82186)
+script = null
+
+[node name="rusted_metro_doors" parent="Doors" instance=ExtResource("3_64v0w")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.443447, 1.19209e-07, -10.8478)
+
+[node name="rusted_metro_doors2" parent="Doors" instance=ExtResource("3_64v0w")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -0.443, 0, 10.848)
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, 1.79436)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, 0.6417)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, 4.17929)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, 3.02663)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, 6.5775)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, 5.42484)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, 9.00825)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D28" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, 10.1693)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D12" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, 7.85559)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D13" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, -0.669326)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D15" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, -1.82199)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D16" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, -3.01996)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D18" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, -4.17262)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D19" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, -5.44567)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D21" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, -6.59833)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D22" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, -7.78024)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D24" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, -8.9329)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D25" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, -10.1945)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D29" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, 1.79436)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D31" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, 0.6417)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D32" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, 4.17929)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D34" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, 3.02663)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D35" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, 6.5775)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D37" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, 5.42484)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D38" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, 9.00825)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D41" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, 10.1693)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D42" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, 7.85559)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D43" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, -0.669326)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D45" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, -1.82199)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D46" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, -3.01996)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D48" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, -4.17262)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D49" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, -5.44567)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D51" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, -6.59833)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D52" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, -7.78024)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D54" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, -8.9329)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="OmniLight3D55" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, -10.1945)
+light_color = Color(0.333663, 0.360028, 0.238409, 1)
+light_energy = 0.2
+shadow_enabled = true
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Node3D"]
+transform = Transform3D(1.11111, 0, 0, 0, 1.11111, 0, 0, 0, 1.11111, 2.03128, 1.76803, 0)
+stream = ExtResource("4_nm8av")
+volume_db = -31.35
+autoplay = true
+bus = &"SoundEffects"
+attenuation_filter_cutoff_hz = 4705.0
+attenuation_filter_db = -35.8
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Node3D"]
+transform = Transform3D(1.11111, 0, 0, 0, 1.11111, 0, 0, 0, 1.11111, -2.031, 1.768, 0)
+stream = ExtResource("4_nm8av")
+volume_db = -31.35
+autoplay = true
+bus = &"SoundEffects"
+attenuation_filter_cutoff_hz = 4705.0
+attenuation_filter_db = -35.8
+
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="Node3D"]
+transform = Transform3D(1.11111, 0, 0, 0, 1.11111, 0, 0, 0, 1.11111, 2.03128, 1.76803, -8.89842)
+stream = ExtResource("4_nm8av")
+volume_db = -31.35
+autoplay = true
+bus = &"SoundEffects"
+attenuation_filter_cutoff_hz = 4705.0
+attenuation_filter_db = -35.8
+
+[node name="AudioStreamPlayer3D4" type="AudioStreamPlayer3D" parent="Node3D"]
+transform = Transform3D(1.11111, 0, 0, 0, 1.11111, 0, 0, 0, 1.11111, -2.031, 1.768, -8.89842)
+stream = ExtResource("4_nm8av")
+volume_db = -31.35
+autoplay = true
+bus = &"SoundEffects"
+attenuation_filter_cutoff_hz = 4705.0
+attenuation_filter_db = -35.8
+
+[node name="AudioStreamPlayer3D5" type="AudioStreamPlayer3D" parent="Node3D"]
+transform = Transform3D(1.11111, 0, 0, 0, 1.11111, 0, 0, 0, 1.11111, 2.03128, 1.76803, 8.898)
+stream = ExtResource("4_nm8av")
+volume_db = -31.35
+autoplay = true
+bus = &"SoundEffects"
+attenuation_filter_cutoff_hz = 4705.0
+attenuation_filter_db = -35.8
+
+[node name="AudioStreamPlayer3D6" type="AudioStreamPlayer3D" parent="Node3D"]
+transform = Transform3D(1.11111, 0, 0, 0, 1.11111, 0, 0, 0, 1.11111, -2.031, 1.768, 8.898)
+stream = ExtResource("4_nm8av")
+volume_db = -31.35
+autoplay = true
+bus = &"SoundEffects"
+attenuation_filter_cutoff_hz = 4705.0
+attenuation_filter_db = -35.8
+
+[editable path="rustedMetroGltf"]
