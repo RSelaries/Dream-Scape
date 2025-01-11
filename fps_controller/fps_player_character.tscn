@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://5m1g178ubchd"]
 
-[ext_resource type="Script" path="res://fps_controller/fps_player_character.gd" id="1_j1svx"]
-[ext_resource type="Script" path="res://fps_controller/reticle.gd" id="2_qhyan"]
-[ext_resource type="Script" path="res://fps_controller/player_camera.gd" id="2_qy0gv"]
+[ext_resource type="Script" uid="uid://du3igkctqys0i" path="res://fps_controller/fps_player_character.gd" id="1_j1svx"]
+[ext_resource type="Script" uid="uid://dqt34n12hada2" path="res://fps_controller/reticle.gd" id="2_qhyan"]
+[ext_resource type="Script" uid="uid://dx8cc25hfj1yx" path="res://fps_controller/player_camera.gd" id="2_qy0gv"]
 [ext_resource type="Texture2D" uid="uid://cn56dom5y6eka" path="res://global_assets/textures/hand_reticle.png" id="4_g6328"]
 [ext_resource type="Texture2D" uid="uid://bw0qkik1rmcue" path="res://global_assets/textures/closed_hand_reticle.png" id="5_416f4"]
 
