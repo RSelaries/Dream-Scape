@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bdgg64gsfnru"]
+[gd_scene load_steps=14 format=3 uid="uid://bdgg64gsfnru"]
 
 [ext_resource type="Script" path="res://scenes/asleep/asleep_scene.gd" id="1_sdt8w"]
 [ext_resource type="PackedScene" uid="uid://5m1g178ubchd" path="res://fps_controller/fps_player_character.tscn" id="2_46cu2"]
+[ext_resource type="Material" uid="uid://cllts01y0qs4d" path="res://global_assets/materials/debug_material.tres" id="2_jl7b8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wh8ij"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -66,9 +67,10 @@ size = Vector3(3.72095, 4.74359, 2)
 material = SubResource("StandardMaterial3D_yx2b3")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.77639, 1.8718, 9.05456)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0185, 1.8718, 6.07482)
+material_override = ExtResource("2_jl7b8")
 use_collision = true
-size = Vector3(5.40063, 4.74359, 6.91797)
+size = Vector3(5, 5, 13)
 material = SubResource("StandardMaterial3D_rikb4")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="."]
