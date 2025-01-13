@@ -2,7 +2,7 @@ extends CollisionObject3D
 class_name InteractibleObject3D
 
 
-enum InteractionTypes {DEFAULT, INSPECT}
+enum InteractionTypes {DEFAULT, INSPECT, OWNER_DEFAULT}
 @export var interaction_type: InteractionTypes = InteractionTypes.DEFAULT
 
 
@@ -16,21 +16,26 @@ var can_move := false
 
 func _process(_delta: float) -> void:
 	match interaction_type:
-		InteractionTypes.DEFAULT:
-			pass
-		
 		InteractionTypes.INSPECT:
 			if can_move and Global.current_game_state == Global.GameStates.OBJECT_INSPECTING:
 				_inspect_update_position()
+		
+		_:
+			pass
 
 
 func interact() -> void:
 	match interaction_type:
-		InteractionTypes.DEFAULT:
-			pass
-		
 		InteractionTypes.INSPECT:
 			_inspect_interact()
+		
+		InteractionTypes.OWNER_DEFAULT:
+			if owner.has_method("interact"):
+				@warning_ignore("unsafe_method_access")
+				owner.interact()
+		
+		_:
+			pass
 
 
 func _unhandled_input(event: InputEvent) -> void:
