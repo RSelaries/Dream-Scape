@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cp6eposjagq3s"]
 
-[ext_resource type="Script" path="res://scenes/awake/metro/assets/rusted_metro_double_door.gd" id="1_1dpu2"]
+[ext_resource type="Script" uid="uid://di6vtgsf558qx" path="res://scenes/awake/metro/assets/rusted_metro_double_door.gd" id="1_1dpu2"]
 [ext_resource type="PackedScene" uid="uid://b5t3ekulhinbx" path="res://scenes/awake/metro/assets/rusted_metro_doors.glb" id="1_llynn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o1tmg"]
@@ -59,8 +59,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_43781"]
 _data = {
-"Opening": SubResource("Animation_d3sns"),
-"RESET": SubResource("Animation_vnslf")
+&"Opening": SubResource("Animation_d3sns"),
+&"RESET": SubResource("Animation_vnslf")
 }
 
 [node name="RustedMetroDoubleDoor" type="Node3D"]
@@ -73,6 +73,7 @@ script = ExtResource("1_1dpu2")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="rusted_metro_doors/AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20248, -0.446694)
 shape = SubResource("BoxShape3D_o1tmg")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="rusted_metro_doors2" parent="." instance=ExtResource("1_llynn")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
@@ -83,8 +84,9 @@ transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="rusted_metro_doors2/AnimatableBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20248, -0.446694)
 shape = SubResource("BoxShape3D_o1tmg")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_43781")
+&"": SubResource("AnimationLibrary_43781")
 }

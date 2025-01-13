@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://bdgg64gsfnru"]
 
-[ext_resource type="Script" path="res://scenes/asleep/asleep_scene.gd" id="1_sdt8w"]
+[ext_resource type="Script" uid="uid://b3p18vea8dwuf" path="res://scenes/asleep/asleep_scene.gd" id="1_sdt8w"]
 [ext_resource type="PackedScene" uid="uid://5m1g178ubchd" path="res://fps_controller/fps_player_character.tscn" id="2_46cu2"]
 [ext_resource type="Material" uid="uid://cllts01y0qs4d" path="res://global_assets/materials/debug_material.tres" id="2_jl7b8"]
 
@@ -53,6 +53,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0415039, 0)
 use_collision = true
 size = Vector3(48.5176, 0.0830078, 48.0762)
 material = SubResource("StandardMaterial3D_yeif6")
+metadata/_edit_lock_ = true
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76902, 0.885315, -9.41852)

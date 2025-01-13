@@ -51,7 +51,7 @@ size = Vector3(0.687866, 0.585693, 1.92223)
 size = Vector3(0.0328674, 0.715088, 1.92208)
 
 [node name="RustedMetro" type="Node3D"]
-transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 
 [node name="rustedMetroGltf" parent="." instance=ExtResource("1_hpct2")]
 
@@ -60,232 +60,289 @@ transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MetroCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0689087, 0)
 shape = SubResource("BoxShape3D_3x6tt")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="MetroCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.23682, 0)
 shape = SubResource("BoxShape3D_t5j64")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="MetroCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47429, 2.64326, 0)
 shape = SubResource("BoxShape3D_yqpmw")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="MetroCollisions"]
 transform = Transform3D(0.831615, -0.555353, 0, 0.555353, 0.831615, 0, 0, 0, 1, 1.325, 3.119, 0)
 shape = SubResource("BoxShape3D_bwurd")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="MetroCollisions"]
 transform = Transform3D(-0.831954, 0.554844, -8.74228e-08, 0.554844, 0.831954, 0, 7.27317e-08, -4.8506e-08, -1, -1.325, 3.119, 0)
 shape = SubResource("BoxShape3D_bwurd")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D7" type="CollisionShape3D" parent="MetroCollisions"]
 transform = Transform3D(-0.505868, 0.862611, -7.86345e-08, 0.862611, 0.505868, 3.82015e-08, 7.27317e-08, -4.8506e-08, -1, -0.984566, 3.03297, 0)
 shape = SubResource("BoxShape3D_bwurd")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D9" type="CollisionShape3D" parent="MetroCollisions"]
 transform = Transform3D(-0.914254, 0.405142, 8.74228e-08, 0.405142, 0.914254, 0, -7.99266e-08, 3.54186e-08, -1, -1.275, 2.696, 0)
 shape = SubResource("BoxShape3D_bwurd")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D10" type="CollisionShape3D" parent="MetroCollisions"]
 transform = Transform3D(0.914254, -0.405142, 0, 0.405142, 0.914254, 0, 0, 0, 1, 1.275, 2.696, 0)
 shape = SubResource("BoxShape3D_bwurd")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="MetroCollisions"]
 transform = Transform3D(0.506034, -0.862514, 0, 0.862514, 0.506034, 0, 0, 0, 1, 0.985, 3.033, 0)
 shape = SubResource("BoxShape3D_bwurd")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="MetroCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.474, 2.6478, 0)
 shape = SubResource("BoxShape3D_yqpmw")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D11" type="CollisionShape3D" parent="MetroCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.474, 1.16073, 0)
 shape = SubResource("BoxShape3D_7b1q5")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D12" type="CollisionShape3D" parent="MetroCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.474, 1.16073, 5.21782)
 shape = SubResource("BoxShape3D_7b1q5")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D13" type="CollisionShape3D" parent="MetroCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.474, 1.16073, -5.22074)
 shape = SubResource("BoxShape3D_7b1q5")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D14" type="CollisionShape3D" parent="MetroCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47431, 1.16073, 0)
 shape = SubResource("BoxShape3D_7b1q5")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D15" type="CollisionShape3D" parent="MetroCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47431, 1.16073, 5.21782)
 shape = SubResource("BoxShape3D_7b1q5")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D16" type="CollisionShape3D" parent="MetroCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47431, 1.16073, -5.22074)
 shape = SubResource("BoxShape3D_7b1q5")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D17" type="CollisionShape3D" parent="MetroCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47431, 1.16073, -9.78967)
 shape = SubResource("BoxShape3D_nxq2v")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D18" type="CollisionShape3D" parent="MetroCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42184, 10.8488)
 shape = SubResource("BoxShape3D_fjcu7")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D19" type="CollisionShape3D" parent="MetroCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13227, 10.8488)
 shape = SubResource("BoxShape3D_kyiu1")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D20" type="CollisionShape3D" parent="MetroCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.42184, -10.849)
 shape = SubResource("BoxShape3D_fjcu7")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D21" type="CollisionShape3D" parent="MetroCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.13227, -10.849)
 shape = SubResource("BoxShape3D_kyiu1")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="SeatsCollisions" type="AnimatableBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12324, 0.26532, -0.00149536)
 shape = SubResource("BoxShape3D_djukt")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06059, 1.46272, -1.50201)
 shape = SubResource("BoxShape3D_r57yv")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.061, 1.463, 1.502)
 shape = SubResource("BoxShape3D_r57yv")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(0.991765, 0.128069, 0, -0.128069, 0.991765, 0, 0, 0, 1, 1.40868, 0.8612, 0.00114441)
 shape = SubResource("BoxShape3D_85fxc")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12324, 0.26532, -5.21611)
 shape = SubResource("BoxShape3D_djukt")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06059, 1.46272, -6.71813)
 shape = SubResource("BoxShape3D_r57yv")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D7" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.061, 1.463, -3.71411)
 shape = SubResource("BoxShape3D_r57yv")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(0.991765, 0.128069, 0, -0.128069, 0.991765, 0, 0, 0, 1, 1.40868, 0.8612, -5.22954)
 shape = SubResource("BoxShape3D_85fxc")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D9" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12324, 0.26532, 5.21767)
 shape = SubResource("BoxShape3D_djukt")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D10" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06059, 1.46272, 3.71566)
 shape = SubResource("BoxShape3D_r57yv")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D11" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.061, 1.463, 6.71967)
 shape = SubResource("BoxShape3D_r57yv")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D12" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(0.991765, 0.128069, 0, -0.128069, 0.991765, 0, 0, 0, 1, 1.40868, 0.8612, 5.20425)
 shape = SubResource("BoxShape3D_85fxc")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D15" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12324, 0.26532, -9.89197)
 shape = SubResource("BoxShape3D_b5aee")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D18" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.061, 1.463, -8.93348)
 shape = SubResource("BoxShape3D_r57yv")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D19" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(0.991765, 0.128069, 0, -0.128069, 0.991765, 0, 0, 0, 1, 1.40868, 0.8612, -9.89205)
 shape = SubResource("BoxShape3D_57ofj")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D13" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12324, 0.26532, 9.88598)
 shape = SubResource("BoxShape3D_wap3b")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D14" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.06059, 1.46272, 8.9314)
 shape = SubResource("BoxShape3D_r57yv")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D16" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(0.991765, 0.128069, 0, -0.128069, 0.991765, 0, 0, 0, 1, 1.40868, 0.8612, 9.89726)
 shape = SubResource("BoxShape3D_c6nmy")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D17" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.12345, 0.26532, -0.00115777)
 shape = SubResource("BoxShape3D_djukt")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D20" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.06079, 1.46272, 1.49936)
 shape = SubResource("BoxShape3D_r57yv")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D21" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.06121, 1.463, -1.50465)
 shape = SubResource("BoxShape3D_r57yv")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D22" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(-0.991765, -0.128069, -8.74228e-08, -0.128069, 0.991765, 0, 8.67029e-08, 1.11961e-08, -1, -1.40889, 0.8612, -0.00379751)
 shape = SubResource("BoxShape3D_85fxc")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D23" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.12345, 0.26532, 5.21346)
 shape = SubResource("BoxShape3D_djukt")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D24" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.06079, 1.46272, 6.71547)
 shape = SubResource("BoxShape3D_r57yv")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D25" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.06121, 1.463, 3.71146)
 shape = SubResource("BoxShape3D_r57yv")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D26" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(-0.991765, -0.128069, -8.74228e-08, -0.128069, 0.991765, 0, 8.67029e-08, 1.11961e-08, -1, -1.40889, 0.8612, 5.22689)
 shape = SubResource("BoxShape3D_85fxc")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D27" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.12345, 0.26532, -5.22033)
 shape = SubResource("BoxShape3D_djukt")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D28" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.06079, 1.46272, -3.71831)
 shape = SubResource("BoxShape3D_r57yv")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D29" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.06121, 1.463, -6.72233)
 shape = SubResource("BoxShape3D_r57yv")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D30" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(-0.991765, -0.128069, -8.74228e-08, -0.128069, 0.991765, 0, 8.67029e-08, 1.11961e-08, -1, -1.40889, 0.8612, -5.2069)
 shape = SubResource("BoxShape3D_85fxc")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D31" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.12345, 0.26532, 9.88932)
 shape = SubResource("BoxShape3D_b5aee")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D32" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.06121, 1.463, 8.93083)
 shape = SubResource("BoxShape3D_r57yv")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D33" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(-0.991765, -0.128069, -8.74228e-08, -0.128069, 0.991765, 0, 8.67029e-08, 1.11961e-08, -1, -1.40889, 0.8612, 9.88939)
 shape = SubResource("BoxShape3D_57ofj")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D34" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.12345, 0.26532, -9.88863)
 shape = SubResource("BoxShape3D_wap3b")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D35" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.0608, 1.46272, -8.93405)
 shape = SubResource("BoxShape3D_r57yv")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="CollisionShape3D36" type="CollisionShape3D" parent="SeatsCollisions"]
 transform = Transform3D(-0.991765, -0.128069, -8.74228e-08, -0.128069, 0.991765, 0, 8.67029e-08, 1.11961e-08, -1, -1.40889, 0.8612, -9.89991)
 shape = SubResource("BoxShape3D_c6nmy")
+debug_color = Color(1, 1, 1, 0.211765)
 
 [node name="Doors" type="Node3D" parent="."]
 
