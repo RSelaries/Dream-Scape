@@ -73,7 +73,7 @@ script = ExtResource("1_tttr4")
 [node name="dream_metro_door" parent="." instance=ExtResource("1_7flbo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000277638, -0.000393697, 0.914864)
 
-[node name="AnimatableBody3D2" type="AnimatableBody3D" parent="dream_metro_door"]
+[node name="AnimatableBody3D2" type="StaticBody3D" parent="dream_metro_door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000277638, 0.000393697, -0.914864)
 script = ExtResource("3_0825c")
 interaction_type = 2
@@ -81,12 +81,12 @@ interaction_type = 2
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="dream_metro_door/AnimatableBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20134, 0.457257)
 shape = SubResource("BoxShape3D_7flbo")
-debug_color = Color(0.470588, 0.784314, 0.121569, 1)
+debug_color = Color(1, 1, 1, 1)
 
 [node name="dream_metro_door3" parent="." instance=ExtResource("1_7flbo")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.000277519, -0.000393697, -0.897462)
 
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="dream_metro_door3"]
+[node name="AnimatableBody3D" type="StaticBody3D" parent="dream_metro_door3"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.000277597, 0.000393697, -0.897462)
 script = ExtResource("3_0825c")
 interaction_type = 2
@@ -94,7 +94,7 @@ interaction_type = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="dream_metro_door3/AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00720215, 1.20134, -0.437132)
 shape = SubResource("BoxShape3D_7flbo")
-debug_color = Color(0.470588, 0.784314, 0.121569, 1)
+debug_color = Color(1, 1, 1, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true

@@ -1,9 +1,10 @@
-[gd_scene load_steps=35 format=3 uid="uid://c4snmw7euut7v"]
+[gd_scene load_steps=37 format=3 uid="uid://c4snmw7euut7v"]
 
 [ext_resource type="PackedScene" uid="uid://cftdheen3466e" path="res://scenes/awake/metro/rusted_metro.tscn" id="1_b21n0"]
-[ext_resource type="Script" uid="uid://de05h31nifcvc" path="res://scenes/awake/awake_scene.gd" id="1_p8hv6"]
+[ext_resource type="Script" path="res://scenes/awake/awake_scene.gd" id="1_p8hv6"]
 [ext_resource type="PackedScene" uid="uid://5m1g178ubchd" path="res://fps_controller/fps_player_character.tscn" id="2_8oyf3"]
 [ext_resource type="Shader" uid="uid://c4gvnmq1ksyn1" path="res://shaders/dithering.gdshader" id="3_jasn7"]
+[ext_resource type="Shader" path="res://shaders/pixelate_shader.gdshader" id="4_a622i"]
 [ext_resource type="Shader" uid="uid://ban6fk30se87r" path="res://shaders/gamma_correction.gdshader" id="4_ttayp"]
 [ext_resource type="Shader" uid="uid://cop3il56do541" path="res://shaders/color_correction.gdshader" id="4_v1e0c"]
 [ext_resource type="Script" uid="uid://cpvmvyi40kayr" path="res://scenes/awake/newspaper.gd" id="8_e6aqh"]
@@ -19,6 +20,34 @@
 [ext_resource type="Texture2D" uid="uid://cejst4kk51nei" path="res://global_assets/materials/rock_normal.png" id="17_72sqo"]
 [ext_resource type="PackedScene" uid="uid://hxteg7wxn1gv" path="res://characters/character_2.glb" id="18_gaey3"]
 [ext_resource type="Shader" uid="uid://bg587hxcyvw01" path="res://shaders/my_shader_character.gdshader" id="19_mxccn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b7g1y"]
+resource_local_to_scene = true
+shader = ExtResource("4_ttayp")
+shader_parameter/gamma = 1.45
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hakeb"]
+shader = ExtResource("4_v1e0c")
+shader_parameter/brightness = 0.044
+shader_parameter/contrast = 1.222
+shader_parameter/saturation = 0.614
+shader_parameter/redVal = 1.0
+shader_parameter/greenVal = 0.886
+shader_parameter/blueVal = 1.0
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/tint_effect_factor = 0.53
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bnrml"]
+shader = ExtResource("4_a622i")
+shader_parameter/pixel_size = 1.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ysxg"]
+resource_local_to_scene = true
+shader = ExtResource("3_jasn7")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 12
+shader_parameter/dither_size = 2
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xpc56"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -39,30 +68,6 @@ glow_intensity = 1.7
 glow_strength = 0.87
 glow_bloom = 0.07
 glow_blend_mode = 0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_b7g1y"]
-resource_local_to_scene = true
-shader = ExtResource("4_ttayp")
-shader_parameter/gamma = 1.45
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hakeb"]
-shader = ExtResource("4_v1e0c")
-shader_parameter/brightness = 0.044
-shader_parameter/contrast = 1.222
-shader_parameter/saturation = 0.614
-shader_parameter/redVal = 1.0
-shader_parameter/greenVal = 0.886
-shader_parameter/blueVal = 1.0
-shader_parameter/tint_color = Color(1, 1, 1, 1)
-shader_parameter/tint_effect_factor = 0.53
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ysxg"]
-resource_local_to_scene = true
-shader = ExtResource("3_jasn7")
-shader_parameter/enabled = true
-shader_parameter/dithering = true
-shader_parameter/colors = 12
-shader_parameter/dither_size = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h2jlp"]
 size = Vector3(0.519043, 0.315674, 2.28125)
@@ -924,21 +929,9 @@ _data = {
 &"sat": SubResource("Animation_gaey3")
 }
 
-[node name="AwakeScene" type="Node3D"]
+[node name="AwakeScene" type="Node3D" node_paths=PackedStringArray("player")]
 script = ExtResource("1_p8hv6")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_bt3tw")
-
-[node name="RustedMetro" parent="." instance=ExtResource("1_b21n0")]
-metadata/_edit_lock_ = true
-
-[node name="Player" parent="." instance=ExtResource("2_8oyf3")]
-mouse_sensitivity = 0.03
-viewbobbing_frequency = 0.5
-viewbobbing_force = 0.05
-use_jump = false
-speed = 1.2
+player = NodePath("Player")
 
 [node name="PostProcessing" type="Node" parent="."]
 
@@ -965,6 +958,18 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="Layer3" type="CanvasLayer" parent="PostProcessing"]
+layer = 3
+
+[node name="Pixelisation" type="ColorRect" parent="PostProcessing/Layer3"]
+material = SubResource("ShaderMaterial_bnrml")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
 [node name="10" type="CanvasLayer" parent="PostProcessing"]
 layer = 10
 
@@ -976,6 +981,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bt3tw")
+
+[node name="RustedMetro" parent="." instance=ExtResource("1_b21n0")]
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("2_8oyf3")]
+unique_name_in_owner = true
+mouse_sensitivity = 0.03
+viewbobbing_frequency = 0.5
+viewbobbing_force = 0.05
+use_jump = false
+speed = 1.2
 
 [node name="BenchInteraction" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.931034, 0.458042, 0)
@@ -1320,6 +1339,7 @@ material_override = SubResource("ShaderMaterial_a622i")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="character_2/AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.692985, 0.254365)
+visible = false
 shape = SubResource("CylinderShape3D_mxccn")
 debug_color = Color(1, 0, 0, 0.419608)
 

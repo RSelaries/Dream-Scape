@@ -1,4 +1,4 @@
-extends Node
+extends Node3D
 
 
 @export var awake_scene: PackedScene
@@ -11,7 +11,6 @@ var player_parameters := {
 		},
 	"asleep_scene": {
 		"position": Vector3.ZERO,
-		
 		},
 }
 var current_scene := "awake_scene"
@@ -70,6 +69,9 @@ func change_scene(scene_name: String, transition := true, transition_duration :=
 				child.player.neck.rotation.y = player_parameters["rotation"].neck_y
 				@warning_ignore("unsafe_property_access")
 				child.player.camera.rotation.x = player_parameters["rotation"].camera_x
+	
+				@warning_ignore("unsafe_property_access")
+				print(child.player.position)
 
 
 func _add_scene_as_child(scene: Node3D) -> void:
