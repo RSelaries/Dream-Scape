@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://pl5xmhdpkpqr" path="res://scenes/awake/awake_scene.gd" id="1_p8hv6"]
 [ext_resource type="PackedScene" uid="uid://5m1g178ubchd" path="res://fps_controller/fps_player_character.tscn" id="2_8oyf3"]
 [ext_resource type="Shader" uid="uid://c4gvnmq1ksyn1" path="res://shaders/dithering.gdshader" id="3_jasn7"]
-[ext_resource type="Shader" uid="uid://dwbirewc5ltfu" path="res://shaders/pixelate_shader.gdshader" id="4_a622i"]
+[ext_resource type="Shader" path="res://shaders/pixelate_shader.gdshader" id="4_a622i"]
 [ext_resource type="Shader" uid="uid://ban6fk30se87r" path="res://shaders/gamma_correction.gdshader" id="4_ttayp"]
 [ext_resource type="Shader" uid="uid://cop3il56do541" path="res://shaders/color_correction.gdshader" id="4_v1e0c"]
 [ext_resource type="Script" uid="uid://cpvmvyi40kayr" path="res://scenes/awake/newspaper.gd" id="8_e6aqh"]
@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://ca4vn1antt73" path="res://global_assets/materials/rock_heightmap.png" id="16_7lrfh"]
 [ext_resource type="Texture2D" uid="uid://cejst4kk51nei" path="res://global_assets/materials/rock_normal.png" id="17_72sqo"]
 [ext_resource type="PackedScene" uid="uid://hxteg7wxn1gv" path="res://characters/character_2.glb" id="18_gaey3"]
-[ext_resource type="Shader" uid="uid://bg587hxcyvw01" path="res://shaders/my_shader_character.gdshader" id="19_mxccn"]
+[ext_resource type="Shader" path="res://shaders/my_shader_character.gdshader" id="19_mxccn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b7g1y"]
 resource_local_to_scene = true
@@ -926,7 +926,7 @@ tracks/115/keys = PackedFloat32Array(0, 1, -5.51534e-09, 0.195856, 3.0268e-09)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a622i"]
 _data = {
-&"sat": SubResource("Animation_gaey3")
+"sat": SubResource("Animation_gaey3")
 }
 
 [node name="AwakeScene" type="Node3D" node_paths=PackedStringArray("player")]
@@ -1002,7 +1002,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.931034, 0.458042, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BenchInteraction"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0227051, 0.150512, 0)
 shape = SubResource("BoxShape3D_h2jlp")
-debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="Newspaper" type="Area3D" parent="."]
 transform = Transform3D(-0.139193, 0, 0.787798, 0, 0.8, 0, -0.787798, 0, -0.139193, -0.838814, 0.449506, 4.83725)
@@ -1015,7 +1014,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.06)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Newspaper"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.002)
 shape = SubResource("BoxShape3D_gmi8q")
-debug_color = Color(1, 0, 0.0156863, 0.419608)
 
 [node name="InteractInfos" type="CanvasLayer" parent="Newspaper"]
 visible = false
@@ -1341,12 +1339,11 @@ material_override = SubResource("ShaderMaterial_a622i")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.692985, 0.254365)
 visible = false
 shape = SubResource("CylinderShape3D_mxccn")
-debug_color = Color(1, 0, 0, 0.419608)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="character_2"]
 reset_on_save = false
 libraries = {
-&"": SubResource("AnimationLibrary_a622i")
+"": SubResource("AnimationLibrary_a622i")
 }
 
 [editable path="Player"]

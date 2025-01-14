@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dq3njnvokihyy"]
+[gd_scene load_steps=9 format=3 uid="uid://dq3njnvokihyy"]
 
 [ext_resource type="Script" uid="uid://b06sch7nub6vx" path="res://scenes/asleep/metro/metros.gd" id="1_21dvq"]
 [ext_resource type="PackedScene" uid="uid://to63enenx7hx" path="res://scenes/asleep/metro/dream_metro_simplified.glb" id="2_21dvq"]
@@ -57,12 +57,15 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eoa20"]
 _data = {
-&"RESET": SubResource("Animation_eoa20"),
-&"speed_off": SubResource("Animation_f81i8")
+"RESET": SubResource("Animation_eoa20"),
+"speed_off": SubResource("Animation_f81i8")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wcggm"]
 size = Vector3(3.79163, 2.61816, 17.2266)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gfl50"]
+size = Vector3(2.4707, 2.80225, 351.524)
 
 [node name="Metros" type="Node3D"]
 script = ExtResource("1_21dvq")
@@ -70,17 +73,16 @@ script = ExtResource("1_21dvq")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
-&"": SubResource("AnimationLibrary_eoa20")
+"": SubResource("AnimationLibrary_eoa20")
 }
 
 [node name="Metro_Escaped" type="Area3D" parent="."]
-visible = false
 input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Metro_Escaped"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.562317, 1.25304, 0)
+visible = false
 shape = SubResource("BoxShape3D_wcggm")
-debug_color = Color(0.793971, 0.425891, 1.15514e-06, 0.42)
 
 [node name="Node3D" type="Node3D" parent="."]
 
@@ -91,6 +93,16 @@ transform = Transform3D(-0.8, 0, -6.99382e-08, 0, 0.8, 0, 6.99382e-08, 0, -0.8, 
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, -17.572)
 
 [node name="DreamMetro" parent="Node3D" instance=ExtResource("2_yf25r")]
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28833, 184.63)
+shape = SubResource("BoxShape3D_gfl50")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.288, -184.63)
+shape = SubResource("BoxShape3D_gfl50")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_exited" from="Metro_Escaped" to="." method="_on_metro_escaped_body_exited"]

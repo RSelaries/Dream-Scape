@@ -59,6 +59,7 @@ mesh = SubResource("PlaneMesh_oueue")
 metadata/_edit_lock_ = true
 
 [node name="Metros" parent="." instance=ExtResource("4_wcggm")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 
 [node name="Floor" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.299072, 0)

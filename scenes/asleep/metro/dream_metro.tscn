@@ -16,8 +16,8 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 [node name="StaticBody3D" type="StaticBody3D" parent="dream_metro"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="dream_metro/StaticBody3D"]
+visible = false
 shape = SubResource("ConcavePolygonShape3D_f81i8")
-debug_color = Color(100, 100, 100, 0.038)
 
 [node name="Doors" type="Node3D" parent="dream_metro"]
 
