@@ -1,0 +1,60 @@
+[gd_resource type="ShaderMaterial" load_steps=10 format=3 uid="uid://8uhkt4s13tna"]
+
+[ext_resource type="Shader" uid="uid://b6re73w2ovi5h" path="res://shaders/water_3.gdshader" id="1_j6utn"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_j6utn"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_eoa20"]
+seamless = true
+seamless_blend_skirt = 1.0
+noise = SubResource("FastNoiseLite_j6utn")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_eoa20"]
+noise_type = 3
+offset = Vector3(5.7, 0, 0)
+fractal_weighted_strength = 0.79
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_oueue"]
+seamless = true
+seamless_blend_skirt = 0.834
+as_normal_map = true
+bump_strength = 10.9
+noise = SubResource("FastNoiseLite_eoa20")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_oueue"]
+frequency = 0.0149
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_k8w74"]
+invert = true
+seamless = true
+seamless_blend_skirt = 1.0
+as_normal_map = true
+noise = SubResource("FastNoiseLite_oueue")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6n480"]
+offset = Vector3(51.75, 0, 0)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gb5bf"]
+seamless = true
+seamless_blend_skirt = 1.0
+noise = SubResource("FastNoiseLite_6n480")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_j6utn")
+shader_parameter/depth_fade_distance = 1.0
+shader_parameter/absorbance = 2.0
+shader_parameter/shallow_color = Color(0.616511, 0.652798, 0.523825, 1)
+shader_parameter/deep_color = Color(0.451873, 0.665617, 0.853046, 1)
+shader_parameter/foam_amount = 0.2
+shader_parameter/foam_color = Color(1, 1, 1, 1)
+shader_parameter/foam_noise = SubResource("NoiseTexture2D_eoa20")
+shader_parameter/roughness = 0.05
+shader_parameter/wave_texture = SubResource("NoiseTexture2D_gb5bf")
+shader_parameter/wave_scale = 6.725
+shader_parameter/height_scale = 0.33
+shader_parameter/normal1 = SubResource("NoiseTexture2D_oueue")
+shader_parameter/wave_dir1 = Vector2(1, 0)
+shader_parameter/normal2 = SubResource("NoiseTexture2D_k8w74")
+shader_parameter/wave_dir2 = Vector2(0.27, 1.05)
+shader_parameter/wave_speed = 0.041

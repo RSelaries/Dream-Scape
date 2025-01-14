@@ -1,0 +1,96 @@
+[gd_scene load_steps=8 format=3 uid="uid://dq3njnvokihyy"]
+
+[ext_resource type="Script" uid="uid://b06sch7nub6vx" path="res://scenes/asleep/metro/metros.gd" id="1_21dvq"]
+[ext_resource type="PackedScene" uid="uid://to63enenx7hx" path="res://scenes/asleep/metro/dream_metro_simplified.glb" id="2_21dvq"]
+[ext_resource type="PackedScene" uid="uid://co3dlc4g1fvjh" path="res://scenes/asleep/metro/dream_metro.tscn" id="2_yf25r"]
+
+[sub_resource type="Animation" id="Animation_eoa20"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0, 0.001)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0, 0.001)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0, 0.001)
+}
+
+[sub_resource type="Animation" id="Animation_f81i8"]
+resource_name = "speed_off"
+length = 10.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:z")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 10.5333, -6.74772, -4968.9, 0, 3504.05, 0, 537.653),
+"times": PackedFloat32Array(0, 10)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eoa20"]
+_data = {
+&"RESET": SubResource("Animation_eoa20"),
+&"speed_off": SubResource("Animation_f81i8")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wcggm"]
+size = Vector3(3.79163, 2.61816, 17.2266)
+
+[node name="Metros" type="Node3D"]
+script = ExtResource("1_21dvq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_eoa20")
+}
+
+[node name="Metro_Escaped" type="Area3D" parent="."]
+visible = false
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Metro_Escaped"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.562317, 1.25304, 0)
+shape = SubResource("BoxShape3D_wcggm")
+debug_color = Color(0.793971, 0.425891, 1.15514e-06, 0.42)
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="dream_metro_simplified2" parent="Node3D" instance=ExtResource("2_21dvq")]
+transform = Transform3D(-0.8, 0, -6.99382e-08, 0, 0.8, 0, 6.99382e-08, 0, -0.8, 0, 0, 17.572)
+
+[node name="dream_metro_simplified" parent="Node3D" instance=ExtResource("2_21dvq")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, -17.572)
+
+[node name="DreamMetro" parent="Node3D" instance=ExtResource("2_yf25r")]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="body_exited" from="Metro_Escaped" to="." method="_on_metro_escaped_body_exited"]

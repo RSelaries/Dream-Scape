@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://5dtnvblojg4y"
-path="res://.godot/imported/dream_metro.glb-a098b0cdf9a69d31531170d071141c2b.scn"
+uid="uid://to63enenx7hx"
+path="res://.godot/imported/dream_metro_simplified.glb-3006d916dcc5342d6c53dff04b69119e.scn"
 
 [deps]
 
-source_file="res://scenes/asleep/dream_metro.glb"
-dest_files=["res://.godot/imported/dream_metro.glb-a098b0cdf9a69d31531170d071141c2b.scn"]
+source_file="res://scenes/asleep/metro/dream_metro_simplified.glb"
+dest_files=["res://.godot/imported/dream_metro_simplified.glb-3006d916dcc5342d6c53dff04b69119e.scn"]
 
 [params]
 

@@ -1,10 +1,10 @@
 [gd_scene load_steps=37 format=3 uid="uid://c4snmw7euut7v"]
 
 [ext_resource type="PackedScene" uid="uid://cftdheen3466e" path="res://scenes/awake/metro/rusted_metro.tscn" id="1_b21n0"]
-[ext_resource type="Script" path="res://scenes/awake/awake_scene.gd" id="1_p8hv6"]
+[ext_resource type="Script" uid="uid://pl5xmhdpkpqr" path="res://scenes/awake/awake_scene.gd" id="1_p8hv6"]
 [ext_resource type="PackedScene" uid="uid://5m1g178ubchd" path="res://fps_controller/fps_player_character.tscn" id="2_8oyf3"]
 [ext_resource type="Shader" uid="uid://c4gvnmq1ksyn1" path="res://shaders/dithering.gdshader" id="3_jasn7"]
-[ext_resource type="Shader" path="res://shaders/pixelate_shader.gdshader" id="4_a622i"]
+[ext_resource type="Shader" uid="uid://dwbirewc5ltfu" path="res://shaders/pixelate_shader.gdshader" id="4_a622i"]
 [ext_resource type="Shader" uid="uid://ban6fk30se87r" path="res://shaders/gamma_correction.gdshader" id="4_ttayp"]
 [ext_resource type="Shader" uid="uid://cop3il56do541" path="res://shaders/color_correction.gdshader" id="4_v1e0c"]
 [ext_resource type="Script" uid="uid://cpvmvyi40kayr" path="res://scenes/awake/newspaper.gd" id="8_e6aqh"]

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cnd2buxpe2qtt"
-path="res://.godot/imported/dream_metro_door.glb-0fc873f3e410a811a35538a2c9bc7f19.scn"
+path="res://.godot/imported/dream_metro_door.glb-48ccc9a00cba94328c8c736f34836a13.scn"
 
 [deps]
 
-source_file="res://scenes/asleep/dream_metro_door.glb"
-dest_files=["res://.godot/imported/dream_metro_door.glb-0fc873f3e410a811a35538a2c9bc7f19.scn"]
+source_file="res://scenes/asleep/metro/dream_metro_door.glb"
+dest_files=["res://.godot/imported/dream_metro_door.glb-48ccc9a00cba94328c8c736f34836a13.scn"]
 
 [params]
 
