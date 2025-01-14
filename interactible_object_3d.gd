@@ -10,6 +10,7 @@ var inspected := false
 var moving := false
 var can_move := false
 
+
 @onready var original_position := position
 @onready var original_rotation := rotation
 
@@ -54,7 +55,7 @@ func _on_return() -> void:
 
 ## ========= Inspect functions =========
 func _inspect_update_position() -> void:
-	position = Global.player.inspect_position_node.global_position
+	global_position = Global.player.inspect_position_node.global_position
 
 func _inspect_interact() -> void:
 	Global.current_game_state = Global.GameStates.OBJECT_INSPECTING
@@ -62,9 +63,9 @@ func _inspect_interact() -> void:
 	var tween := create_tween()
 	
 	var inspect_rotation := Global.player.inspect_position_node.global_rotation
-	tween.tween_property(self, "position", Global.player.inspect_position_node.global_position, 0.5)
+	tween.tween_property(self, "global_position", Global.player.inspect_position_node.global_position, 0.5)
 	tween.parallel()
-	tween.tween_property(self, "rotation", Vector3(inspect_rotation.x + PI * 0.5, inspect_rotation.y, inspect_rotation.z), 0.5)
+	tween.tween_property(self, "global_rotation", Vector3(inspect_rotation.x + PI * 0.5, inspect_rotation.y, inspect_rotation.z), 0.5)
 	
 	inspected = true
 	

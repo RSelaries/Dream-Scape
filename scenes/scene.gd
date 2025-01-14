@@ -11,4 +11,3 @@ var input_enabled := false
 func _ready() -> void:
 	if %Player:
 		player = %Player
-		player.position = player_position

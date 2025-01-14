@@ -4,6 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://to63enenx7hx" path="res://scenes/asleep/metro/dream_metro_simplified.glb" id="2_21dvq"]
 [ext_resource type="PackedScene" uid="uid://co3dlc4g1fvjh" path="res://scenes/asleep/metro/dream_metro.tscn" id="2_yf25r"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_gfl50"]
+size = Vector3(2.4707, 2.80225, 351.524)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wcggm"]
+size = Vector3(3.79163, 2.61816, 17.2266)
+
 [sub_resource type="Animation" id="Animation_eoa20"]
 length = 0.001
 tracks/0/type = "bezier"
@@ -61,40 +67,18 @@ _data = {
 "speed_off": SubResource("Animation_f81i8")
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_wcggm"]
-size = Vector3(3.79163, 2.61816, 17.2266)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_gfl50"]
-size = Vector3(2.4707, 2.80225, 351.524)
-
 [node name="Metros" type="Node3D"]
 script = ExtResource("1_21dvq")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-unique_name_in_owner = true
-libraries = {
-"": SubResource("AnimationLibrary_eoa20")
-}
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
 
-[node name="Metro_Escaped" type="Area3D" parent="."]
-input_ray_pickable = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Metro_Escaped"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.562317, 1.25304, 0)
-visible = false
-shape = SubResource("BoxShape3D_wcggm")
-
-[node name="Node3D" type="Node3D" parent="."]
-
-[node name="dream_metro_simplified2" parent="Node3D" instance=ExtResource("2_21dvq")]
+[node name="dream_metro_simplified2" parent="AnimatableBody3D" instance=ExtResource("2_21dvq")]
 transform = Transform3D(-0.8, 0, -6.99382e-08, 0, 0.8, 0, 6.99382e-08, 0, -0.8, 0, 0, 17.572)
 
-[node name="dream_metro_simplified" parent="Node3D" instance=ExtResource("2_21dvq")]
+[node name="dream_metro_simplified" parent="AnimatableBody3D" instance=ExtResource("2_21dvq")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, -17.572)
 
-[node name="DreamMetro" parent="Node3D" instance=ExtResource("2_yf25r")]
-
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+[node name="DreamMetro" parent="AnimatableBody3D" instance=ExtResource("2_yf25r")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28833, 184.63)
@@ -104,5 +88,43 @@ shape = SubResource("BoxShape3D_gfl50")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.288, -184.63)
 shape = SubResource("BoxShape3D_gfl50")
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[node name="Metro_Escaped" type="Area3D" parent="."]
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Metro_Escaped"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.562317, 1.25304, 0)
+shape = SubResource("BoxShape3D_wcggm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_eoa20")
+}
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.24909, 0)
+light_color = Color(0.984601, 0.701194, 0.615088, 1)
+light_energy = 0.5
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.24909, -4.18692)
+light_color = Color(0.984601, 0.701194, 0.615088, 1)
+light_energy = 0.5
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.24909, -8.1293)
+light_color = Color(0.984601, 0.701194, 0.615088, 1)
+light_energy = 0.5
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.24909, 8.09031)
+light_color = Color(0.984601, 0.701194, 0.615088, 1)
+light_energy = 0.5
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.24909, 4.14793)
+light_color = Color(0.984601, 0.701194, 0.615088, 1)
+light_energy = 0.5
+
 [connection signal="body_exited" from="Metro_Escaped" to="." method="_on_metro_escaped_body_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
