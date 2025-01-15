@@ -11,7 +11,7 @@
 size = Vector3(0.505188, 0.0180359, 0.365387)
 
 [node name="Newspaper" type="Area3D"]
-transform = Transform3D(-0.214879, 0, 1.21616, 0, 1.235, 0, -1.21616, 0, -0.214879, -1.04852, 0.561882, 6.04656)
+transform = Transform3D(1.235, 0, 0, 0, 1.235, 0, 0, 0, 1.235, 0, 0, 0)
 script = ExtResource("1_8gjwq")
 interaction_type = 1
 
@@ -23,6 +23,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.002)
 shape = SubResource("BoxShape3D_a7mf5")
 
 [node name="InteractInfos" type="CanvasLayer" parent="."]
+layer = 20
 visible = false
 
 [node name="Control" type="Control" parent="InteractInfos"]
@@ -91,6 +92,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id enim id nunc ves
 fit_content = true
 
 [node name="InputsTextures" type="CanvasLayer" parent="."]
+layer = 20
 visible = false
 
 [node name="Control" type="Control" parent="InputsTextures"]
