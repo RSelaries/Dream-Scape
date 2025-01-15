@@ -1,9 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://bdgg64gsfnru"]
 
-[ext_resource type="Script" uid="uid://glflxtb3ommi" path="res://scenes/asleep/asleep_scene.gd" id="1_sdt8w"]
-[ext_resource type="PackedScene" uid="uid://5m1g178ubchd" path="res://fps_controller/fps_player_character.tscn" id="2_46cu2"]
+[ext_resource type="Script" path="res://scenes/asleep/asleep_scene.gd" id="1_sdt8w"]
+[ext_resource type="PackedScene" uid="uid://5m1g178ubchd" path="res://global_assets/fps_controller/fps_player_character.tscn" id="2_46cu2"]
 [ext_resource type="Material" uid="uid://8uhkt4s13tna" path="res://global_assets/materials/water_1.tres" id="3_f81i8"]
 [ext_resource type="PackedScene" uid="uid://dq3njnvokihyy" path="res://scenes/asleep/metro/metros.tscn" id="4_wcggm"]
+
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wh8ij"]
 sky_top_color = Color(0.330808, 0.394582, 0.483296, 1)

@@ -1,10 +1,10 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c3474jk8dpqrm"]
 
-[ext_resource type="Texture2D" uid="uid://286w2foileio" path="res://scenes/awake/metro/assets/rusted_metro_rusted_metro_baked.png" id="1_5qewg"]
+[ext_resource type="Texture2D" uid="uid://t7wnyn5pg6lm" path="res://scenes/awake/metro/assets/rusted_metro_rusted_metro_rusted_metro_baked.png" id="1_gjbe4"]
 
 [resource]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("1_5qewg")
+albedo_texture = ExtResource("1_gjbe4")
 texture_filter = 0

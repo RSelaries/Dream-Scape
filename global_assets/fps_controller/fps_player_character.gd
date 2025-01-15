@@ -2,6 +2,12 @@ class_name FpsPlayer
 extends CharacterBody3D
 
 
+@export_group("Inputs")
+@export var input_enabled := {
+	"movement": true,
+	"camera": true,
+}
+
 @export_group("Nodes")
 @export var neck : Node3D
 @export var camera : PlayerCamera
@@ -39,10 +45,6 @@ extends CharacterBody3D
 }
 
 
-var input_enabled := {
-	"movement": true,
-	"camera": true,
-}
 var inspect_original_distance: float
 
 
@@ -92,27 +94,28 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	if input_enabled.movement:
+		# Add the gravity
+		if not is_on_floor():
+			velocity += get_gravity() * delta
 
-	# Handle jump
-	if use_jump and input_enabled.movement:
-		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-			velocity.y = jump_velocity
+		# Handle jump
+		if use_jump:
+			if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+				velocity.y = jump_velocity
 
-	# Get the input direction and handle the movement/deceleration
-	@warning_ignore("unsafe_call_argument")
-	var input_dir := Input.get_vector(action_names["lft"],action_names["rgt"], action_names["frw"], action_names["bck"])
-	var direction := (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction and input_enabled.movement:
-		velocity.x = direction.x * speed
-		velocity.z = direction.z * speed
-	else:
-		velocity.x = move_toward(velocity.x, 0, speed)
-		velocity.z = move_toward(velocity.z, 0, speed)
+		# Get the input direction and handle the movement/deceleration
+		@warning_ignore("unsafe_call_argument")
+		var input_dir := Input.get_vector(action_names["lft"],action_names["rgt"], action_names["frw"], action_names["bck"])
+		var direction := (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		if direction:
+			velocity.x = direction.x * speed
+			velocity.z = direction.z * speed
+		else:
+			velocity.x = move_toward(velocity.x, 0, speed)
+			velocity.z = move_toward(velocity.z, 0, speed)
 
-	move_and_slide()
+		move_and_slide()
 
 
 func _input(event: InputEvent) -> void:

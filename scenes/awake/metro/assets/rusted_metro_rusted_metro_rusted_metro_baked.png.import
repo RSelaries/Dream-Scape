@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duosr6mxe1q82"
-path.s3tc="res://.godot/imported/rusted_metro_doors_rusted_metro_doors.png-2c138f491164b607e6d88735ce2414c8.s3tc.ctex"
+uid="uid://t7wnyn5pg6lm"
+path.s3tc="res://.godot/imported/rusted_metro_rusted_metro_rusted_metro_baked.png-b6d152e35bc5a0b0af563aa3384ea6b8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/awake/metro/assets/rusted_metro_doors_rusted_metro_doors.png"
-dest_files=["res://.godot/imported/rusted_metro_doors_rusted_metro_doors.png-2c138f491164b607e6d88735ce2414c8.s3tc.ctex"]
+source_file="res://scenes/awake/metro/assets/rusted_metro_rusted_metro_rusted_metro_baked.png"
+dest_files=["res://.godot/imported/rusted_metro_rusted_metro_rusted_metro_baked.png-b6d152e35bc5a0b0af563aa3384ea6b8.s3tc.ctex"]
 
 [params]
 

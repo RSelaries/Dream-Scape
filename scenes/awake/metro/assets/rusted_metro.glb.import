@@ -40,6 +40,10 @@ _subresources={
 "rusted_metro": {
 "use_external/enabled": true,
 "use_external/path": "res://scenes/awake/metro/assets/rusted_metro_material.tres"
+},
+"rusted_metro_doors": {
+"use_external/enabled": true,
+"use_external/path": "res://scenes/awake/metro/assets/rusted_metro_doors_material.tres"
 }
 }
 }

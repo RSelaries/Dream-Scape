@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://286w2foileio"
-path.s3tc="res://.godot/imported/rusted_metro_rusted_metro_baked.png-8b3e75622ec0abee2e37992460b25fbb.s3tc.ctex"
+uid="uid://cvdkwvllg2uwg"
+path.s3tc="res://.godot/imported/rusted_metro_metro_weels.png-5435d7050c5a0f2fcab156387f1539d4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/awake/metro/assets/rusted_metro_rusted_metro_baked.png"
-dest_files=["res://.godot/imported/rusted_metro_rusted_metro_baked.png-8b3e75622ec0abee2e37992460b25fbb.s3tc.ctex"]
+source_file="res://scenes/awake/metro/assets/rusted_metro_metro_weels.png"
+dest_files=["res://.godot/imported/rusted_metro_metro_weels.png-5435d7050c5a0f2fcab156387f1539d4.s3tc.ctex"]
 
 [params]
 

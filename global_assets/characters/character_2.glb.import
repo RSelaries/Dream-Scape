@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://hxteg7wxn1gv"
-path="res://.godot/imported/character_2.glb-ce0f2840a1351b02ded90da75ebca3fe.scn"
+path="res://.godot/imported/character_2.glb-15259c64a9658972db46f8d1f3d22956.scn"
 
 [deps]
 
-source_file="res://characters/character_2.glb"
-dest_files=["res://.godot/imported/character_2.glb-ce0f2840a1351b02ded90da75ebca3fe.scn"]
+source_file="res://global_assets/characters/character_2.glb"
+dest_files=["res://.godot/imported/character_2.glb-15259c64a9658972db46f8d1f3d22956.scn"]
 
 [params]
 
@@ -18,7 +18,6 @@ nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
-nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
