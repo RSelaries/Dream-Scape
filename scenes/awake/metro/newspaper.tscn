@@ -1,0 +1,205 @@
+[gd_scene load_steps=8 format=3 uid="uid://dlqj4wdy8kd52"]
+
+[ext_resource type="Script" uid="uid://cpvmvyi40kayr" path="res://scenes/awake/newspaper.gd" id="1_8gjwq"]
+[ext_resource type="PackedScene" uid="uid://bkcqayimx4rcc" path="res://global_assets/objects/newspaper_folded.glb" id="2_mf3gb"]
+[ext_resource type="Theme" uid="uid://bnwjft0phq0e0" path="res://themes/inspect_object_theme.tres" id="3_f7du8"]
+[ext_resource type="Theme" uid="uid://c8prbfapem2ta" path="res://themes/input.tres" id="4_0iqvt"]
+[ext_resource type="Texture2D" uid="uid://k2gcrsjsdim7" path="res://global_assets/textures/frame.png" id="5_tha4k"]
+[ext_resource type="Texture2D" uid="uid://85r7nioyh3lf" path="res://global_assets/textures/left_mouse_button.png" id="6_v8yh6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a7mf5"]
+size = Vector3(0.505188, 0.0180359, 0.365387)
+
+[node name="Newspaper" type="Area3D"]
+transform = Transform3D(1.235, 0, 0, 0, 1.235, 0, 0, 0, 1.235, 0, 0, 0)
+script = ExtResource("1_8gjwq")
+interaction_type = 1
+
+[node name="newspaper_folded" parent="." instance=ExtResource("2_mf3gb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.06)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.002)
+shape = SubResource("BoxShape3D_a7mf5")
+
+[node name="InteractInfos" type="CanvasLayer" parent="."]
+layer = 20
+visible = false
+
+[node name="Control" type="Control" parent="InteractInfos"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_f7du8")
+
+[node name="ObjectText" type="Panel" parent="InteractInfos/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.121528
+anchor_top = 0.0787037
+anchor_right = 0.878
+anchor_bottom = 0.921
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="InteractInfos/Control/ObjectText"]
+layout_mode = 1
+anchor_left = 0.092
+anchor_top = 0.069
+anchor_right = 0.908
+anchor_bottom = 0.931
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InteractInfos/Control/ObjectText/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InteractInfos/Control/ObjectText/Control/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 52
+
+[node name="ObjectTitle" type="Label" parent="InteractInfos/Control/ObjectText/Control/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2, 0)
+layout_mode = 2
+text = "Journal du 01/01/50"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InteractInfos/Control/ObjectText/Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ObjectBodyText" type="RichTextLabel" parent="InteractInfos/Control/ObjectText/Control/HBoxContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+bbcode_enabled = true
+text = "[indent][/indent][b]50e anniversaire de l'assombrissement.[/b]
+[color=#999] [fill]
+Nous a cette date, 50 annees jour pour jour de l'assombrissement, cet evenement cataclysmique que nous avons reussi a survivre en se cachant sous terre.
+
+Blah blah blah, trouver des trucs a dire pour raconter l'histoire et le background et tout ca.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id enim id nunc vestibulum accumsan a eu dolor. Nam et elementum lorem. Praesent eu enim condimentum, volutpat urna at, pharetra felis. Fusce sagittis sagittis tempor. Phasellus quis ligula egestas, placerat orci auctor, gravida enim. Nullam a convallis diam. Phasellus eu urna lorem."
+fit_content = true
+
+[node name="InputsTextures" type="CanvasLayer" parent="."]
+layer = 20
+visible = false
+
+[node name="Control" type="Control" parent="InputsTextures"]
+layout_mode = 3
+anchor_top = 0.0787037
+anchor_right = 1.0
+anchor_bottom = 0.919753
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="InputsTextures/Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -144.0
+offset_right = 181.0
+grow_vertical = 0
+mouse_filter = 2
+theme = ExtResource("4_0iqvt")
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InputsTextures/Control/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+alignment = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="InputsTextures/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 11
+
+[node name="MarginContainer" type="MarginContainer" parent="InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("5_tha4k")
+
+[node name="Label" type="Label" parent="InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Lire"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="InputsTextures/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 11
+
+[node name="MarginContainer" type="MarginContainer" parent="InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="TextureRect" type="TextureRect" parent="InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer3/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("6_v8yh6")
+
+[node name="TextureRect2" type="TextureRect" parent="InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer3/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("5_tha4k")
+
+[node name="Label" type="Label" parent="InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Inspecter"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="InputsTextures/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 11
+
+[node name="MarginContainer2" type="MarginContainer" parent="InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="TextureRect" type="TextureRect" parent="InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("6_v8yh6")
+flip_h = true
+
+[node name="TextureRect2" type="TextureRect" parent="InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("5_tha4k")
+
+[node name="Label2" type="Label" parent="InputsTextures/Control/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Retour"

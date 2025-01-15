@@ -1,0 +1,113 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3x3es1e814y2"]
+
+[ext_resource type="PackedScene" uid="uid://cnd2buxpe2qtt" path="res://scenes/asleep/metro/dream_metro_door.glb" id="1_7flbo"]
+[ext_resource type="Script" uid="uid://wvybq1iq8xca" path="res://scenes/asleep/metro/dream_metro_doors.gd" id="1_tttr4"]
+[ext_resource type="Script" uid="uid://djvd1l3rhmbf8" path="res://interactible_object_3d.gd" id="3_0825c"]
+[ext_resource type="Material" uid="uid://drgxw2y8a3l6t" path="res://scenes/asleep/metro/dream_metro_material.tres" id="3_na5g4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7flbo"]
+size = Vector3(0.0192871, 2.44412, 0.90918)
+
+[sub_resource type="Animation" id="Animation_0825c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dream_metro_door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.000277638, -0.000393697, 0.914864)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dream_metro_door3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.000277519, -0.000393697, -0.897462)]
+}
+
+[sub_resource type="Animation" id="Animation_tttr4"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("dream_metro_door:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.000277638, -0.000393697, 0.914864), Vector3(-0.000277638, -0.000393697, 1.77003)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("dream_metro_door3:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.000277519, -0.000393697, -0.897462), Vector3(-0.000277444, -0.000393697, -1.75263)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lcpsb"]
+_data = {
+&"RESET": SubResource("Animation_0825c"),
+&"open": SubResource("Animation_tttr4")
+}
+
+[node name="Doors" type="Node3D"]
+script = ExtResource("1_tttr4")
+
+[node name="dream_metro_door" parent="." instance=ExtResource("1_7flbo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000277638, -0.000393697, 0.914864)
+
+[node name="DreamMetroDoor" parent="dream_metro_door" index="0"]
+material_override = ExtResource("3_na5g4")
+
+[node name="AnimatableBody3D2" type="StaticBody3D" parent="dream_metro_door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000277638, 0.000393697, -0.914864)
+script = ExtResource("3_0825c")
+interaction_type = 2
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="dream_metro_door/AnimatableBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20134, 0.457257)
+shape = SubResource("BoxShape3D_7flbo")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="dream_metro_door3" parent="." instance=ExtResource("1_7flbo")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -0.000277519, -0.000393697, -0.897462)
+
+[node name="DreamMetroDoor" parent="dream_metro_door3" index="0"]
+material_override = ExtResource("3_na5g4")
+
+[node name="AnimatableBody3D" type="StaticBody3D" parent="dream_metro_door3"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.000277597, 0.000393697, -0.897462)
+script = ExtResource("3_0825c")
+interaction_type = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="dream_metro_door3/AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.201, -0.437)
+shape = SubResource("BoxShape3D_7flbo")
+debug_color = Color(1, 1, 1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_lcpsb")
+}
+
+[editable path="dream_metro_door"]
+[editable path="dream_metro_door3"]

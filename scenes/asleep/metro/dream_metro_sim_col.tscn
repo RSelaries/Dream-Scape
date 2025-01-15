@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://4hayf2ecppt0"]
+
+[ext_resource type="PackedScene" uid="uid://to63enenx7hx" path="res://scenes/asleep/metro/dream_metro_simplified.glb" id="1_1bh3r"]
+[ext_resource type="Material" uid="uid://drgxw2y8a3l6t" path="res://scenes/asleep/metro/dream_metro_material.tres" id="2_2to0p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_adc3m"]
+size = Vector3(3.09204, 3.55621, 21.79)
+
+[node name="DreamMetroSimCol" type="Node3D"]
+
+[node name="StaticBody3D" type="AnimatableBody3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63315, 0)
+shape = SubResource("BoxShape3D_adc3m")
+
+[node name="dream_metro_simplified" parent="." instance=ExtResource("1_1bh3r")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+
+[node name="DreamMetroSimplified" parent="dream_metro_simplified" index="0"]
+material_override = ExtResource("2_2to0p")
+
+[editable path="dream_metro_simplified"]

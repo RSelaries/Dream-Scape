@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4kl2k7u87n7n"
+uid="uid://286w2foileio"
 path.s3tc="res://.godot/imported/rusted_metro_rusted_metro_baked.png-8b3e75622ec0abee2e37992460b25fbb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "6106029414abc2078f1067239df9e573"
 }
 
 [deps]

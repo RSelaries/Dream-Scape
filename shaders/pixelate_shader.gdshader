@@ -2,7 +2,7 @@ shader_type canvas_item;
 render_mode unshaded;
 
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, repeat_disable, filter_nearest;
-uniform float pixel_size : hint_range(1.0, 1000.0, 1.0) = 2.0;
+uniform float pixel_size : hint_range(1.0, 1000.0, 0.5) = 2.0;
 
 void fragment() {
 	float x = FRAGCOORD.x - mod(FRAGCOORD.x, pixel_size);
