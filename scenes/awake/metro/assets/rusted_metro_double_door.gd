@@ -1,3 +1,4 @@
+class_name RustedMetroDoor
 extends Node3D
 
 
@@ -20,7 +21,7 @@ func close() -> void:
 	if animation_player.has_animation("Closing"):
 		animation_player.play("Closing")
 		is_open = false
-	elif animation_player.has_animation("Opening"): #If there aren't anu closing animation, reverses the opening animation
+	elif animation_player.has_animation("Opening"): #If there aren't any closing animation, reverses the opening animation
 		animation_player.play("Opening", -1, -1, true)
 		is_open = false
 		

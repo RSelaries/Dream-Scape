@@ -12,7 +12,7 @@ config_version=5
 
 config/name="DreamScape"
 run/main_scene="res://scenes/scene_switcher.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.4", "Forward Plus")
 
 [audio]
 
@@ -46,6 +46,11 @@ folder_colors={
 "res://shaders/": "blue",
 "res://themes/": "pink"
 }
+
+[global_group]
+
+rusted_metro_double_doors_left=""
+rusted_metro_double_doors_right=""
 
 [input]
 

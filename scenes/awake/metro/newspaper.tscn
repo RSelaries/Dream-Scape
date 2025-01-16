@@ -21,6 +21,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.06)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.002)
 shape = SubResource("BoxShape3D_a7mf5")
+debug_color = Color(0.786, 0, 0.212, 1)
 
 [node name="InteractInfos" type="CanvasLayer" parent="."]
 layer = 20

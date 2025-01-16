@@ -1,13 +1,13 @@
 [gd_scene load_steps=17 format=3 uid="uid://c4snmw7euut7v"]
 
 [ext_resource type="PackedScene" uid="uid://cftdheen3466e" path="res://scenes/awake/metro/rusted_metro.tscn" id="1_b21n0"]
-[ext_resource type="Script" path="res://scenes/awake/awake_scene.gd" id="1_p8hv6"]
+[ext_resource type="Script" uid="uid://pl5xmhdpkpqr" path="res://scenes/awake/awake_scene.gd" id="1_p8hv6"]
 [ext_resource type="PackedScene" uid="uid://5m1g178ubchd" path="res://global_assets/fps_controller/fps_player_character.tscn" id="2_8oyf3"]
 [ext_resource type="Shader" uid="uid://c4gvnmq1ksyn1" path="res://shaders/dithering.gdshader" id="3_jasn7"]
-[ext_resource type="Shader" path="res://shaders/pixelate_shader.gdshader" id="4_a622i"]
+[ext_resource type="Shader" uid="uid://dwbirewc5ltfu" path="res://shaders/pixelate_shader.gdshader" id="4_a622i"]
 [ext_resource type="Shader" uid="uid://ban6fk30se87r" path="res://shaders/gamma_correction.gdshader" id="4_ttayp"]
 [ext_resource type="Shader" path="res://shaders/color_correction.gdshader" id="4_v1e0c"]
-[ext_resource type="PackedScene" uid="uid://dtieo028qoy71" path="res://scenes/awake/metro/assets/rusted_metro.glb" id="8_7bw3e"]
+[ext_resource type="PackedScene" uid="uid://duiycqw2b5fp6" path="res://scenes/awake/metro/assets/uni_rusted_metro.glb" id="8_foxla"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b7g1y"]
 resource_local_to_scene = true
@@ -129,70 +129,55 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46941, -1.63199, 0)
 use_collision = true
 size = Vector3(6.39659, 0.933594, 23.5479)
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
-snap = 1e-06
+[node name="MetroStation" type="Node3D" parent="."]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="MetroStation"]
 use_collision = true
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9118, -1.1, 0)
+[node name="CSGBox3D2" type="CSGBox3D" parent="MetroStation/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9118, -1.1, 8.84575)
 calculate_tangents = false
 use_collision = true
-size = Vector3(7.16161, 2.131, 30)
+size = Vector3(7.16161, 2.131, 70.7598)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43173, -1.23185, 0)
+[node name="CSGBox3D3" type="CSGBox3D" parent="MetroStation/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43173, -1.23185, 8.80679)
 operation = 2
 use_collision = true
-size = Vector3(0.403, 2.053, 30)
-
-[node name="CSGCombiner3D2" type="CSGCombiner3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.94068, 0, 0)
-snap = 1e-06
-use_collision = true
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.997, -1.1, 0)
-use_collision = true
-size = Vector3(5.332, 2.131, 30)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43173, -1.23185, 0)
-operation = 2
-use_collision = true
-size = Vector3(0.403, 2.053, 30)
-
-[node name="MetroStation" type="Node3D" parent="."]
+size = Vector3(0.403, 2.053, 79.2827)
 
 [node name="Metro" type="Node3D" parent="."]
 
 [node name="RustedMetro" parent="Metro" instance=ExtResource("1_b21n0")]
+unique_name_in_owner = true
 
-[node name="rusted_metro" parent="Metro" instance=ExtResource("8_7bw3e")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 17.6418)
-metadata/_edit_group_ = true
+[node name="uni_rusted_metro" parent="Metro" instance=ExtResource("8_foxla")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 17.642)
 
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Metro/rusted_metro"]
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Metro/uni_rusted_metro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.000249863)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Metro/rusted_metro/AnimatableBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Metro/uni_rusted_metro/AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43579, 0)
 shape = SubResource("BoxShape3D_q4igu")
+debug_color = Color(1, 1, 1, 0.087)
 
-[node name="rusted_metro3" parent="Metro" instance=ExtResource("8_7bw3e")]
+[node name="uni_rusted_metro2" parent="Metro" instance=ExtResource("8_foxla")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 35.284)
-metadata/_edit_group_ = true
 
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Metro/rusted_metro3"]
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Metro/uni_rusted_metro2"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Metro/rusted_metro3/AnimatableBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Metro/uni_rusted_metro2/AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43579, 0)
 shape = SubResource("BoxShape3D_q4igu")
+debug_color = Color(1, 1, 1, 0.087)
 
-[node name="rusted_metro2" parent="Metro" instance=ExtResource("8_7bw3e")]
+[node name="uni_rusted_metro3" parent="Metro" instance=ExtResource("8_foxla")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, -17.642)
-metadata/_edit_group_ = true
 
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Metro/rusted_metro2"]
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Metro/uni_rusted_metro3"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Metro/rusted_metro2/AnimatableBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Metro/uni_rusted_metro3/AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43579, 0)
 shape = SubResource("BoxShape3D_q4igu")
+debug_color = Color(1, 1, 1, 0.087)
