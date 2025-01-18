@@ -11,6 +11,6 @@ https://creativecommons.org/licenses/by-sa/4.0/
 - "pipisi" (https://skfb.ly/psqpw) by Slepskiy. \
 - "Trash can" (https://skfb.ly/6TQ6N) by Artyom. \
 - "trash bag" (https://skfb.ly/o8KHB) by Erythro. \
-_ "Pile of Trash-1" (https://skfb.ly/orpHr) by Soph. \
+- "Pile of Trash-1" (https://skfb.ly/orpHr) by Soph. \
 - "Metro Bench Model" (https://skfb.ly/oMBHE) by Wille Evensson. \
 - "Security Camera" (https://skfb.ly/ow6yI) by MehraN. \
