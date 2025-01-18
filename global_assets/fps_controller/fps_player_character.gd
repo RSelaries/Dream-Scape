@@ -107,7 +107,7 @@ func _physics_process(delta: float) -> void:
 		# Get the input direction and handle the movement/deceleration
 		@warning_ignore("unsafe_call_argument")
 		var input_dir := Input.get_vector(action_names["lft"],action_names["rgt"], action_names["frw"], action_names["bck"])
-		var direction := (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		var direction := (neck.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 		if direction:
 			velocity.x = direction.x * speed
 			velocity.z = direction.z * speed

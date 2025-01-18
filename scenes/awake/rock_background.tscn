@@ -1,10 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://bvpsbp40x51jy"]
 
 [ext_resource type="Script" uid="uid://do8p2iywen8pf" path="res://scenes/awake/rock_background.gd" id="1_p1yix"]
-[ext_resource type="Texture2D" uid="uid://dl64imk0tnuhb" path="res://global_assets/materials/rock_albedo.png" id="2_dmvuv"]
-[ext_resource type="Texture2D" uid="uid://yp8x4y67j1ed" path="res://global_assets/materials/rock_orm.png" id="3_dfktg"]
-[ext_resource type="Texture2D" uid="uid://ca4vn1antt73" path="res://global_assets/materials/rock_heightmap.png" id="4_da6lk"]
-[ext_resource type="Texture2D" uid="uid://cejst4kk51nei" path="res://global_assets/materials/rock_normal.png" id="5_8o7mm"]
+[ext_resource type="Texture2D" uid="uid://dl64imk0tnuhb" path="res://global_assets/textures/rock_albedo.png" id="2_dmvuv"]
+[ext_resource type="Texture2D" uid="uid://yp8x4y67j1ed" path="res://global_assets/textures/rock_orm.png" id="3_dfktg"]
+[ext_resource type="Texture2D" uid="uid://ca4vn1antt73" path="res://global_assets/textures/rock_heightmap.png" id="4_da6lk"]
+[ext_resource type="Texture2D" uid="uid://cejst4kk51nei" path="res://global_assets/textures/rock_normal.png" id="5_8o7mm"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21g4f"]
 albedo_texture = ExtResource("2_dmvuv")

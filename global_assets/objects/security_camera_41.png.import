@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cf3l6ec01sqii"
+path.s3tc="res://.godot/imported/security_camera_41.png-163d6ae3bebadc7d7e2ff832b0e10ccc.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "1c3de9d68b606925f485c81cac3d1661"
+}
+
+[deps]
+
+source_file="res://global_assets/objects/security_camera_41.png"
+dest_files=["res://.godot/imported/security_camera_41.png-163d6ae3bebadc7d7e2ff832b0e10ccc.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=8
+roughness/src_normal="res://global_assets/objects/security_camera_43.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

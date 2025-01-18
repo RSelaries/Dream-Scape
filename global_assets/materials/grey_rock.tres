@@ -1,9 +1,9 @@
 [gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://1f8v6tablfqk"]
 
-[ext_resource type="Texture2D" uid="uid://d0eno4rujphma" path="res://global_assets/materials/grey_rock_albedo.png" id="1"]
-[ext_resource type="Texture2D" uid="uid://regn5bjhja7i" path="res://global_assets/materials/grey_rock_orm.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://c6grv4mb71ydb" path="res://global_assets/materials/grey_rock_normal.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://bxojvbf1uf5r4" path="res://global_assets/materials/grey_rock_heightmap.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://d0eno4rujphma" path="res://global_assets/textures/grey_rock_albedo.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://regn5bjhja7i" path="res://global_assets/textures/grey_rock_orm.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://c6grv4mb71ydb" path="res://global_assets/textures/grey_rock_normal.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bxojvbf1uf5r4" path="res://global_assets/textures/grey_rock_heightmap.png" id="4"]
 
 [resource]
 albedo_color = Color(0.695536, 0.745831, 0.783552, 1)

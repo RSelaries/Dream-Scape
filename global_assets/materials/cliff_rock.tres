@@ -1,9 +1,9 @@
 [gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://c5fklbierge3g"]
 
-[ext_resource type="Texture2D" uid="uid://c82ipnajhc788" path="res://global_assets/materials/cliff_rock_albedo.png" id="1"]
-[ext_resource type="Texture2D" uid="uid://cy7fyomko4jb4" path="res://global_assets/materials/cliff_rock_orm.png" id="2"]
-[ext_resource type="Texture2D" uid="uid://bofnvuroit1ns" path="res://global_assets/materials/cliff_rock_normal.png" id="3"]
-[ext_resource type="Texture2D" uid="uid://bwjalpea7niow" path="res://global_assets/materials/cliff_rock_heightmap.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://c82ipnajhc788" path="res://global_assets/textures/cliff_rock_albedo.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cy7fyomko4jb4" path="res://global_assets/textures/cliff_rock_orm.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bofnvuroit1ns" path="res://global_assets/textures/cliff_rock_normal.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bwjalpea7niow" path="res://global_assets/textures/cliff_rock_heightmap.png" id="4"]
 
 [resource]
 albedo_texture = ExtResource("1")
