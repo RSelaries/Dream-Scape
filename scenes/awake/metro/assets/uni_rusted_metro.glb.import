@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b5t3ekulhinbx"
-path="res://.godot/imported/rusted_metro_doors.glb-72939f19e1ffd06c2c53b18e796e7f58.scn"
+uid="uid://duiycqw2b5fp6"
+path="res://.godot/imported/uni_rusted_metro.glb-df9b1956ae7542aeaedc84ee01291088.scn"
 
 [deps]
 
-source_file="res://scenes/awake/metro/assets/rusted_metro_doors.glb"
-dest_files=["res://.godot/imported/rusted_metro_doors.glb-72939f19e1ffd06c2c53b18e796e7f58.scn"]
+source_file="res://scenes/awake/metro/assets/uni_rusted_metro.glb"
+dest_files=["res://.godot/imported/uni_rusted_metro.glb-df9b1956ae7542aeaedc84ee01291088.scn"]
 
 [params]
 
@@ -34,9 +34,17 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
+"light_fixtures": {
+"use_external/enabled": true,
+"use_external/path": "uid://djw5hnudnwdft"
+},
+"rusted_metro": {
+"use_external/enabled": true,
+"use_external/path": "uid://c3474jk8dpqrm"
+},
 "rusted_metro_doors": {
 "use_external/enabled": true,
-"use_external/path": "res://scenes/awake/metro/assets/rusted_metro_doors_material.tres"
+"use_external/path": "uid://bjnpqj35sbcv0"
 }
 }
 }

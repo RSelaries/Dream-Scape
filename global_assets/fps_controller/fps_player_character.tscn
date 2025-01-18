@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://5m1g178ubchd"]
 
-[ext_resource type="Script" path="res://global_assets/fps_controller/fps_player_character.gd" id="1_j1svx"]
-[ext_resource type="Script" path="res://global_assets/fps_controller/reticle.gd" id="2_qhyan"]
-[ext_resource type="Script" path="res://global_assets/fps_controller/player_camera.gd" id="2_qy0gv"]
+[ext_resource type="Script" uid="uid://tk86tlfqqys2" path="res://global_assets/fps_controller/fps_player_character.gd" id="1_j1svx"]
+[ext_resource type="Script" uid="uid://bckxs3pwgf4bs" path="res://global_assets/fps_controller/reticle.gd" id="2_qhyan"]
+[ext_resource type="Script" uid="uid://cw5qwfhkoliup" path="res://global_assets/fps_controller/player_camera.gd" id="2_qy0gv"]
 [ext_resource type="Texture2D" uid="uid://cn56dom5y6eka" path="res://global_assets/textures/hand_reticle.png" id="4_g6328"]
 [ext_resource type="Texture2D" uid="uid://bw0qkik1rmcue" path="res://global_assets/textures/closed_hand_reticle.png" id="5_416f4"]
 
@@ -21,6 +21,7 @@ inspect_position_node = NodePath("Neck/PlayerCamera/InspectPosition")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_kxxeq")
+debug_color = Color(0.222, 0.639, 0, 0.454)
 
 [node name="Neck" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.66672, 0)
