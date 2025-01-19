@@ -13,4 +13,4 @@ https://creativecommons.org/licenses/by-sa/4.0/
 - "trash bag" (https://skfb.ly/o8KHB) by Erythro is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/). \
 _ "Pile of Trash-1" (https://skfb.ly/orpHr) by Soph is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/). \
 - "Metro Bench Model" (https://skfb.ly/oMBHE) by Wille Evensson is licensed under Creative Commons Attribution-NonCommercial (http://creativecommons.org/licenses/by-nc/4.0/). \
-- "Security Camera" (https://skfb.ly/ow6yI) by MehraN is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/). \
+- "Industrial Light" (https://skfb.ly/oGM6T) by ConhuirParker is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/). \

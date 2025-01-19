@@ -32,6 +32,17 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"Bricks": {
+"use_external/enabled": true,
+"use_external/path": "uid://dpgc13mol6u2n"
+},
+"Concrete": {
+"use_external/enabled": true,
+"use_external/path": "uid://bef4can8gwlu7"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
