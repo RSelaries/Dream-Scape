@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://crntqobisgc3s"]
+
+[ext_resource type="Texture2D" uid="uid://daqxlqpjvtt7q" path="res://scenes/awake/metro_station/advertisements/advertisement_5.png" id="1_nhjgy"]
+
+[resource]
+albedo_texture = ExtResource("1_nhjgy")
+texture_filter = 2

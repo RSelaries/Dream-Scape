@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c6cg8pfdoywh7"
+uid="uid://crbeset88l65x"
 path="res://.godot/imported/metro_station.glb-1caacfcbe7b60eca6bf287a4d72966eb.scn"
 
 [deps]
@@ -34,6 +34,34 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "materials": {
+"Advertisement_1": {
+"use_external/enabled": true,
+"use_external/path": "uid://coqrheuxnmvj7"
+},
+"Advertisement_2": {
+"use_external/enabled": true,
+"use_external/path": "uid://c4fg5crugv8p"
+},
+"Advertisement_3": {
+"use_external/enabled": true,
+"use_external/path": "uid://djdhsh5gqxv8s"
+},
+"Advertisement_4": {
+"use_external/enabled": true,
+"use_external/path": "uid://bfhnigktm7ccm"
+},
+"Advertisement_5": {
+"use_external/enabled": true,
+"use_external/path": "uid://crntqobisgc3s"
+},
+"Advertisement_6": {
+"use_external/enabled": true,
+"use_external/path": "uid://y42xxab36kus"
+},
+"Advertisement_7": {
+"use_external/enabled": true,
+"use_external/path": "uid://msl320yqk1qk"
+},
 "Bricks": {
 "use_external/enabled": true,
 "use_external/path": "uid://dpgc13mol6u2n"
@@ -41,6 +69,10 @@ _subresources={
 "Concrete": {
 "use_external/enabled": true,
 "use_external/path": "uid://bef4can8gwlu7"
+},
+"StationName": {
+"use_external/enabled": true,
+"use_external/path": "uid://csf5hoty07ejn"
 }
 }
 }

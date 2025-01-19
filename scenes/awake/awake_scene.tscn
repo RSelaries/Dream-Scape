@@ -141,7 +141,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.000249863)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Metro/uni_rusted_metro/AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43579, 0)
 shape = SubResource("BoxShape3D_q4igu")
-debug_color = Color(1, 1, 1, 0.087)
+debug_color = Color(1, 1, 1, 0.086)
 
 [node name="uni_rusted_metro2" parent="Metro" instance=ExtResource("8_foxla")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 35.284)
@@ -151,7 +151,7 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 35.284)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Metro/uni_rusted_metro2/AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43579, 0)
 shape = SubResource("BoxShape3D_q4igu")
-debug_color = Color(1, 1, 1, 0.087)
+debug_color = Color(1, 1, 1, 0.086)
 
 [node name="uni_rusted_metro3" parent="Metro" instance=ExtResource("8_foxla")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, -17.642)
@@ -161,6 +161,6 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, -17.642)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Metro/uni_rusted_metro3/AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43579, 0)
 shape = SubResource("BoxShape3D_q4igu")
-debug_color = Color(1, 1, 1, 0.087)
+debug_color = Color(1, 1, 1, 0.086)
 
 [node name="MetroStation" parent="." instance=ExtResource("9_foxla")]
