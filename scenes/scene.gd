@@ -4,6 +4,7 @@ extends Node3D
 
 @export var player: FpsPlayer
 @export var player_position: Vector3
+@export var cinematic_player: AnimationPlayer
 
 var input_enabled := false
 

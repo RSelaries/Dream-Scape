@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c4snmw7euut7v"]
+[gd_scene load_steps=27 format=3 uid="uid://c4snmw7euut7v"]
 
 [ext_resource type="PackedScene" uid="uid://cftdheen3466e" path="res://scenes/awake/metro/rusted_metro.tscn" id="1_b21n0"]
 [ext_resource type="Script" uid="uid://pl5xmhdpkpqr" path="res://scenes/awake/awake_scene.gd" id="1_p8hv6"]
@@ -9,6 +9,10 @@
 [ext_resource type="Shader" path="res://shaders/color_correction.gdshader" id="4_v1e0c"]
 [ext_resource type="PackedScene" uid="uid://duiycqw2b5fp6" path="res://scenes/awake/metro/assets/uni_rusted_metro.glb" id="8_foxla"]
 [ext_resource type="PackedScene" uid="uid://byanlewo006y" path="res://scenes/awake/metro_station/metro_station.tscn" id="9_foxla"]
+[ext_resource type="Texture2D" uid="uid://k2gcrsjsdim7" path="res://global_assets/textures/frame.png" id="10_6fyfv"]
+[ext_resource type="Theme" uid="uid://c8prbfapem2ta" path="res://themes/input.tres" id="10_gtb35"]
+[ext_resource type="Texture2D" uid="uid://diwck285e2ddu" path="res://global_assets/textures/full_mouse_128.png" id="11_8mgc6"]
+[ext_resource type="Texture2D" uid="uid://dtewq6nqo0s8u" path="res://global_assets/textures/left_mouse_button_128.png" id="12_qxkeu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b7g1y"]
 resource_local_to_scene = true
@@ -61,13 +65,335 @@ glow_blend_mode = 0
 [sub_resource type="BoxShape3D" id="BoxShape3D_q4igu"]
 size = Vector3(3.01855, 3.87158, 21.7158)
 
-[node name="AwakeScene" type="Node3D" node_paths=PackedStringArray("player")]
+[sub_resource type="BoxShape3D" id="BoxShape3D_foxla"]
+size = Vector3(1.83606, 2.26859, 15.5752)
+
+[sub_resource type="Animation" id="Animation_6fyfv"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-6.795, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player/Neck/PlayerCamera:rotation:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PostProcessing/Layer1/GammaCorrection:material:shader_parameter/gamma")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.45, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player/UserInterface/Reticle:line_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player:input_enabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [{
+"camera": true,
+"movement": true
+}]
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Metro:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.31351, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Metro:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Metro:position:z")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_gtb35"]
+resource_name = "player_in_metro"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:shake_oscillation_speed")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:shake_oscillation_amplitude")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:viewbobbing_frequency")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.5]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player:viewbobbing_force")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.05]
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Metro:position:z")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0, -153.99, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 4.93)
+}
+
+[sub_resource type="Animation" id="Animation_foxla"]
+resource_name = "starting_cinematic"
+length = 6.8
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-7.87894, -0.25, 0, 0.25, 0, -7.87894, -0.25, 0, 0.25, 0, -7.779, -0.25, 0, 0.25, 0, -7.28832, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3.53333, 4.23333, 5.53333)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-0.622983, -0.25, 0, 0.25, 0, -0.622983, -0.25, 0, 0.25, 0, -0.658, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3.53333, 4.23333, 5.53333)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player/Neck/PlayerCamera:rotation:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-1.213, -0.25, 0, 0.25, 0, -1.213, -0.25, 0, 0.25, 0, -1.15152, -0.333333, 0.00397396, 1.2, 0.25036, 0.105, -0.7, -0.217636, 0.25, 0, 0.105, -0.127481, 7.48932e-05, 0.25, 0, -0.78, -0.25, 0, 0.25, 0, -0.78, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.73, 1.43333, 3.1333, 3.56667, 4.36667, 4.99904, 6.3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PostProcessing/Layer1/GammaCorrection:material:shader_parameter/gamma")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.333333, 0.394199, 0.791035, -0.766667, -0.136058, 0.866667, 0, 1.41464, -0.0666667, -0.226764, 0.25, 0),
+"times": PackedFloat32Array(0, 0.966667, 2)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player:shake_intensity")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player:shake_noise_scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Player:shake_oscillation_speed")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Player:shake_oscillation_amplitude")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Player:input_enabled")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 6.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [{
+"camera": false,
+"movement": false
+}, {
+"camera": true,
+"movement": true
+}]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Player/UserInterface/Reticle:line_color")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(5.53333, 6.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "method"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath(".")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(5.46667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_open_metro_doors"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6fyfv"]
+_data = {
+&"RESET": SubResource("Animation_6fyfv"),
+&"player_in_metro": SubResource("Animation_gtb35"),
+&"starting_cinematic": SubResource("Animation_foxla")
+}
+
+[node name="AwakeScene" type="Node3D" node_paths=PackedStringArray("player", "cinematic_player")]
 script = ExtResource("1_p8hv6")
 player = NodePath("Player")
+cinematic_player = NodePath("AnimationPlayer")
 
 [node name="PostProcessing" type="Node" parent="."]
 
 [node name="Layer1" type="CanvasLayer" parent="PostProcessing"]
+visible = false
 
 [node name="GammaCorrection" type="ColorRect" parent="PostProcessing/Layer1"]
 material = SubResource("ShaderMaterial_b7g1y")
@@ -80,6 +406,7 @@ mouse_filter = 2
 
 [node name="Layer2" type="CanvasLayer" parent="PostProcessing"]
 layer = 2
+visible = false
 
 [node name="ColorCorect" type="ColorRect" parent="PostProcessing/Layer2"]
 material = SubResource("ShaderMaterial_hakeb")
@@ -92,6 +419,7 @@ mouse_filter = 2
 
 [node name="Layer3" type="CanvasLayer" parent="PostProcessing"]
 layer = 3
+visible = false
 
 [node name="Pixelisation" type="ColorRect" parent="PostProcessing/Layer3"]
 material = SubResource("ShaderMaterial_bnrml")
@@ -102,10 +430,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="10" type="CanvasLayer" parent="PostProcessing"]
+[node name="Layer10" type="CanvasLayer" parent="PostProcessing"]
 layer = 10
+visible = false
 
-[node name="PsxDithering" type="ColorRect" parent="PostProcessing/10"]
+[node name="PsxDithering" type="ColorRect" parent="PostProcessing/Layer10"]
 material = SubResource("ShaderMaterial_3ysxg")
 anchors_preset = 15
 anchor_right = 1.0
@@ -119,12 +448,20 @@ environment = SubResource("Environment_bt3tw")
 
 [node name="Player" parent="." instance=ExtResource("2_8oyf3")]
 unique_name_in_owner = true
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.63596, 0, -1.84907)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.795, 0, -1.27459)
 mouse_sensitivity = 0.03
+shake_intensity = 0.0
+shake_noise_scale = 0.0
+shake_oscillation_speed = 0.0
+shake_oscillation_amplitude = 0.0
 viewbobbing_frequency = 0.5
 viewbobbing_force = 0.05
 use_jump = false
 speed = 1.2
+metadata/_edit_group_ = true
+
+[node name="PlayerCamera" parent="Player/Neck" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Metro" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31351, 0, 0)
@@ -163,4 +500,307 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43579, 0)
 shape = SubResource("BoxShape3D_q4igu")
 debug_color = Color(1, 1, 1, 0.086)
 
+[node name="InsideMetro" type="Area3D" parent="Metro"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Metro/InsideMetro"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0189819, 1.19392, 0)
+shape = SubResource("BoxShape3D_foxla")
+debug_color = Color(0.989441, 0, 0.29041, 0.42)
+
 [node name="MetroStation" parent="." instance=ExtResource("9_foxla")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.337362, -0.0255311, -0.0996563)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6fyfv")
+}
+
+[node name="Controls" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="Controls"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -211.0
+offset_top = -175.5
+offset_right = 211.0
+offset_bottom = 175.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("10_gtb35")
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Controls/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 29
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Controls/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 29
+
+[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 0
+theme_override_font_sizes/font_size = 17
+text = "REGARDER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+texture = ExtResource("11_8mgc6")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 29
+
+[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "INTERAGIR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("12_qxkeu")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="Controls/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "MOUVEMENTS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Controls/MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 47
+
+[node name="ZqsdDirections" type="GridContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+mouse_filter = 0
+columns = 3
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="MarginContainer2" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Z"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("10_6fyfv")
+
+[node name="MarginContainer3" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="MarginContainer4" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Q"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer4"]
+layout_mode = 2
+texture = ExtResource("10_6fyfv")
+
+[node name="MarginContainer5" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer5"]
+layout_mode = 2
+texture = ExtResource("10_6fyfv")
+
+[node name="MarginContainer6" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer6"]
+layout_mode = 2
+texture = ExtResource("10_6fyfv")
+
+[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+mouse_filter = 0
+text = "OU"
+
+[node name="ArrowsDirections" type="GridContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+mouse_filter = 0
+columns = 3
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="MarginContainer2" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "↑"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("10_6fyfv")
+
+[node name="MarginContainer3" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="MarginContainer4" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "←"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer4"]
+layout_mode = 2
+texture = ExtResource("10_6fyfv")
+
+[node name="MarginContainer5" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "↓"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer5"]
+layout_mode = 2
+texture = ExtResource("10_6fyfv")
+
+[node name="MarginContainer6" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer6"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "→"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer6"]
+layout_mode = 2
+texture = ExtResource("10_6fyfv")
+
+[connection signal="body_entered" from="Metro/InsideMetro" to="." method="_on_inside_metro_body_entered"]
+
+[editable path="Player"]
