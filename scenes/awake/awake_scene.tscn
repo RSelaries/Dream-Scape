@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c4snmw7euut7v"]
+[gd_scene load_steps=30 format=3 uid="uid://c4snmw7euut7v"]
 
 [ext_resource type="PackedScene" uid="uid://cftdheen3466e" path="res://scenes/awake/metro/rusted_metro.tscn" id="1_b21n0"]
 [ext_resource type="Script" uid="uid://pl5xmhdpkpqr" path="res://scenes/awake/awake_scene.gd" id="1_p8hv6"]
@@ -13,6 +13,26 @@
 [ext_resource type="Theme" uid="uid://c8prbfapem2ta" path="res://themes/input.tres" id="10_gtb35"]
 [ext_resource type="Texture2D" uid="uid://diwck285e2ddu" path="res://global_assets/textures/full_mouse_128.png" id="11_8mgc6"]
 [ext_resource type="Texture2D" uid="uid://dtewq6nqo0s8u" path="res://global_assets/textures/left_mouse_button_128.png" id="12_qxkeu"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xpc56"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_l3v6g"]
+sky_material = SubResource("ProceduralSkyMaterial_xpc56")
+
+[sub_resource type="Environment" id="Environment_bt3tw"]
+background_mode = 1
+sky = SubResource("Sky_l3v6g")
+ambient_light_source = 2
+ambient_light_color = Color(0.623697, 0.74, 0.5698, 1)
+ambient_light_energy = 0.04
+tonemap_mode = 2
+glow_enabled = true
+glow_intensity = 1.7
+glow_strength = 0.63
+glow_bloom = 0.07
+glow_blend_mode = 0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b7g1y"]
 resource_local_to_scene = true
@@ -41,26 +61,6 @@ shader_parameter/enabled = true
 shader_parameter/dithering = true
 shader_parameter/colors = 12
 shader_parameter/dither_size = 2
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xpc56"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_l3v6g"]
-sky_material = SubResource("ProceduralSkyMaterial_xpc56")
-
-[sub_resource type="Environment" id="Environment_bt3tw"]
-background_mode = 1
-sky = SubResource("Sky_l3v6g")
-ambient_light_source = 2
-ambient_light_color = Color(0.623697, 0.74, 0.5698, 1)
-ambient_light_energy = 0.04
-tonemap_mode = 2
-glow_enabled = true
-glow_intensity = 1.7
-glow_strength = 0.63
-glow_bloom = 0.07
-glow_blend_mode = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q4igu"]
 size = Vector3(3.01855, 3.87158, 21.7158)
@@ -177,7 +177,7 @@ tracks/8/keys = {
 
 [sub_resource type="Animation" id="Animation_gtb35"]
 resource_name = "player_in_metro"
-length = 5.0
+length = 20.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -185,7 +185,7 @@ tracks/0/path = NodePath("Player:shake_oscillation_speed")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(2.23333),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [2.0]
@@ -197,7 +197,7 @@ tracks/1/path = NodePath("Player:shake_oscillation_amplitude")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(2.23333),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.3]
@@ -209,7 +209,7 @@ tracks/2/path = NodePath("Player:viewbobbing_frequency")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(2.23333),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.5]
@@ -221,7 +221,7 @@ tracks/3/path = NodePath("Player:viewbobbing_force")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(2.23333),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.05]
@@ -234,8 +234,8 @@ tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0, -153.99, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 4.93)
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0, -108.49, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(2.2, 19.9)
 }
 
 [sub_resource type="Animation" id="Animation_foxla"]
@@ -249,8 +249,8 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(-7.87894, -0.25, 0, 0.25, 0, -7.87894, -0.25, 0, 0.25, 0, -7.779, -0.25, 0, 0.25, 0, -7.28832, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 3.53333, 4.23333, 5.53333)
+"points": PackedFloat32Array(-7.87894, -0.25, 0, 0.25, 0, -7.87894, -0.25, 0, 0.25, 0, -7.779, -0.25, 0, 0.25, 0, -6.848, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3.53333, 4.23333, 5.9)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -370,9 +370,12 @@ tracks/10/path = NodePath(".")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(5.46667),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(5.13333, 5.46667),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
+"args": [],
+"method": &"_fade_in_out_controls"
+}, {
 "args": [],
 "method": &"_open_metro_doors"
 }]
@@ -385,15 +388,76 @@ _data = {
 &"starting_cinematic": SubResource("Animation_foxla")
 }
 
+[sub_resource type="Animation" id="Animation_1grr6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Controls:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Controls:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_qxkeu"]
+resource_name = "fade_in_out"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Controls:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Controls:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.966667, 4, 5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1grr6"]
+_data = {
+&"RESET": SubResource("Animation_1grr6"),
+&"fade_in_out": SubResource("Animation_qxkeu")
+}
+
 [node name="AwakeScene" type="Node3D" node_paths=PackedStringArray("player", "cinematic_player")]
 script = ExtResource("1_p8hv6")
 player = NodePath("Player")
 cinematic_player = NodePath("AnimationPlayer")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bt3tw")
+
 [node name="PostProcessing" type="Node" parent="."]
 
 [node name="Layer1" type="CanvasLayer" parent="PostProcessing"]
-visible = false
 
 [node name="GammaCorrection" type="ColorRect" parent="PostProcessing/Layer1"]
 material = SubResource("ShaderMaterial_b7g1y")
@@ -406,7 +470,6 @@ mouse_filter = 2
 
 [node name="Layer2" type="CanvasLayer" parent="PostProcessing"]
 layer = 2
-visible = false
 
 [node name="ColorCorect" type="ColorRect" parent="PostProcessing/Layer2"]
 material = SubResource("ShaderMaterial_hakeb")
@@ -419,7 +482,6 @@ mouse_filter = 2
 
 [node name="Layer3" type="CanvasLayer" parent="PostProcessing"]
 layer = 3
-visible = false
 
 [node name="Pixelisation" type="ColorRect" parent="PostProcessing/Layer3"]
 material = SubResource("ShaderMaterial_bnrml")
@@ -432,7 +494,6 @@ mouse_filter = 2
 
 [node name="Layer10" type="CanvasLayer" parent="PostProcessing"]
 layer = 10
-visible = false
 
 [node name="PsxDithering" type="ColorRect" parent="PostProcessing/Layer10"]
 material = SubResource("ShaderMaterial_3ysxg")
@@ -443,25 +504,17 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_bt3tw")
-
 [node name="Player" parent="." instance=ExtResource("2_8oyf3")]
 unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6.795, 0, -1.27459)
 mouse_sensitivity = 0.03
 shake_intensity = 0.0
 shake_noise_scale = 0.0
-shake_oscillation_speed = 0.0
-shake_oscillation_amplitude = 0.0
 viewbobbing_frequency = 0.5
 viewbobbing_force = 0.05
 use_jump = false
 speed = 1.2
 metadata/_edit_group_ = true
-
-[node name="PlayerCamera" parent="Player/Neck" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Metro" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.31351, 0, 0)
@@ -474,6 +527,7 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 17.642)
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="Metro/uni_rusted_metro"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.000249863)
+sync_to_physics = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Metro/uni_rusted_metro/AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43579, 0)
@@ -484,6 +538,7 @@ debug_color = Color(1, 1, 1, 0.086)
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 35.284)
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="Metro/uni_rusted_metro2"]
+sync_to_physics = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Metro/uni_rusted_metro2/AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43579, 0)
@@ -494,6 +549,7 @@ debug_color = Color(1, 1, 1, 0.086)
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, -17.642)
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="Metro/uni_rusted_metro3"]
+sync_to_physics = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Metro/uni_rusted_metro3/AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43579, 0)
@@ -515,44 +571,47 @@ libraries = {
 &"": SubResource("AnimationLibrary_6fyfv")
 }
 
-[node name="Controls" type="CanvasLayer" parent="."]
+[node name="OnTopOfPostProc" type="CanvasLayer" parent="."]
+layer = 20
 
-[node name="MarginContainer" type="MarginContainer" parent="Controls"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -211.0
-offset_top = -175.5
-offset_right = 211.0
-offset_bottom = 175.5
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Controls" type="MarginContainer" parent="OnTopOfPostProc"]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -401.0
+offset_right = 441.0
+grow_vertical = 0
 mouse_filter = 2
 theme = ExtResource("10_gtb35")
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_bottom = 150
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Controls/MarginContainer"]
+[node name="ControlsAnimationPlayer" type="AnimationPlayer" parent="OnTopOfPostProc/Controls"]
+unique_name_in_owner = true
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_1grr6")
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OnTopOfPostProc/Controls"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 29
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Controls/MarginContainer/VBoxContainer"]
-layout_mode = 2
-mouse_filter = 2
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="OnTopOfPostProc/Controls/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 71
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer"]
+layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 29
 
-[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 mouse_filter = 0
 theme_override_font_sizes/font_size = 17
@@ -560,27 +619,68 @@ text = "REGARDER"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 texture = ExtResource("11_8mgc6")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer/VBoxContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="Label4" type="Label" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer/VBoxContainer/TextureRect/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "↑"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer/VBoxContainer/TextureRect/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 45
+alignment = 1
+
+[node name="Label3" type="Label" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer/VBoxContainer/TextureRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "←"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer/VBoxContainer/TextureRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "→"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer/VBoxContainer/TextureRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "↓"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer"]
+layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 29
 
-[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="Label" type="Label" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 17
 text = "INTERAGIR"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="TextureRect" type="TextureRect" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 mouse_filter = 2
@@ -588,25 +688,25 @@ texture = ExtResource("12_qxkeu")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="Label2" type="Label" parent="Controls/MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="OnTopOfPostProc/Controls/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 17
 text = "MOUVEMENTS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Controls/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="OnTopOfPostProc/Controls/VBoxContainer"]
 layout_mode = 2
 mouse_filter = 2
-theme_override_constants/separation = 47
+theme_override_constants/separation = 20
+alignment = 1
 
-[node name="ZqsdDirections" type="GridContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="ZqsdDirections" type="GridContainer" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 mouse_filter = 0
 columns = 3
-metadata/_edit_group_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections"]
+[node name="MarginContainer" type="MarginContainer" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ZqsdDirections"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 0
@@ -614,7 +714,7 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="MarginContainer2" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections"]
+[node name="MarginContainer2" type="MarginContainer" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ZqsdDirections"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 0
@@ -622,18 +722,18 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer2"]
+[node name="Label" type="Label" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Z"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer2"]
+[node name="TextureRect2" type="TextureRect" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer2"]
 layout_mode = 2
 texture = ExtResource("10_6fyfv")
 
-[node name="MarginContainer3" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections"]
+[node name="MarginContainer3" type="MarginContainer" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ZqsdDirections"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 0
@@ -641,7 +741,7 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="MarginContainer4" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections"]
+[node name="MarginContainer4" type="MarginContainer" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ZqsdDirections"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 0
@@ -649,18 +749,18 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer4"]
+[node name="Label" type="Label" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer4"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Q"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer4"]
+[node name="TextureRect2" type="TextureRect" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer4"]
 layout_mode = 2
 texture = ExtResource("10_6fyfv")
 
-[node name="MarginContainer5" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections"]
+[node name="MarginContainer5" type="MarginContainer" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ZqsdDirections"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 0
@@ -668,18 +768,18 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer5"]
+[node name="Label" type="Label" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer5"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "S"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer5"]
+[node name="TextureRect2" type="TextureRect" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer5"]
 layout_mode = 2
 texture = ExtResource("10_6fyfv")
 
-[node name="MarginContainer6" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections"]
+[node name="MarginContainer6" type="MarginContainer" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ZqsdDirections"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 0
@@ -687,29 +787,28 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer6"]
+[node name="Label" type="Label" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer6"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "D"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer6"]
+[node name="TextureRect2" type="TextureRect" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ZqsdDirections/MarginContainer6"]
 layout_mode = 2
 texture = ExtResource("10_6fyfv")
 
-[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 mouse_filter = 0
 text = "OU"
 
-[node name="ArrowsDirections" type="GridContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="ArrowsDirections" type="GridContainer" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 mouse_filter = 0
 columns = 3
-metadata/_edit_group_ = true
 
-[node name="MarginContainer" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections"]
+[node name="MarginContainer" type="MarginContainer" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ArrowsDirections"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 0
@@ -717,7 +816,7 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="MarginContainer2" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections"]
+[node name="MarginContainer2" type="MarginContainer" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ArrowsDirections"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 0
@@ -725,45 +824,45 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer2"]
+[node name="TextureRect2" type="TextureRect" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("10_6fyfv")
+
+[node name="Label" type="Label" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "↑"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer2"]
+[node name="MarginContainer3" type="MarginContainer" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ArrowsDirections"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="MarginContainer4" type="MarginContainer" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ArrowsDirections"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="TextureRect2" type="TextureRect" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer4"]
 layout_mode = 2
 texture = ExtResource("10_6fyfv")
 
-[node name="MarginContainer3" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections"]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 0
-theme_override_constants/margin_top = 0
-theme_override_constants/margin_right = 0
-theme_override_constants/margin_bottom = 0
-
-[node name="MarginContainer4" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections"]
-layout_mode = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 0
-theme_override_constants/margin_top = 0
-theme_override_constants/margin_right = 0
-theme_override_constants/margin_bottom = 0
-
-[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer4"]
+[node name="Label" type="Label" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer4"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "←"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer4"]
-layout_mode = 2
-texture = ExtResource("10_6fyfv")
-
-[node name="MarginContainer5" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections"]
+[node name="MarginContainer5" type="MarginContainer" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ArrowsDirections"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 0
@@ -771,18 +870,18 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer5"]
+[node name="TextureRect2" type="TextureRect" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer5"]
+layout_mode = 2
+texture = ExtResource("10_6fyfv")
+
+[node name="Label" type="Label" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer5"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "↓"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect2" type="TextureRect" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer5"]
-layout_mode = 2
-texture = ExtResource("10_6fyfv")
-
-[node name="MarginContainer6" type="MarginContainer" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections"]
+[node name="MarginContainer6" type="MarginContainer" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ArrowsDirections"]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 0
@@ -790,16 +889,16 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 
-[node name="Label" type="Label" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer6"]
+[node name="TextureRect2" type="TextureRect" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer6"]
+layout_mode = 2
+texture = ExtResource("10_6fyfv")
+
+[node name="Label" type="Label" parent="OnTopOfPostProc/Controls/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer6"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "→"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="TextureRect2" type="TextureRect" parent="Controls/MarginContainer/VBoxContainer/HBoxContainer2/ArrowsDirections/MarginContainer6"]
-layout_mode = 2
-texture = ExtResource("10_6fyfv")
 
 [connection signal="body_entered" from="Metro/InsideMetro" to="." method="_on_inside_metro_body_entered"]
 

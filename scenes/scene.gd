@@ -10,5 +10,5 @@ var input_enabled := false
 
 
 func _ready() -> void:
-	if %Player:
+	if !player and %Player:
 		player = %Player
