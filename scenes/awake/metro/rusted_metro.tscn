@@ -1,10 +1,12 @@
-[gd_scene load_steps=27 format=3 uid="uid://cftdheen3466e"]
+[gd_scene load_steps=29 format=3 uid="uid://cftdheen3466e"]
 
+[ext_resource type="Script" uid="uid://uuld6dieoim2" path="res://scenes/awake/metro/rusted_metro.gd" id="1_8wtu5"]
 [ext_resource type="PackedScene" uid="uid://dtieo028qoy71" path="res://scenes/awake/metro/assets/rusted_metro.glb" id="1_hpct2"]
 [ext_resource type="PackedScene" uid="uid://cp6eposjagq3s" path="res://scenes/awake/metro/assets/rusted_metro_double_door.tscn" id="2_n48jr"]
 [ext_resource type="PackedScene" uid="uid://b5t3ekulhinbx" path="res://scenes/awake/metro/assets/rusted_metro_doors.glb" id="3_64v0w"]
-[ext_resource type="AudioStream" uid="uid://dplxg55db8jec" path="res://scenes/awake/sounds/metro_environment_loop.wav" id="4_nm8av"]
+[ext_resource type="AudioStream" uid="uid://dplxg55db8jec" path="res://global_assets/sounds/metro_environment_loop.wav" id="4_nm8av"]
 [ext_resource type="PackedScene" uid="uid://dlqj4wdy8kd52" path="res://scenes/awake/metro/newspaper.tscn" id="5_e0p58"]
+[ext_resource type="AudioStream" uid="uid://dbbyui373pkpi" path="res://global_assets/sounds/metro_door_sound.wav" id="6_ypv5a"]
 [ext_resource type="PackedScene" uid="uid://hxteg7wxn1gv" path="res://global_assets/characters/character_2.glb" id="11_ic8bv"]
 [ext_resource type="Shader" uid="uid://bg587hxcyvw01" path="res://shaders/my_shader_character.gdshader" id="12_tdh7l"]
 
@@ -883,7 +885,10 @@ _data = {
 &"sat": SubResource("Animation_gaey3")
 }
 
-[node name="RustedMetro" type="Node3D"]
+[node name="RustedMetro" type="Node3D" node_paths=PackedStringArray("door_sound_players", "ambiant_sound_players")]
+script = ExtResource("1_8wtu5")
+door_sound_players = [NodePath("rustedMetroGltf/Sounds/Doors/AudioStreamPlayer3D"), NodePath("rustedMetroGltf/Sounds/Doors/AudioStreamPlayer3D2"), NodePath("rustedMetroGltf/Sounds/Doors/AudioStreamPlayer3D3"), NodePath("rustedMetroGltf/Sounds/Doors/AudioStreamPlayer3D4"), NodePath("rustedMetroGltf/Sounds/Doors/AudioStreamPlayer3D5"), NodePath("rustedMetroGltf/Sounds/Doors/AudioStreamPlayer3D6"), NodePath("rustedMetroGltf/Sounds/Doors/AudioStreamPlayer3D7"), NodePath("rustedMetroGltf/Sounds/Doors/AudioStreamPlayer3D8")]
+ambiant_sound_players = [NodePath("rustedMetroGltf/Sounds/Ambiant/AudioStreamPlayer3D"), NodePath("rustedMetroGltf/Sounds/Ambiant/AudioStreamPlayer3D2"), NodePath("rustedMetroGltf/Sounds/Ambiant/AudioStreamPlayer3D3"), NodePath("rustedMetroGltf/Sounds/Ambiant/AudioStreamPlayer3D4"), NodePath("rustedMetroGltf/Sounds/Ambiant/AudioStreamPlayer3D5"), NodePath("rustedMetroGltf/Sounds/Ambiant/AudioStreamPlayer3D6")]
 
 [node name="rustedMetroGltf" parent="." instance=ExtResource("1_hpct2")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
@@ -1429,61 +1434,117 @@ light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
-[node name="Audio" type="Node3D" parent="rustedMetroGltf"]
+[node name="Sounds" type="Node3D" parent="rustedMetroGltf"]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="rustedMetroGltf/Audio"]
+[node name="Ambiant" type="Node3D" parent="rustedMetroGltf/Sounds"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="rustedMetroGltf/Sounds/Ambiant"]
 transform = Transform3D(1.11111, 0, 0, 0, 1.11111, 0, 0, 0, 1.11111, 2.03128, 1.76803, 0)
 stream = ExtResource("4_nm8av")
 volume_db = -31.35
-autoplay = true
 bus = &"SoundEffects"
 attenuation_filter_cutoff_hz = 4705.0
 attenuation_filter_db = -35.8
 
-[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="rustedMetroGltf/Audio"]
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="rustedMetroGltf/Sounds/Ambiant"]
 transform = Transform3D(1.11111, 0, 0, 0, 1.11111, 0, 0, 0, 1.11111, -2.031, 1.768, 0)
 stream = ExtResource("4_nm8av")
 volume_db = -31.35
-autoplay = true
 bus = &"SoundEffects"
 attenuation_filter_cutoff_hz = 4705.0
 attenuation_filter_db = -35.8
 
-[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="rustedMetroGltf/Audio"]
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="rustedMetroGltf/Sounds/Ambiant"]
 transform = Transform3D(1.11111, 0, 0, 0, 1.11111, 0, 0, 0, 1.11111, 2.03128, 1.76803, -8.89842)
 stream = ExtResource("4_nm8av")
 volume_db = -31.35
-autoplay = true
 bus = &"SoundEffects"
 attenuation_filter_cutoff_hz = 4705.0
 attenuation_filter_db = -35.8
 
-[node name="AudioStreamPlayer3D4" type="AudioStreamPlayer3D" parent="rustedMetroGltf/Audio"]
+[node name="AudioStreamPlayer3D4" type="AudioStreamPlayer3D" parent="rustedMetroGltf/Sounds/Ambiant"]
 transform = Transform3D(1.11111, 0, 0, 0, 1.11111, 0, 0, 0, 1.11111, -2.031, 1.768, -8.89842)
 stream = ExtResource("4_nm8av")
 volume_db = -31.35
-autoplay = true
 bus = &"SoundEffects"
 attenuation_filter_cutoff_hz = 4705.0
 attenuation_filter_db = -35.8
 
-[node name="AudioStreamPlayer3D5" type="AudioStreamPlayer3D" parent="rustedMetroGltf/Audio"]
+[node name="AudioStreamPlayer3D5" type="AudioStreamPlayer3D" parent="rustedMetroGltf/Sounds/Ambiant"]
 transform = Transform3D(1.11111, 0, 0, 0, 1.11111, 0, 0, 0, 1.11111, 2.03128, 1.76803, 8.898)
 stream = ExtResource("4_nm8av")
 volume_db = -31.35
-autoplay = true
 bus = &"SoundEffects"
 attenuation_filter_cutoff_hz = 4705.0
 attenuation_filter_db = -35.8
 
-[node name="AudioStreamPlayer3D6" type="AudioStreamPlayer3D" parent="rustedMetroGltf/Audio"]
+[node name="AudioStreamPlayer3D6" type="AudioStreamPlayer3D" parent="rustedMetroGltf/Sounds/Ambiant"]
 transform = Transform3D(1.11111, 0, 0, 0, 1.11111, 0, 0, 0, 1.11111, -2.031, 1.768, 8.898)
 stream = ExtResource("4_nm8av")
 volume_db = -31.35
-autoplay = true
 bus = &"SoundEffects"
 attenuation_filter_cutoff_hz = 4705.0
 attenuation_filter_db = -35.8
+
+[node name="Doors" type="Node3D" parent="rustedMetroGltf/Sounds"]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="rustedMetroGltf/Sounds/Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19492, 1.08604, -2.0917)
+stream = ExtResource("6_ypv5a")
+volume_db = -35.177
+unit_size = 100.0
+bus = &"SoundEffects"
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="rustedMetroGltf/Sounds/Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19492, 1.08604, -6.2676)
+stream = ExtResource("6_ypv5a")
+volume_db = -35.177
+unit_size = 100.0
+bus = &"SoundEffects"
+
+[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="rustedMetroGltf/Sounds/Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19492, 1.08604, 2.0978)
+stream = ExtResource("6_ypv5a")
+volume_db = -35.177
+unit_size = 100.0
+bus = &"SoundEffects"
+
+[node name="AudioStreamPlayer3D4" type="AudioStreamPlayer3D" parent="rustedMetroGltf/Sounds/Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19492, 1.08604, 6.2329)
+stream = ExtResource("6_ypv5a")
+volume_db = -35.177
+unit_size = 100.0
+bus = &"SoundEffects"
+
+[node name="AudioStreamPlayer3D5" type="AudioStreamPlayer3D" parent="rustedMetroGltf/Sounds/Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19866, 1.08604, -2.0917)
+stream = ExtResource("6_ypv5a")
+volume_db = -35.177
+unit_size = 100.0
+bus = &"SoundEffects"
+
+[node name="AudioStreamPlayer3D6" type="AudioStreamPlayer3D" parent="rustedMetroGltf/Sounds/Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19866, 1.08604, -6.2676)
+stream = ExtResource("6_ypv5a")
+volume_db = -35.177
+unit_size = 100.0
+bus = &"SoundEffects"
+
+[node name="AudioStreamPlayer3D7" type="AudioStreamPlayer3D" parent="rustedMetroGltf/Sounds/Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19866, 1.08604, 2.0978)
+stream = ExtResource("6_ypv5a")
+volume_db = -35.177
+unit_size = 100.0
+bus = &"SoundEffects"
+
+[node name="AudioStreamPlayer3D8" type="AudioStreamPlayer3D" parent="rustedMetroGltf/Sounds/Doors"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19866, 1.08604, 6.2329)
+stream = ExtResource("6_ypv5a")
+volume_db = -35.177
+unit_size = 100.0
+bus = &"SoundEffects"
 
 [node name="Newspaper" parent="." instance=ExtResource("5_e0p58")]
 transform = Transform3D(-0.173991, 0, 0.984747, 0, 1, 0, -0.984747, 0, -0.173991, -0.838816, 0.449506, 4.83725)

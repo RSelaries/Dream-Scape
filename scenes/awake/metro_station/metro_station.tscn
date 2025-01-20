@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bh2ilwn5p10n2" path="res://global_assets/objects/trash_can.glb" id="8_rvim6"]
 [ext_resource type="PackedScene" uid="uid://dpy6a3y2b7tmp" path="res://global_assets/objects/trash_bag.glb" id="9_6a1bf"]
 [ext_resource type="PackedScene" uid="uid://bt38r4j722r1y" path="res://global_assets/objects/trash1.glb" id="10_dq17b"]
-[ext_resource type="Material" uid="uid://cycr2wlqj2wex" path="res://global_assets/materials/trash_pile.tres" id="11_dpypf"]
+[ext_resource type="PackedScene" uid="uid://dlqj4wdy8kd52" path="res://scenes/awake/metro/newspaper.tscn" id="11_eyfxf"]
 [ext_resource type="PackedScene" uid="uid://drc830biossp" path="res://global_assets/objects/metro_bench_model.glb" id="12_hktm2"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0jdse"]
@@ -48,7 +48,7 @@ script = ExtResource("4_oae8g")
 lights_values = {
 "attenuation": 1.0,
 "color": Color(0.794809, 0.653327, 1.15514e-06, 1),
-"energy": 0.2,
+"energy": 0.5,
 "indirect_energy": 1.0,
 "range": 5.0
 }
@@ -395,12 +395,6 @@ transform = Transform3D(-0.850012, 0, 0.526763, 0, 1, 0, -0.526763, 0, -0.850012
 [node name="scene" parent="." instance=ExtResource("10_dq17b")]
 transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, -8.01736, -0.131742, 42.2987)
 
-[node name="render_camera_n3d" parent="scene" index="0"]
-visible = false
-
-[node name="SM_Dump_1" parent="scene" index="1"]
-material_override = ExtResource("11_dpypf")
-
 [node name="Sketchfab_Scene15" parent="." instance=ExtResource("12_hktm2")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.9527, -0.0345006, 5.49391)
 
@@ -494,5 +488,7 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 8.00486,
 [node name="Sketchfab_Scene41" parent="." instance=ExtResource("12_hktm2")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 8.00486, -0.0345006, -15.828)
 
+[node name="Newspaper" parent="." instance=ExtResource("11_eyfxf")]
+transform = Transform3D(0.493885, -0.0469857, 0.868257, 0.0443624, 0.9986, 0.0288049, -0.868394, 0.0242917, 0.495279, -7.88719, 0.425651, 0.746742)
+
 [editable path="metro_station"]
-[editable path="scene"]

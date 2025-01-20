@@ -63,7 +63,8 @@ func _inspect_interact() -> void:
 	var tween := create_tween()
 	
 	var inspect_rotation := Global.player.inspect_position_node.global_rotation
-	tween.tween_property(self, "global_position", Global.player.inspect_position_node.global_position, 0.5)
+	var parent: Node3D = get_parent()
+	tween.tween_property(self, "position", Global.player.inspect_position_node.global_position - parent.global_position, 0.5)
 	tween.parallel()
 	tween.tween_property(self, "global_rotation", Vector3(inspect_rotation.x + PI * 0.5, inspect_rotation.y, inspect_rotation.z), 0.5)
 	

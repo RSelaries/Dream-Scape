@@ -22,7 +22,6 @@ var viewbobbing_timer: float = 0.0
 
 func _ready() -> void:
 	original_position = self.position
-	#noise.seed = int(randf() * 10000)
 
 
 func _process(delta: float) -> void:

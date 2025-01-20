@@ -8,3 +8,4 @@ script = ExtResource("1_des8l")
 awake_scene = NodePath("AwakeScene")
 
 [node name="AwakeScene" parent="." instance=ExtResource("2_qbsmt")]
+sound_effect_volume_db = 1.0
