@@ -2,6 +2,10 @@ shader_type spatial;
 
 
 uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_nearest;
+uniform float luminosity_mult : hint_range(0.0, 10.0) = 6.0;
+uniform float luminosity_2 = 10.0;
+uniform float glow_threshold = 0.07;
+uniform float glow_mult = 10.0;
 
 
 float noise(vec2 input) {
@@ -10,12 +14,13 @@ float noise(vec2 input) {
 
 
 void fragment() {
-	vec3 back_color = texture(screen_texture, SCREEN_UV).rgb * 60.0;
+	vec3 back_color = texture(screen_texture, SCREEN_UV).rgb * 10.0 * luminosity_mult;
 
-	if(length(back_color) < 0.07) {
-		back_color = back_color * 10.0;
+	if(length(back_color) < glow_threshold) {
+		back_color = back_color * glow_mult;
 	}
-	vec3 inverted_color = 1.0 - back_color * (10.0 * noise(SCREEN_UV));
+
+	vec3 inverted_color = 1.0 - back_color * (luminosity_2 * noise(SCREEN_UV));
 
 
 	ALBEDO = back_color * - 20.0 * inverted_color;

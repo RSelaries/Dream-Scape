@@ -13,7 +13,8 @@ data = PackedVector3Array(1.5249, -0.0054, 10.8812, 0.4487, 1.2014, 10.8812, 1.5
 [node name="dream_metro" parent="." instance=ExtResource("1_2ikx0")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="dream_metro"]
+[node name="StaticBody3D" type="AnimatableBody3D" parent="dream_metro"]
+sync_to_physics = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="dream_metro/StaticBody3D"]
 visible = false

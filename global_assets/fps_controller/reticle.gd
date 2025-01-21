@@ -1,7 +1,7 @@
 extends CenterContainer
 class_name Reticle
 
-enum ReticleTypes {CIRCLE, HAND, CLOSED_HAND, VISOR, NONE}
+enum ReticleTypes {CIRCLE, HAND, CLOSED_HAND, VISOR, NONE, SLEEP}
 
 @export var reticle_type: ReticleTypes = ReticleTypes.CIRCLE
 
@@ -13,6 +13,7 @@ enum ReticleTypes {CIRCLE, HAND, CLOSED_HAND, VISOR, NONE}
 
 @onready var hand_reticle: TextureRect = %HandReticle
 @onready var closed_hand_reticle: TextureRect = %ClosedHandReticle
+@onready var sleep_reticle: TextureRect = %SleepReticle
 
 
 func _process(_delta: float) -> void:
@@ -39,6 +40,9 @@ func _draw() -> void:
 		
 		ReticleTypes.CLOSED_HAND:
 			closed_hand_reticle.visible = true
+		
+		ReticleTypes.SLEEP:
+			sleep_reticle.visible = true
 		
 		ReticleTypes.NONE:
 			pass

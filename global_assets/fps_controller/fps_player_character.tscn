@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://5m1g178ubchd"]
+[gd_scene load_steps=8 format=3 uid="uid://5m1g178ubchd"]
 
 [ext_resource type="Script" uid="uid://tk86tlfqqys2" path="res://global_assets/fps_controller/fps_player_character.gd" id="1_j1svx"]
 [ext_resource type="Script" uid="uid://bckxs3pwgf4bs" path="res://global_assets/fps_controller/reticle.gd" id="2_qhyan"]
 [ext_resource type="Script" uid="uid://cw5qwfhkoliup" path="res://global_assets/fps_controller/player_camera.gd" id="2_qy0gv"]
 [ext_resource type="Texture2D" uid="uid://cn56dom5y6eka" path="res://global_assets/textures/hand_reticle.png" id="4_g6328"]
 [ext_resource type="Texture2D" uid="uid://bw0qkik1rmcue" path="res://global_assets/textures/closed_hand_reticle.png" id="5_416f4"]
+[ext_resource type="Texture2D" uid="uid://cwbdwa0fdrjno" path="res://global_assets/textures/sleep.png" id="6_buu73"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kxxeq"]
 radius = 0.4
@@ -69,3 +70,10 @@ visible = false
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("5_416f4")
+
+[node name="SleepReticle" type="TextureRect" parent="UserInterface/Reticle"]
+unique_name_in_owner = true
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("6_buu73")

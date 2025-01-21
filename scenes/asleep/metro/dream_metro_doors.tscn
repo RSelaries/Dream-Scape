@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b3x3es1e814y2"]
 
 [ext_resource type="PackedScene" uid="uid://cnd2buxpe2qtt" path="res://scenes/asleep/metro/dream_metro_door.glb" id="1_7flbo"]
-[ext_resource type="Script" uid="uid://wvybq1iq8xca" path="res://scenes/asleep/metro/dream_metro_doors.gd" id="1_tttr4"]
+[ext_resource type="Script" path="res://scenes/asleep/metro/dream_metro_doors.gd" id="1_tttr4"]
 [ext_resource type="Script" uid="uid://djvd1l3rhmbf8" path="res://interactible_object_3d.gd" id="3_0825c"]
 [ext_resource type="Material" uid="uid://drgxw2y8a3l6t" path="res://scenes/asleep/metro/dream_metro_material.tres" id="3_na5g4"]
 

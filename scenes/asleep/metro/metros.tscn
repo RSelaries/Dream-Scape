@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dq3njnvokihyy"]
 
-[ext_resource type="Script" uid="uid://b06sch7nub6vx" path="res://scenes/asleep/metro/metros.gd" id="1_21dvq"]
+[ext_resource type="Script" path="res://scenes/asleep/metro/metros.gd" id="1_21dvq"]
 [ext_resource type="PackedScene" uid="uid://to63enenx7hx" path="res://scenes/asleep/metro/dream_metro_simplified.glb" id="2_21dvq"]
 [ext_resource type="PackedScene" uid="uid://co3dlc4g1fvjh" path="res://scenes/asleep/metro/dream_metro.tscn" id="2_yf25r"]
 
@@ -63,14 +63,15 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eoa20"]
 _data = {
-"RESET": SubResource("Animation_eoa20"),
-"speed_off": SubResource("Animation_f81i8")
+&"RESET": SubResource("Animation_eoa20"),
+&"speed_off": SubResource("Animation_f81i8")
 }
 
 [node name="Metros" type="Node3D"]
 script = ExtResource("1_21dvq")
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+sync_to_physics = false
 
 [node name="dream_metro_simplified2" parent="AnimatableBody3D" instance=ExtResource("2_21dvq")]
 transform = Transform3D(-0.8, 0, -6.99382e-08, 0, 0.8, 0, 6.99382e-08, 0, -0.8, 0, 0, 17.572)
@@ -83,10 +84,12 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, -17.572)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28833, 184.63)
 shape = SubResource("BoxShape3D_gfl50")
+debug_color = Color(100, 100, 100, 0.42)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.288, -184.63)
 shape = SubResource("BoxShape3D_gfl50")
+debug_color = Color(100, 100, 100, 0.42)
 
 [node name="Metro_Escaped" type="Area3D" parent="."]
 input_ray_pickable = false
@@ -98,7 +101,7 @@ shape = SubResource("BoxShape3D_wcggm")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 libraries = {
-"": SubResource("AnimationLibrary_eoa20")
+&"": SubResource("AnimationLibrary_eoa20")
 }
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]

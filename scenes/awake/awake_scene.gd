@@ -1,3 +1,4 @@
+class_name AwakeScene
 extends Scene
 
 
@@ -15,7 +16,7 @@ var metro_departed := false
 func _ready() -> void:
 	super()
 	
-	if get_parent().name != "Game":
+	if owner is not SceneManager:
 		_set_sound_effect_audio_bus_volume(sound_effect_volume_db)
 		_open_metro_doors()
 
@@ -40,3 +41,9 @@ func _fade_in_out_controls() -> void:
 
 func _set_sound_effect_audio_bus_volume(volume: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SoundEffects"), linear_to_db(volume))
+
+
+func _switch_scene() -> void:
+	if owner is SceneManager:
+		var game: SceneManager = owner
+		game.switch_scene("AsleepScene")

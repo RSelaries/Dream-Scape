@@ -55,15 +55,7 @@ func _ready() -> void:
 
 
 func _process(_delta: float) -> void:
-	var ray_cast_collider := interaction_ray_cast.get_collider()
-	
-	if Global.current_game_state == Global.GameStates.PLAYING:
-		if ray_cast_collider is InteractibleObject3D:
-			var _ray_cast_collider: InteractibleObject3D = ray_cast_collider
-			if _ray_cast_collider.interaction_type == _ray_cast_collider.InteractionTypes.INSPECT:
-				reticle.reticle_type = reticle.ReticleTypes.HAND
-		else:
-			reticle.reticle_type = reticle.ReticleTypes.CIRCLE
+	_reticle_based_on_interact()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -150,3 +142,31 @@ func _interact_with() -> void:
 		if what.has_method("interact"):
 			@warning_ignore("unsafe_method_access")
 			what.interact()
+
+
+func _reticle_based_on_interact() -> void:
+	if Global.current_game_state != Global.GameStates.PLAYING:
+		return
+	
+	if interaction_ray_cast.get_collider() is not InteractibleObject3D:
+		reticle.reticle_type = reticle.ReticleTypes.CIRCLE
+		return
+	
+	var ray_cast_collider: InteractibleObject3D = interaction_ray_cast.get_collider()
+	
+	var interaction_type: InteractibleObject3D.InteractionTypes = InteractibleObject3D.InteractionTypes.DEFAULT
+	interaction_type = ray_cast_collider.interaction_type
+	
+	
+	match interaction_type:
+		InteractibleObject3D.InteractionTypes.DEFAULT:
+			reticle.reticle_type = reticle.ReticleTypes.HAND
+		
+		InteractibleObject3D.InteractionTypes.OWNER_DEFAULT:
+			reticle.reticle_type = reticle.ReticleTypes.HAND
+		
+		InteractibleObject3D.InteractionTypes.INSPECT:
+			reticle.reticle_type = reticle.ReticleTypes.HAND
+		
+		InteractibleObject3D.InteractionTypes.SLEEP:
+			reticle.reticle_type = reticle.ReticleTypes.SLEEP

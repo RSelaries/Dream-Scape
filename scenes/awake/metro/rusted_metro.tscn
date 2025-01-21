@@ -58,6 +58,10 @@ size = Vector3(0.0328674, 0.715088, 1.92208)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_76fir"]
 render_priority = 0
 shader = ExtResource("12_tdh7l")
+shader_parameter/luminosity_mult = 6.0
+shader_parameter/luminosity_2 = 10.0
+shader_parameter/glow_threshold = 0.07
+shader_parameter/glow_mult = 10.0
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_sc08h"]
 height = 1.39612

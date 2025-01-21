@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://l3xqhsekkp7k" path="res://scenes/game.gd" id="1_des8l"]
 [ext_resource type="PackedScene" uid="uid://c4snmw7euut7v" path="res://scenes/awake/awake_scene.tscn" id="2_qbsmt"]
 
-[node name="Game" type="Node" node_paths=PackedStringArray("awake_scene")]
+[node name="SceneManager" type="Node" node_paths=PackedStringArray("awake_scene")]
 script = ExtResource("1_des8l")
 awake_scene = NodePath("AwakeScene")
 
