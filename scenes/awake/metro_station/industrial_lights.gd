@@ -14,7 +14,7 @@ extends Node3D
 		_update_lights()
 
 
-var lights: Array[OmniLight3D]
+var lights: Array[Light3D]
 
 
 func _ready() -> void:
@@ -24,12 +24,12 @@ func _ready() -> void:
 func _update_lights() -> void:
 	for child: Node3D in get_children():
 		for child_child in child.get_children():
-			if child_child is OmniLight3D:
+			if child_child is Light3D:
 				lights.append(child_child)
 	
 	for light in lights:
-		light.omni_range = lights_values.range
-		light.omni_attenuation = lights_values.attenuation
+		#light.omni_range = lights_values.range
+		#light.omni_attenuation = lights_values.attenuation
 		light.light_color = lights_values.color
 		light.light_energy = lights_values.energy
 		light.light_indirect_energy = lights_values.indirect_energy

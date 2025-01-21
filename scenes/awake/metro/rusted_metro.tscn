@@ -1219,217 +1219,217 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -0.443, 
 [node name="Lights" type="Node3D" parent="rustedMetroGltf"]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, 1.79436)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.961104, 2.94849, 1.79436)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, 0.6417)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.961104, 2.94849, 0.6417)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, 4.17929)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.961104, 2.94849, 4.17929)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, 3.02663)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.961104, 2.94849, 3.02663)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D7" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, 6.5775)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.961104, 2.94849, 6.5775)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D9" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, 5.42484)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.961104, 2.94849, 5.42484)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D10" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, 9.00825)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.961104, 2.94849, 9.00825)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D28" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, 10.1693)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.961104, 2.94849, 10.1693)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D12" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, 7.85559)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.961104, 2.94849, 7.85559)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D13" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, -0.669326)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.961104, 2.94849, -0.669326)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D15" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, -1.82199)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.961104, 2.94849, -1.82199)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D16" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, -3.01996)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.961104, 2.94849, -3.01996)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D18" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, -4.17262)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.961104, 2.94849, -4.17262)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D19" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, -5.44567)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.961104, 2.94849, -5.44567)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D21" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, -6.59833)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.961104, 2.94849, -6.59833)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D22" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, -7.78024)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.961104, 2.94849, -7.78024)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D24" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, -8.9329)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.961104, 2.94849, -8.9329)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D25" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.961104, 3.0083, -10.1945)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.961104, 2.94849, -10.1945)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D29" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, 1.79436)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.961, 2.94849, 1.79436)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D31" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, 0.6417)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.961, 2.94849, 0.6417)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D32" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, 4.17929)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.961, 2.94849, 4.17929)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D34" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, 3.02663)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.961, 2.94849, 3.02663)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D35" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, 6.5775)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.961, 2.94849, 6.5775)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D37" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, 5.42484)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.961, 2.94849, 5.42484)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D38" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, 9.00825)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.961, 2.94849, 9.00825)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D41" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, 10.1693)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.961, 2.94849, 10.1693)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D42" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, 7.85559)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.961, 2.94849, 7.85559)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D43" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, -0.669326)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.961, 2.94849, -0.669326)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D45" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, -1.82199)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.961, 2.94849, -1.82199)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D46" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, -3.01996)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.961, 2.94849, -3.01996)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D48" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, -4.17262)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.961, 2.94849, -4.17262)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D49" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, -5.44567)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.961, 2.94849, -5.44567)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D51" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, -6.59833)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.961, 2.94849, -6.59833)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D52" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, -7.78024)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.961, 2.94849, -7.78024)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D54" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, -8.9329)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.961, 2.94849, -8.9329)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true
 
 [node name="OmniLight3D55" type="OmniLight3D" parent="rustedMetroGltf/Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961, 3.0083, -10.1945)
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.961, 2.94849, -10.1945)
 light_color = Color(0.333663, 0.360028, 0.238409, 1)
 light_energy = 0.2
 shadow_enabled = true

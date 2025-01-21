@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://crbeset88l65x" path="res://scenes/awake/metro_station/metro_station.glb" id="1_pl28k"]
 [ext_resource type="PackedScene" uid="uid://cihudioipsyhq" path="res://global_assets/objects/rail_tracks.glb" id="3_7xbpy"]
 [ext_resource type="Script" uid="uid://dvscx0rl7xg5o" path="res://scenes/awake/metro_station/industrial_lights.gd" id="4_oae8g"]
-[ext_resource type="PackedScene" uid="uid://0d7s8pmt8u3t" path="res://global_assets/objects/industrial_light.tscn" id="5_nti3m"]
+[ext_resource type="PackedScene" uid="uid://0d7s8pmt8u3t" path="res://scenes/awake/metro_station/industrial_light.tscn" id="5_nti3m"]
 [ext_resource type="PackedScene" uid="uid://c0prmoiwpl6kb" path="res://global_assets/objects/vending_machine.gltf" id="6_k140j"]
 [ext_resource type="PackedScene" uid="uid://b3au5t28n73s7" path="res://global_assets/objects/pepisi_vending_machine.glb" id="7_jiqky"]
 [ext_resource type="PackedScene" uid="uid://bh2ilwn5p10n2" path="res://global_assets/objects/trash_can.glb" id="8_rvim6"]
@@ -48,7 +48,7 @@ script = ExtResource("4_oae8g")
 lights_values = {
 "attenuation": 1.0,
 "color": Color(0.794809, 0.653327, 1.15514e-06, 1),
-"energy": 0.5,
+"energy": 0.3,
 "indirect_energy": 1.0,
 "range": 5.0
 }
