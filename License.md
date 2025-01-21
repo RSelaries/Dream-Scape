@@ -16,3 +16,7 @@ If not precised, those are licensed under CC-BY 4.0
 _ "Pile of Trash-1" (https://skfb.ly/orpHr) by Soph. \
 - "Metro Bench Model" (https://skfb.ly/oMBHE) by Wille Evensson is licensed under CC-BY NC 4.0. \
 - "Industrial Light" (https://skfb.ly/oGM6T) by ConhuirParker. \
+
+### From Fontesk
+
+Every font
