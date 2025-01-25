@@ -16,9 +16,12 @@ var metro_departed := false
 func _ready() -> void:
 	super()
 	
+	cinematic_player.play("RESET")
+	
 	if owner is not SceneManager:
 		_set_sound_effect_audio_bus_volume(sound_effect_volume_db)
 		_open_metro_doors()
+		cinematic_player.play("for_f6")
 
 
 func _open_metro_doors() -> void:

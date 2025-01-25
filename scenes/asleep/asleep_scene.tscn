@@ -184,6 +184,6 @@ bones/60/rotation = Quaternion(0.74289, 0.023108, -0.0344137, 0.668129)
 bones/60/scale = Vector3(1, 1, 1)
 
 [node name="Sketchfab_Scene4" parent="." instance=ExtResource("9_k8w74")]
-transform = Transform3D(-56.605, 0, 0, 0, 56.605, 0, 0, 0, -56.605, 338.086, 196.146, -213.575)
+transform = Transform3D(-56.605, 0, 0, 0, 56.605, 0, 0, 0, -56.605, 338.086, 187.756, -213.575)
 
 [editable path="Sketchfab_Scene3"]

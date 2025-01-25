@@ -11,10 +11,13 @@ extends Node
 
 var current_scene: String = "AwakeScene"
 
+@onready var transition_black: ColorRect = %TransitionBlack
+
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
+	transition_black.visible = false
 	awake_scene.cinematic_player.play("starting_cinematic")
 
 

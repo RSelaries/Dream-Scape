@@ -7,4 +7,13 @@
 script = ExtResource("1_des8l")
 awake_scene = NodePath("AwakeScene")
 
+[node name="TransitionBlack" type="ColorRect" parent="."]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="AwakeScene" parent="." instance=ExtResource("2_qbsmt")]
