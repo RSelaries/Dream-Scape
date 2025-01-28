@@ -36,8 +36,12 @@ gdscript/warnings/unsafe_call_argument=2
 
 [display]
 
-window/size/mode=2
+window/size/mode=4
 mouse_cursor/custom_image_hotspot=Vector2(8, 8)
+
+[editor]
+
+movie_writer/movie_file="E:/Godot/Projects/dream_scape/recordings/recording.avi"
 
 [file_customization]
 

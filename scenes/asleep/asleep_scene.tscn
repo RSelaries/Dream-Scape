@@ -134,27 +134,25 @@ libraries = {
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("6_gb5bf")]
 transform = Transform3D(-0.143679, 0, -1.27191, 0, 1.28, 0, 1.27191, 0, -0.143679, 109.647, -0.0484065, -82.9181)
+visible = false
 
 [node name="Sketchfab_Scene2" parent="." instance=ExtResource("7_k8w74")]
 transform = Transform3D(16.685, 0, 0, 0, 16.685, 0, 0, 0, 16.685, 318.022, 0.344236, -74.4886)
+visible = false
 
 [node name="Sketchfab_Scene3" parent="." instance=ExtResource("8_6n480")]
 transform = Transform3D(-72.92, 0, 6.37487e-06, 0, 72.92, 0, -6.37487e-06, 0, -72.92, 160.918, -0.108221, -83.924)
+visible = false
 
 [node name="Skeleton3D" parent="Sketchfab_Scene3/Sketchfab_model/model_fbx/RootNode/AvatarRoot/Object_4" index="0"]
-bones/1/scale = Vector3(1, 1, 1)
 bones/2/position = Vector3(0, 0.159976, 0.018663)
 bones/2/rotation = Quaternion(0.168867, 1.20431e-09, -1.99036e-08, 0.985639)
-bones/2/scale = Vector3(1, 1, 1)
 bones/3/position = Vector3(-4.46884e-09, 0.114582, 0.0168958)
 bones/3/rotation = Quaternion(0.300165, 3.16396e-09, -2.60498e-08, 0.953887)
-bones/3/scale = Vector3(1, 1, 1)
 bones/9/position = Vector3(0.0293813, 0.0678562, 0.104331)
 bones/9/rotation = Quaternion(-0.113685, 0.17131, -0.0199045, 0.978434)
-bones/9/scale = Vector3(1, 1, 1)
 bones/10/position = Vector3(-0.0300772, 0.068289, 0.103946)
 bones/10/rotation = Quaternion(0.108264, -0.400544, -0.0477265, 0.908606)
-bones/10/scale = Vector3(1, 1, 1)
 bones/13/position = Vector3(0.00504427, 0.0861281, -0.048711)
 bones/13/rotation = Quaternion(0.747479, -0.363862, 0.51591, 0.20668)
 bones/13/scale = Vector3(1, 1, 1)
@@ -169,10 +167,8 @@ bones/39/rotation = Quaternion(-0.297252, 0.00113724, 0.119214, 0.947327)
 bones/39/scale = Vector3(0.999999, 1, 1)
 bones/45/position = Vector3(0.0213811, 0.0412687, 0.0039242)
 bones/45/rotation = Quaternion(-0.313566, 0.502189, -0.219301, 0.775493)
-bones/45/scale = Vector3(1, 1, 1)
 bones/46/position = Vector3(0.00643291, 0.0337646, -0.00291452)
 bones/46/rotation = Quaternion(-0.206706, 0.171666, -0.318812, 0.908935)
-bones/46/scale = Vector3(1, 1, 1)
 bones/48/position = Vector3(0.0267423, 0.0735444, -0.0131048)
 bones/48/rotation = Quaternion(0.708529, 0.081951, -0.100571, 0.693655)
 bones/48/scale = Vector3(1, 1, 1)
@@ -185,5 +181,6 @@ bones/60/scale = Vector3(1, 1, 1)
 
 [node name="Sketchfab_Scene4" parent="." instance=ExtResource("9_k8w74")]
 transform = Transform3D(-56.605, 0, 0, 0, 56.605, 0, 0, 0, -56.605, 338.086, 187.756, -213.575)
+visible = false
 
 [editable path="Sketchfab_Scene3"]
