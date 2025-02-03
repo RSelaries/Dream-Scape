@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7ursrw4o2ydv"]
+[gd_scene load_steps=3 format=3 uid="uid://b7ursrw4o2ydv"]
 
 [ext_resource type="Theme" uid="uid://bwa01eckmt4sl" path="res://themes/menus.tres" id="1_ejwgg"]
 [ext_resource type="Script" uid="uid://c8wflgupki0fa" path="res://ui/pause_menu.gd" id="2_fob5h"]
-[ext_resource type="PackedScene" uid="uid://di1732j3c2wpf" path="res://ui/main_menu.tscn" id="3_fob5h"]
 
 [node name="PauseMenu" type="Control"]
 visible = false
@@ -14,7 +13,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ejwgg")
 script = ExtResource("2_fob5h")
-main_menu_scene = ExtResource("3_fob5h")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

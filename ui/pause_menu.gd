@@ -1,15 +1,11 @@
 extends Control
 
 
-@export var main_menu_scene: PackedScene
-
-
 func _ready() -> void:
 	visible = false
 
 
 func _on_reload_button_pressed() -> void:
-	#get_tree().change_scene_to_packed(main_menu_scene)
 	get_tree().change_scene_to_file("res://ui/main_menu.tscn")
 
 

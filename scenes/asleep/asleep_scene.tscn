@@ -1,10 +1,12 @@
-[gd_scene load_steps=19 format=3 uid="uid://bdgg64gsfnru"]
+[gd_scene load_steps=22 format=3 uid="uid://bdgg64gsfnru"]
 
 [ext_resource type="Script" uid="uid://glflxtb3ommi" path="res://scenes/asleep/asleep_scene.gd" id="1_sdt8w"]
 [ext_resource type="PackedScene" uid="uid://5m1g178ubchd" path="res://global_assets/fps_controller/fps_player_character.tscn" id="2_46cu2"]
 [ext_resource type="Shader" uid="uid://ban6fk30se87r" path="res://shaders/gamma_correction.gdshader" id="2_gb5bf"]
+[ext_resource type="Shader" uid="uid://xu4i8s8v7j1g" path="res://shaders/ascii_bw.gdshader" id="3_1ctn8"]
 [ext_resource type="Material" uid="uid://8uhkt4s13tna" path="res://global_assets/materials/water_1.tres" id="3_f81i8"]
 [ext_resource type="PackedScene" uid="uid://dq3njnvokihyy" path="res://scenes/asleep/metro/metros.tscn" id="4_wcggm"]
+[ext_resource type="Texture2D" uid="uid://dhwp3bx3nokjl" path="res://shaders/ascii_characters.png" id="4_yxn7d"]
 [ext_resource type="PackedScene" uid="uid://df3sjmx0ggt37" path="res://scenes/asleep/scene.gltf" id="6_gb5bf"]
 [ext_resource type="PackedScene" uid="uid://nwxuhqgl7a2g" path="res://scenes/asleep/explosion_as_solid.glb" id="7_k8w74"]
 [ext_resource type="PackedScene" uid="uid://h4locu6fviby" path="res://scenes/asleep/emmanuel_m..glb" id="8_6n480"]
@@ -30,6 +32,12 @@ glow_bloom = 0.11
 resource_local_to_scene = true
 shader = ExtResource("2_gb5bf")
 shader_parameter/gamma = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_by0d6"]
+shader = ExtResource("3_1ctn8")
+shader_parameter/ascii_characters = ExtResource("4_yxn7d")
+shader_parameter/character_pixel_size = 8.0
+shader_parameter/nbr_of_lum_values = 10.0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_oueue"]
 material = ExtResource("3_f81i8")
@@ -93,9 +101,21 @@ directional_shadow_max_distance = 300.0
 [node name="PostProcessing" type="Node" parent="."]
 
 [node name="Layer1" type="CanvasLayer" parent="PostProcessing"]
+visible = false
 
 [node name="GammaCorrection" type="ColorRect" parent="PostProcessing/Layer1"]
 material = SubResource("ShaderMaterial_f81i8")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Layer2" type="CanvasLayer" parent="PostProcessing"]
+
+[node name="AsciiArt" type="ColorRect" parent="PostProcessing/Layer2"]
+material = SubResource("ShaderMaterial_by0d6")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
