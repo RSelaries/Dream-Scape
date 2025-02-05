@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bdgg64gsfnru"]
+[gd_scene load_steps=23 format=3 uid="uid://bdgg64gsfnru"]
 
 [ext_resource type="Script" uid="uid://glflxtb3ommi" path="res://scenes/asleep/asleep_scene.gd" id="1_sdt8w"]
 [ext_resource type="PackedScene" uid="uid://5m1g178ubchd" path="res://global_assets/fps_controller/fps_player_character.tscn" id="2_46cu2"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://nwxuhqgl7a2g" path="res://scenes/asleep/explosion_as_solid.glb" id="7_k8w74"]
 [ext_resource type="PackedScene" uid="uid://h4locu6fviby" path="res://scenes/asleep/emmanuel_m..glb" id="8_6n480"]
 [ext_resource type="PackedScene" uid="uid://d2wprtv6n7kha" path="res://scenes/asleep/eglise_souterraine_saint-jean_aubeterre_16.glb" id="9_k8w74"]
+[ext_resource type="Texture2D" uid="uid://b2nblb4e4bqia" path="res://global_assets/textures/pepisi.png" id="12_yxn7d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wh8ij"]
 sky_top_color = Color(0.330808, 0.394582, 0.483296, 1)
@@ -35,9 +36,10 @@ shader_parameter/gamma = 1.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_by0d6"]
 shader = ExtResource("3_1ctn8")
-shader_parameter/ascii_characters = ExtResource("4_yxn7d")
+shader_parameter/use_colors = true
 shader_parameter/character_pixel_size = 8.0
 shader_parameter/nbr_of_lum_values = 10.0
+shader_parameter/ascii_characters = ExtResource("4_yxn7d")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_oueue"]
 material = ExtResource("3_f81i8")
@@ -202,5 +204,11 @@ bones/60/scale = Vector3(1, 1, 1)
 [node name="Sketchfab_Scene4" parent="." instance=ExtResource("9_k8w74")]
 transform = Transform3D(-56.605, 0, 0, 0, 56.605, 0, 0, 0, -56.605, 338.086, 187.756, -213.575)
 visible = false
+
+[node name="Pepisi" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(557, 339)
+scale = Vector2(3.00391, 3.00391)
+texture = ExtResource("12_yxn7d")
 
 [editable path="Sketchfab_Scene3"]
