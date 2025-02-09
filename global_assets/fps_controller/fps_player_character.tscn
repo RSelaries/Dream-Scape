@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://5m1g178ubchd"]
+[gd_scene load_steps=9 format=3 uid="uid://5m1g178ubchd"]
 
 [ext_resource type="Script" uid="uid://tk86tlfqqys2" path="res://global_assets/fps_controller/fps_player_character.gd" id="1_j1svx"]
 [ext_resource type="Script" uid="uid://bckxs3pwgf4bs" path="res://global_assets/fps_controller/reticle.gd" id="2_qhyan"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cn56dom5y6eka" path="res://global_assets/textures/hand_reticle.png" id="4_g6328"]
 [ext_resource type="Texture2D" uid="uid://bw0qkik1rmcue" path="res://global_assets/textures/closed_hand_reticle.png" id="5_416f4"]
 [ext_resource type="Texture2D" uid="uid://cwbdwa0fdrjno" path="res://global_assets/textures/sleep.png" id="6_buu73"]
+[ext_resource type="Texture2D" uid="uid://cf8b8dj0vn3uv" path="res://global_assets/textures/talk.png" id="7_a1pad"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kxxeq"]
 radius = 0.4
@@ -77,3 +78,10 @@ visible = false
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("6_buu73")
+
+[node name="TalkReticle" type="TextureRect" parent="UserInterface/Reticle"]
+unique_name_in_owner = true
+visible = false
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("7_a1pad")

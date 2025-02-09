@@ -2,7 +2,7 @@ extends CollisionObject3D
 class_name InteractibleObject3D
 
 
-enum InteractionTypes {DEFAULT, INSPECT, OWNER_DEFAULT, SLEEP}
+enum InteractionTypes {DEFAULT, INSPECT, OWNER_DEFAULT, SLEEP, TALK}
 @export var interaction_type: InteractionTypes = InteractionTypes.DEFAULT
 
 
@@ -34,6 +34,9 @@ func interact() -> void:
 			if owner.has_method("interact"):
 				@warning_ignore("unsafe_method_access")
 				owner.interact()
+		
+		InteractionTypes.TALK:
+			pass
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -44,6 +47,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		InteractionTypes.INSPECT:
 			if can_move == true:
 				_inspect_handle_input(event)
+		
+		InteractionTypes.TALK:
+			pass
 
 
 func _on_return() -> void:

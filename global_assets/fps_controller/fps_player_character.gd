@@ -170,3 +170,6 @@ func _reticle_based_on_interact() -> void:
 		
 		InteractibleObject3D.InteractionTypes.SLEEP:
 			reticle.reticle_type = reticle.ReticleTypes.SLEEP
+		
+		InteractibleObject3D.InteractionTypes.TALK:
+			reticle.reticle_type = reticle.ReticleTypes.TALK
