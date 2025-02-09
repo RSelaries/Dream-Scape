@@ -1703,7 +1703,6 @@ material_override = SubResource("ShaderMaterial_76fir")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="character_2/AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.692985, 0.254365)
-visible = false
 shape = SubResource("CylinderShape3D_sc08h")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="character_2"]

@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb3dnx3w6txym"]
+
+[ext_resource type="Script" uid="uid://2thbhoqjmhmg" path="res://scenes/awake/speech_bubble.gd" id="1_api01"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_l23kl"]
+viewport_path = NodePath("SpeechBubbleSprite/Speech")
+
+[node name="SpeechBubble" type="Node3D"]
+script = ExtResource("1_api01")
+
+[node name="SpeechBubbleSprite" type="Sprite3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+layers = 3
+billboard = 1
+texture_filter = 2
+texture = SubResource("ViewportTexture_l23kl")
+
+[node name="Speech" type="SubViewport" parent="SpeechBubbleSprite"]
+transparent_bg = true
+
+[node name="Control" type="Control" parent="SpeechBubbleSprite/Speech"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="SpeechBubbleSprite/Speech/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SpeechLabel" type="Label" parent="SpeechBubbleSprite/Speech/Control/Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(512, 0)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -236.0
+offset_top = -55.0
+offset_right = 236.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 2
+autowrap_mode = 3
+
+[node name="NextCharTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="NextCharTimer" to="." method="_on_next_char_timer_timeout"]
