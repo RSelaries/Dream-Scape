@@ -1,40 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqrgb1guv736c"]
+[gd_scene load_steps=3 format=3 uid="uid://dqrgb1guv736c"]
 
 [ext_resource type="Script" uid="uid://1qwsu8xj4je6" path="res://scenes/awake/talkable_character.gd" id="1_1spba"]
-[ext_resource type="Script" uid="uid://ob7iksla10gc" path="res://idk_honestly/speech.gd" id="2_ql5aa"]
 [ext_resource type="PackedScene" uid="uid://cb3dnx3w6txym" path="res://scenes/awake/speech_bubble.tscn" id="3_2jr0a"]
-
-[sub_resource type="Resource" id="Resource_bmyrs"]
-script = ExtResource("2_ql5aa")
-text = "Qu'est-ce que tu fais dans mon rêve ?!"
-next_char_time = 0.005
-next_speech_time = 1.0
-metadata/_custom_type_script = ExtResource("2_ql5aa")
-
-[sub_resource type="Resource" id="Resource_xff7s"]
-script = ExtResource("2_ql5aa")
-text = ". . ."
-next_char_time = 0.5
-next_speech_time = 0.5
-metadata/_custom_type_script = ExtResource("2_ql5aa")
-
-[sub_resource type="Resource" id="Resource_84hgf"]
-script = ExtResource("2_ql5aa")
-text = ". . ."
-next_char_time = 0.5
-next_speech_time = 1.0
-metadata/_custom_type_script = ExtResource("2_ql5aa")
-
-[sub_resource type="Resource" id="Resource_n20c6"]
-script = ExtResource("2_ql5aa")
-text = "C'est la réalité ?"
-next_char_time = 0.05
-next_speech_time = 2.0
-metadata/_custom_type_script = ExtResource("2_ql5aa")
 
 [node name="TalkArea" type="StaticBody3D" node_paths=PackedStringArray("speech_bubble_sprite")]
 script = ExtResource("1_1spba")
-speech = Array[ExtResource("2_ql5aa")]([SubResource("Resource_bmyrs"), SubResource("Resource_xff7s"), SubResource("Resource_84hgf"), SubResource("Resource_n20c6")])
 speech_bubble_sprite = NodePath("SpeechBubble")
 interaction_type = 4
 
