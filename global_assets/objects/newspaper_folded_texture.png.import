@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwuxcs13epgl7"
+uid="uid://yslcfedhyx76"
 path.s3tc="res://.godot/imported/newspaper_folded_texture.png-aa7b9e9cf41fe49f44478fb7d6573200.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "577fe7a3e13852ba2f3228ae97506b7a"
 }
 
 [deps]
