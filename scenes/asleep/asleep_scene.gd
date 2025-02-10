@@ -13,12 +13,9 @@ func _ready() -> void:
 
 
 func _handle_glitch() -> void:
-	# ==== Glitch Shader ====
 	cinematic_player.play("glitch")
-	# =======================
-	pass
 
 
-func _on_glitching_timer_timeout() -> void:
-	pass
-	
+func _on_near_walls_area_body_entered(body: Node3D) -> void:
+	if body is FpsPlayer:
+		_handle_glitch()

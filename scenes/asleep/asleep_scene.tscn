@@ -53,6 +53,11 @@ size = Vector2(1024, 1024)
 subdivide_width = 2048
 subdivide_depth = 2048
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_k8w74"]
+size = Vector3(191.14, 32.12, 12.4672)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_k8w74"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yeif6"]
 albedo_color = Color(0.37559, 0.574228, 0.543286, 1)
 
@@ -161,7 +166,7 @@ tracks/8/keys = {
 
 [sub_resource type="Animation" id="Animation_gb5bf"]
 resource_name = "glitch"
-length = 30.0
+length = 15.0
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -180,9 +185,9 @@ tracks/1/path = NodePath("PostProcessing/Layer2/Glitch:material:shader_parameter
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 19.035, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 30)
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 6.801, 0, 1, -0.1, -0.0776475, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 8.43333, 8.83333, 8.84)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -202,9 +207,9 @@ tracks/3/path = NodePath("PostProcessing/Layer2/Glitch:material:shader_parameter
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0.01, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 22.1333)
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0.01, -0.25, 0, 2.5, 0.00422781, 0.102458, -0.533334, -0.00174522, 0, 0, 0.102458, 0, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3.73333, 8.83333, 8.86667)
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -273,7 +278,7 @@ tracks/1/path = NodePath("Metros/AnimatableBody3D/DreamMetro")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(3),
+"times": PackedFloat32Array(2.96667),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -288,11 +293,6 @@ _data = {
 &"starting_cinematic": SubResource("Animation_wcggm")
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_k8w74"]
-size = Vector3(191.14, 32.12, 12.4672)
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_k8w74"]
-
 [node name="AsleepScene" type="Node3D" node_paths=PackedStringArray("player", "cinematic_player")]
 script = ExtResource("1_sdt8w")
 player = NodePath("Player")
@@ -302,7 +302,7 @@ cinematic_player = NodePath("CinematicPlayer")
 environment = SubResource("Environment_h0xno")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.4479, 0.673092, 0.5885, 0.839355, 0.543305, 0.0174212, -0.308009, 0.501764, -0.808309, 0, 0, 0)
+transform = Transform3D(-0.4479, 0.673092, 0.5885, 0.839355, 0.543305, 0.0174217, -0.308009, 0.501764, -0.808309, 0, 0, 0)
 light_color = Color(0.649223, 0.429886, 0.0868603, 1)
 light_energy = 11.013
 shadow_enabled = true
@@ -365,22 +365,6 @@ metadata/_edit_lock_ = true
 
 [node name="Metros" parent="." instance=ExtResource("4_wcggm")]
 
-[node name="Floor" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.299072, 0)
-use_collision = true
-size = Vector3(1462.85, 0.379883, 2095.19)
-material = SubResource("StandardMaterial3D_yeif6")
-metadata/_edit_lock_ = true
-
-[node name="CinematicPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_f81i8")
-}
-
-[node name="GlitchingTimer" type="Timer" parent="."]
-wait_time = 5.0
-autostart = true
-
 [node name="Invisible Walls" type="StaticBody3D" parent="."]
 transform = Transform3D(0.898557, 0, -0.438857, 0, 1, 0, 0.438857, 0, 0.898557, 11.185, 0, -19.5892)
 
@@ -389,22 +373,22 @@ transform = Transform3D(0.898557, 0, -0.438857, 0, 1, 0, 0.438857, 0, 0.898557, 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Invisible Walls/NearWallsArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.051, 13.3513, -81.077)
 shape = SubResource("BoxShape3D_k8w74")
-debug_color = Color(0.698228, 0.083245, 1.92523e-07, 0.42)
+debug_color = Color(1, 1, 1, 1)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Invisible Walls/NearWallsArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.7604, 13.3513, 72.2381)
 shape = SubResource("BoxShape3D_k8w74")
-debug_color = Color(0.698228, 0.083245, 1.92523e-07, 0.42)
+debug_color = Color(1, 1, 1, 1)
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Invisible Walls/NearWallsArea"]
 transform = Transform3D(-2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, 138.816, 13.3513, -2.63198)
 shape = SubResource("BoxShape3D_k8w74")
-debug_color = Color(0.698228, 0.083245, 1.92523e-07, 0.42)
+debug_color = Color(1, 1, 1, 1)
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Invisible Walls/NearWallsArea"]
 transform = Transform3D(-2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, -31.0166, 13.3513, -7.4874)
 shape = SubResource("BoxShape3D_k8w74")
-debug_color = Color(0.698228, 0.083245, 1.92523e-07, 0.42)
+debug_color = Color(1, 1, 1, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Invisible Walls"]
 transform = Transform3D(4.37114e-08, -1, -8.9407e-08, -1, -4.37114e-08, 0, -3.55271e-15, 8.9407e-08, -1, 143.556, 0, 5.32264)
@@ -422,6 +406,18 @@ shape = SubResource("WorldBoundaryShape3D_k8w74")
 transform = Transform3D(-3.55271e-15, 1.78814e-07, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, 1.78814e-07, 46.9452, 0, -87.3674)
 shape = SubResource("WorldBoundaryShape3D_k8w74")
 
-[connection signal="timeout" from="GlitchingTimer" to="." method="_on_glitching_timer_timeout"]
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.299072, 0)
+use_collision = true
+size = Vector3(1462.85, 0.379883, 2095.19)
+material = SubResource("StandardMaterial3D_yeif6")
+metadata/_edit_lock_ = true
+
+[node name="CinematicPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_f81i8")
+}
+
+[connection signal="body_entered" from="Invisible Walls/NearWallsArea" to="." method="_on_near_walls_area_body_entered"]
 
 [editable path="Metros"]
