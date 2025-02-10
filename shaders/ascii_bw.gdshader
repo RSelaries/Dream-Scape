@@ -5,6 +5,7 @@ uniform sampler2D screen_texture : hint_screen_texture, repeat_disable, filter_n
 uniform bool use_colors = false;
 uniform float character_pixel_size = 8.0;
 uniform float nbr_of_lum_values = 10.0;
+uniform float opacity = 1.0;
 
 uniform sampler2D ascii_characters : repeat_enable, filter_nearest;
 
@@ -26,10 +27,10 @@ void fragment() {
 
 
 	if (use_colors) {
-		if (ascii_texture.r == 0.0) { COLOR = vec4(0, 0, 0, 1); }
-		else { COLOR = vec4(pix_screen_texture.rgb, 1.0); }
+		if (ascii_texture.r <= 0.0001) { COLOR = vec4(0, 0, 0, opacity); }
+		else { COLOR = vec4(pix_screen_texture.rgb, opacity); }
 	}
 	else {
-		COLOR = vec4(ascii_texture.rgb, 1);
+		COLOR = vec4(ascii_texture.rgb, opacity);
 	}
 }

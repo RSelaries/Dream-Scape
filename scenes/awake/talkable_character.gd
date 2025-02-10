@@ -1,4 +1,3 @@
-@tool
 class_name TalkableCharacter3D
 extends InteractibleObject3D
 
@@ -28,10 +27,6 @@ var current_speech: int = -1:
 
 
 func _ready() -> void:
-	if Engine.is_editor_hint() and animation_player:
-		animation_player.play(base_animation)
-		return
-	
 	next_speech_timer = Timer.new()
 	next_speech_timer.timeout.connect(_on_next_speech_timer_timeout)
 	next_speech_timer.one_shot = true

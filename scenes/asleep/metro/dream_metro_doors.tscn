@@ -1,8 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3x3es1e814y2"]
+[gd_scene load_steps=8 format=3 uid="uid://b3x3es1e814y2"]
 
 [ext_resource type="PackedScene" uid="uid://cnd2buxpe2qtt" path="res://scenes/asleep/metro/dream_metro_door.glb" id="1_7flbo"]
 [ext_resource type="Script" uid="uid://wvybq1iq8xca" path="res://scenes/asleep/metro/dream_metro_doors.gd" id="1_tttr4"]
-[ext_resource type="Script" uid="uid://djvd1l3rhmbf8" path="res://idk_honestly/interactible_object_3d.gd" id="3_0825c"]
 [ext_resource type="Material" uid="uid://drgxw2y8a3l6t" path="res://scenes/asleep/metro/dream_metro_material.tres" id="3_na5g4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7flbo"]
@@ -79,8 +78,6 @@ material_override = ExtResource("3_na5g4")
 
 [node name="AnimatableBody3D2" type="StaticBody3D" parent="dream_metro_door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000277638, 0.000393697, -0.914864)
-script = ExtResource("3_0825c")
-interaction_type = 2
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="dream_metro_door/AnimatableBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20134, 0.457257)
@@ -95,8 +92,6 @@ material_override = ExtResource("3_na5g4")
 
 [node name="AnimatableBody3D" type="StaticBody3D" parent="dream_metro_door3"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.000277597, 0.000393697, -0.897462)
-script = ExtResource("3_0825c")
-interaction_type = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="dream_metro_door3/AnimatableBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.201, -0.437)

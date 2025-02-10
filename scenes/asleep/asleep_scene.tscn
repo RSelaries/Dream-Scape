@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bdgg64gsfnru"]
+[gd_scene load_steps=24 format=3 uid="uid://bdgg64gsfnru"]
 
 [ext_resource type="Script" uid="uid://glflxtb3ommi" path="res://scenes/asleep/asleep_scene.gd" id="1_sdt8w"]
 [ext_resource type="PackedScene" uid="uid://5m1g178ubchd" path="res://global_assets/fps_controller/fps_player_character.tscn" id="2_46cu2"]
@@ -8,6 +8,7 @@
 [ext_resource type="Shader" uid="uid://ciqanqlgg7uv4" path="res://shaders/glitch_effect.gdshader" id="3_gb5bf"]
 [ext_resource type="PackedScene" uid="uid://dq3njnvokihyy" path="res://scenes/asleep/metro/metros.tscn" id="4_wcggm"]
 [ext_resource type="Texture2D" uid="uid://dhwp3bx3nokjl" path="res://shaders/ascii_characters.png" id="4_yxn7d"]
+[ext_resource type="PackedScene" uid="uid://baf11qcmyrgar" path="res://global_assets/objects/door.glb" id="9_k8w74"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wh8ij"]
 sky_top_color = Color(0.330808, 0.394582, 0.483296, 1)
@@ -36,13 +37,14 @@ shader_parameter/shake_power = 0.03
 shader_parameter/shake_rate = 0.0
 shader_parameter/shake_speed = 5.0
 shader_parameter/shake_block_size = 96.725
-shader_parameter/shake_color_rate = 0.024
+shader_parameter/shake_color_rate = 0.01
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_by0d6"]
 shader = ExtResource("3_1ctn8")
 shader_parameter/use_colors = true
 shader_parameter/character_pixel_size = 8.0
 shader_parameter/nbr_of_lum_values = 10.0
+shader_parameter/opacity = 0.0
 shader_parameter/ascii_characters = ExtResource("4_yxn7d")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_oueue"]
@@ -67,6 +69,188 @@ tracks/0/keys = {
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PostProcessing/Layer2/Glitch:material:shader_parameter/shake_power")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.03, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PostProcessing/Layer2/Glitch:material:shader_parameter/shake_rate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PostProcessing/Layer2/Glitch:material:shader_parameter/shake_speed")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PostProcessing/Layer2/Glitch:material:shader_parameter/shake_color_rate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.01, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PostProcessing/Layer3/AsciiArt:material:shader_parameter/use_colors")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PostProcessing/Layer3/AsciiArt:material:shader_parameter/character_pixel_size")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PostProcessing/Layer3/AsciiArt:material:shader_parameter/nbr_of_lum_values")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(10, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PostProcessing/Layer3/AsciiArt:material:shader_parameter/opacity")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_gb5bf"]
+resource_name = "glitch"
+length = 30.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PostProcessing/Layer2/Glitch:material:shader_parameter/shake_power")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.03, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PostProcessing/Layer2/Glitch:material:shader_parameter/shake_rate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 19.035, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 30)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PostProcessing/Layer2/Glitch:material:shader_parameter/shake_speed")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PostProcessing/Layer2/Glitch:material:shader_parameter/shake_color_rate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.01, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 22.1333)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PostProcessing/Layer3/AsciiArt:material:shader_parameter/use_colors")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PostProcessing/Layer3/AsciiArt:material:shader_parameter/character_pixel_size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PostProcessing/Layer3/AsciiArt:material:shader_parameter/nbr_of_lum_values")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(10, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PostProcessing/Layer3/AsciiArt:material:shader_parameter/opacity")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_wcggm"]
 resource_name = "starting_cinematic"
@@ -82,12 +266,32 @@ tracks/0/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.9, 1.42802, 0.703648, -0.666667, -0.588554, 0.5, 0.286731, 1, -0.633333, -0.854724, 0.25, 0),
 "times": PackedFloat32Array(0, 1.5, 3)
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Metros/AnimatableBody3D/DreamMetro")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"open_metro_left_doors"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f81i8"]
 _data = {
 &"RESET": SubResource("Animation_f81i8"),
+&"glitch": SubResource("Animation_gb5bf"),
 &"starting_cinematic": SubResource("Animation_wcggm")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k8w74"]
+size = Vector3(191.14, 32.12, 12.4672)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_k8w74"]
 
 [node name="AsleepScene" type="Node3D" node_paths=PackedStringArray("player", "cinematic_player")]
 script = ExtResource("1_sdt8w")
@@ -120,6 +324,7 @@ mouse_filter = 2
 [node name="Layer2" type="CanvasLayer" parent="PostProcessing"]
 
 [node name="Glitch" type="ColorRect" parent="PostProcessing/Layer2"]
+unique_name_in_owner = true
 material = SubResource("ShaderMaterial_k8w74")
 anchors_preset = 15
 anchor_right = 1.0
@@ -130,7 +335,6 @@ mouse_filter = 2
 
 [node name="Layer3" type="CanvasLayer" parent="PostProcessing"]
 layer = 3
-visible = false
 
 [node name="AsciiArt" type="ColorRect" parent="PostProcessing/Layer3"]
 material = SubResource("ShaderMaterial_by0d6")
@@ -151,6 +355,9 @@ shake_oscillation_amplitude = 0.0
 viewbobbing_frequency = 0.365
 viewbobbing_force = 0.02
 
+[node name="door" parent="." instance=ExtResource("9_k8w74")]
+transform = Transform3D(-0.804854, 0, -0.890062, 0, 1.2, 0, 0.890062, 0, -0.804854, 95.0602, 0.892333, -130.992)
+
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12506, 0)
 mesh = SubResource("PlaneMesh_oueue")
@@ -169,3 +376,53 @@ metadata/_edit_lock_ = true
 libraries = {
 &"": SubResource("AnimationLibrary_f81i8")
 }
+
+[node name="GlitchingTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Invisible Walls" type="StaticBody3D" parent="."]
+transform = Transform3D(0.898557, 0, -0.438857, 0, 1, 0, 0.438857, 0, 0.898557, 11.185, 0, -19.5892)
+
+[node name="NearWallsArea" type="Area3D" parent="Invisible Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Invisible Walls/NearWallsArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.051, 13.3513, -81.077)
+shape = SubResource("BoxShape3D_k8w74")
+debug_color = Color(0.698228, 0.083245, 1.92523e-07, 0.42)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Invisible Walls/NearWallsArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.7604, 13.3513, 72.2381)
+shape = SubResource("BoxShape3D_k8w74")
+debug_color = Color(0.698228, 0.083245, 1.92523e-07, 0.42)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Invisible Walls/NearWallsArea"]
+transform = Transform3D(-2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, 138.816, 13.3513, -2.63198)
+shape = SubResource("BoxShape3D_k8w74")
+debug_color = Color(0.698228, 0.083245, 1.92523e-07, 0.42)
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Invisible Walls/NearWallsArea"]
+transform = Transform3D(-2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, -31.0166, 13.3513, -7.4874)
+shape = SubResource("BoxShape3D_k8w74")
+debug_color = Color(0.698228, 0.083245, 1.92523e-07, 0.42)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Invisible Walls"]
+transform = Transform3D(4.37114e-08, -1, -8.9407e-08, -1, -4.37114e-08, 0, -3.55271e-15, 8.9407e-08, -1, 143.556, 0, 5.32264)
+shape = SubResource("WorldBoundaryShape3D_k8w74")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Invisible Walls"]
+transform = Transform3D(-4.37114e-08, 1, 1.78814e-07, -1, -4.37114e-08, 0, 1.06581e-14, -1.78814e-07, 1, -35.975, 0, -5.58876)
+shape = SubResource("WorldBoundaryShape3D_k8w74")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Invisible Walls"]
+transform = Transform3D(1.06581e-14, -2.68221e-07, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -2.68221e-07, 41.0903, 0, 77.0999)
+shape = SubResource("WorldBoundaryShape3D_k8w74")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Invisible Walls"]
+transform = Transform3D(-3.55271e-15, 1.78814e-07, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, 1.78814e-07, 46.9452, 0, -87.3674)
+shape = SubResource("WorldBoundaryShape3D_k8w74")
+
+[connection signal="timeout" from="GlitchingTimer" to="." method="_on_glitching_timer_timeout"]
+
+[editable path="Metros"]

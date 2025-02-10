@@ -21,10 +21,10 @@ void fragment() {
 	if(length(back_color) < glow_threshold) {
 		back_color = back_color * glow_mult;
 	}
-	
+
 	vec3 inverted_color = 1.0 - back_color * (luminosity_2 * noise(SCREEN_UV));
-	
+
 	ALBEDO = back_color * - 20.0 * inverted_color;
-	
+
 	ALBEDO = ( (ALBEDO * (vec3(1) - color_predominance)) + (color_test * color_predominance) ) * color_test;
 }

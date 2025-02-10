@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dq3njnvokihyy"]
 
-[ext_resource type="Script" path="res://scenes/asleep/metro/metros.gd" id="1_21dvq"]
+[ext_resource type="Script" uid="uid://b06sch7nub6vx" path="res://scenes/asleep/metro/metros.gd" id="1_21dvq"]
 [ext_resource type="PackedScene" uid="uid://to63enenx7hx" path="res://scenes/asleep/metro/dream_metro_simplified.glb" id="2_21dvq"]
 [ext_resource type="PackedScene" uid="uid://co3dlc4g1fvjh" path="res://scenes/asleep/metro/dream_metro.tscn" id="2_yf25r"]
 
