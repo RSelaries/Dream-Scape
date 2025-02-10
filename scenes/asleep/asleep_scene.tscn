@@ -385,7 +385,6 @@ autostart = true
 transform = Transform3D(0.898557, 0, -0.438857, 0, 1, 0, 0.438857, 0, 0.898557, 11.185, 0, -19.5892)
 
 [node name="NearWallsArea" type="Area3D" parent="Invisible Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Invisible Walls/NearWallsArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.051, 13.3513, -81.077)
