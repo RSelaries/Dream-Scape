@@ -1,5 +1,6 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://bnwjft0phq0e0"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bnwjft0phq0e0"]
 
+[ext_resource type="FontFile" uid="uid://c3uqqt3f7tvm8" path="res://themes/fonts/Chno_Pixel_Code_Po/CHNOPixelCodePro-Regular.ttf" id="2_2h8fx"]
 [ext_resource type="FontFile" uid="uid://uc3fhopw3jfp" path="res://themes/fonts/Paint/TMT-Paint-Regular.otf" id="2_dh2lk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ehwss"]
@@ -18,17 +19,17 @@ corner_radius_bottom_left = 15
 
 [resource]
 Label/font_sizes/font_size = 24
-Label/fonts/font = ExtResource("2_dh2lk")
+Label/fonts/font = ExtResource("2_2h8fx")
 Panel/styles/panel = SubResource("StyleBoxFlat_ehwss")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_83btr")
-RichTextLabel/font_sizes/bold_font_size = 18
-RichTextLabel/font_sizes/bold_italics_font_size = 16
-RichTextLabel/font_sizes/italics_font_size = 16
-RichTextLabel/font_sizes/mono_font_size = 16
-RichTextLabel/font_sizes/normal_font_size = 16
-RichTextLabel/fonts/bold_font = ExtResource("2_dh2lk")
-RichTextLabel/fonts/bold_italics_font = ExtResource("2_dh2lk")
-RichTextLabel/fonts/italics_font = ExtResource("2_dh2lk")
-RichTextLabel/fonts/mono_font = ExtResource("2_dh2lk")
-RichTextLabel/fonts/normal_font = ExtResource("2_dh2lk")
+RichTextLabel/font_sizes/bold_font_size = 22
+RichTextLabel/font_sizes/bold_italics_font_size = 20
+RichTextLabel/font_sizes/italics_font_size = 20
+RichTextLabel/font_sizes/mono_font_size = 20
+RichTextLabel/font_sizes/normal_font_size = 20
+RichTextLabel/fonts/bold_font = ExtResource("2_2h8fx")
+RichTextLabel/fonts/bold_italics_font = ExtResource("2_2h8fx")
+RichTextLabel/fonts/italics_font = ExtResource("2_2h8fx")
+RichTextLabel/fonts/mono_font = ExtResource("2_2h8fx")
+RichTextLabel/fonts/normal_font = ExtResource("2_2h8fx")
 TabBar/fonts/font = ExtResource("2_dh2lk")

@@ -1,0 +1,95 @@
+[gd_scene load_steps=4 format=3 uid="uid://cii67opi6cu56"]
+
+[ext_resource type="Theme" uid="uid://c8prbfapem2ta" path="res://themes/input.tres" id="1_yoow4"]
+[ext_resource type="Script" uid="uid://bl5bokwaxgpc7" path="res://idk_honestly/console/console_animated.gd" id="2_38vwo"]
+[ext_resource type="Resource" uid="uid://ddmvuvijlqlyi" path="res://idk_honestly/console/crash_output.tres" id="3_38vwo"]
+
+[node name="ConsoleAnimated" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_yoow4")
+script = ExtResource("2_38vwo")
+total_outputs = ExtResource("3_38vwo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 0
+
+[node name="Console" type="RichTextLabel" parent="ColorRect/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "HypnOS(C) v6.21.23589  
+SolarisCorp(TM)  
+--------------------------  
+
+/!\\ UNFORSEEN ERROR CRASH /!\\  
+------  
+Memory overload  
+> \"HypnOS://general/singletones/global.hyn\" Line 652  
+    - An error occurred while in 'get_user_life_values' function.  
+> \"HypnOS://general/singletones/settings.hyn\" Line 652  
+    - Could not resolve 'reality.glm'.  
+> \"HypnOS://general/singletones/cookies.hyn\" Line 652  
+    - Could not find 'user_values/happiness'.  
+
+/!\\ SYSTEM STABILITY COMPROMISED /!\\  
+------  
+> \"HypnOS://vision/render_pipeline.hyn\" Line 129  
+    - Shader compilation failed. Unexpected token '∞' in '.hyn' script.  
+> \"HypnOS://core/runtime.ovr\"  
+    - Stack overflow in spatial reconstruction. Flushing cache... [FAILED]  
+> \"HypnOS://drivers/input_tracking.syn\"  
+    - Hand tracking lost. Recalibration attempt... [TIMEOUT]  
+> \"HypnOS://memory/stack.ovr\"  
+    - Recursive call detected in 'self_perception.lmn'.  
+    - Kernel buffer overflow. Resetting neural clock... [UNRESPONSIVE]  
+
+/!\\ CRITICAL FAILURE DETECTED /!\\  
+------  
+> \"HypnOS://network/connection.hyn\" Line 404  
+    - Attempting to reach SolarisCorp(TM) servers... [CONNECTION REFUSED]  
+> \"HypnOS://system/persistence.lmn\"  
+    - Ghost frame retention detected. Reality buffer corruption imminent.  
+> \"HypnOS://user/sensory_data.hyn\"  
+    - Invalid response from 'vision.reality_check()'. Expected 'TRUE', got '???'.  
+
+/!\\ FATAL ERROR: CORE DUMP INITIATED /!\\  
+------  
+> Dumping active memory to \"HypnOS://crash_logs/last_moment.mem\" ... [INCOMPLETE]  
+> Dumping user perception state... [FAILED]  
+> Finalizing shutdown... [FAILED]  
+> Manual intervention required.  
+
+
+========================
+/!\\ EMERGENCY DECONECTION /!\\
+========================
+
+"
+scroll_active = false
+scroll_following = true
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false

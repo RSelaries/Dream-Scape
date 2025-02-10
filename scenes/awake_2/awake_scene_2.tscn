@@ -1,0 +1,421 @@
+[gd_scene load_steps=20 format=3 uid="uid://dvwk5m0iskpfg"]
+
+[ext_resource type="Script" uid="uid://cw423euvwer17" path="res://scenes/awake_2/awake_scene_2.gd" id="1_4eiyg"]
+[ext_resource type="PackedScene" uid="uid://5m1g178ubchd" path="res://global_assets/fps_controller/fps_player_character.tscn" id="1_5to7w"]
+[ext_resource type="Script" uid="uid://4g3bn1vwh11w" path="res://scenes/awake/post_processing.gd" id="2_7lthq"]
+[ext_resource type="PackedScene" uid="uid://cftdheen3466e" path="res://scenes/awake/metro/rusted_metro.tscn" id="3_a65x8"]
+[ext_resource type="Shader" uid="uid://ban6fk30se87r" path="res://shaders/gamma_correction.gdshader" id="3_ji4se"]
+[ext_resource type="Shader" uid="uid://cop3il56do541" path="res://shaders/color_correction.gdshader" id="4_n4bmw"]
+[ext_resource type="Shader" uid="uid://dwbirewc5ltfu" path="res://shaders/pixelate_shader.gdshader" id="5_idvkr"]
+[ext_resource type="Shader" uid="uid://c4gvnmq1ksyn1" path="res://shaders/dithering.gdshader" id="6_bqufh"]
+[ext_resource type="Script" uid="uid://bygo528hcyt35" path="res://scenes/awake_2/credits.gd" id="9_ji4se"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ovj1v"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_l3v6g"]
+sky_material = SubResource("ProceduralSkyMaterial_ovj1v")
+
+[sub_resource type="Environment" id="Environment_31ki3"]
+background_mode = 1
+sky = SubResource("Sky_l3v6g")
+ambient_light_source = 2
+ambient_light_color = Color(0.623697, 0.74, 0.5698, 1)
+ambient_light_energy = 0.04
+tonemap_mode = 2
+glow_enabled = true
+glow_intensity = 1.7
+glow_strength = 0.63
+glow_bloom = 0.07
+glow_blend_mode = 0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yhfn3"]
+resource_local_to_scene = true
+shader = ExtResource("3_ji4se")
+shader_parameter/gamma = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lijpr"]
+shader = ExtResource("4_n4bmw")
+shader_parameter/brightness = 0.044
+shader_parameter/contrast = 1.222
+shader_parameter/saturation = 0.614
+shader_parameter/redVal = 1.0
+shader_parameter/greenVal = 0.886
+shader_parameter/blueVal = 1.0
+shader_parameter/tint_color = Color(1, 1, 1, 1)
+shader_parameter/tint_effect_factor = 0.53
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dbb5f"]
+shader = ExtResource("5_idvkr")
+shader_parameter/pixel_size = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5hjbe"]
+resource_local_to_scene = true
+shader = ExtResource("6_bqufh")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 12
+shader_parameter/dither_size = 2
+
+[sub_resource type="Animation" id="Animation_ji4se"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Player/Neck:rotation:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Player/Neck/PlayerCamera:rotation:x")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PostProcessing/Layer1/GammaCorrection:material:shader_parameter/gamma")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_7lthq"]
+resource_name = "waking_up"
+length = 22.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.65716, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.5708, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Player:rotation:z")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player/Neck:rotation:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -0.68, -0.25, 0, 0.25, 0, -0.68, -0.25, 0, 0.25, 0, 0.755, -0.25, 0, 0.25, 0, 0.755, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.03333, 1.73333, 1.96131, 3.1, 3.30342, 3.94703)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Player/Neck/PlayerCamera:rotation:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-1.095, 0, 0, 0, 0, -1.095, 0, 0, 0.1015, 0.969773, 0, -0.333333, -0.0059677, 0.25, 0, 0, -0.25, 0, 1.04213, -0.0108177, 0.965, -0.224539, -0.743086, 0.25, 0),
+"times": PackedFloat32Array(0, 0.0841, 0.7, 4.6, 6.06667)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PostProcessing/Layer1/GammaCorrection:material:shader_parameter/gamma")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1.4, -0.25, 0, 0.25, 0, 1.4, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3667, 5.76667, 6.56667)
+}
+tracks/8/type = "method"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CanvasLayer/Credits")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_scroll_credits"
+}]
+}
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(21.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_to_main_screen"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ji4se"]
+_data = {
+&"RESET": SubResource("Animation_ji4se"),
+&"waking_up": SubResource("Animation_7lthq")
+}
+
+[node name="AwakeScene2" type="Node3D" node_paths=PackedStringArray("player", "cinematic_player")]
+script = ExtResource("1_4eiyg")
+player = NodePath("Player")
+cinematic_player = NodePath("CinematicPlayer")
+
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_31ki3")
+
+[node name="PostProcessing" type="Node" parent="."]
+script = ExtResource("2_7lthq")
+
+[node name="Layer1" type="CanvasLayer" parent="PostProcessing"]
+
+[node name="GammaCorrection" type="ColorRect" parent="PostProcessing/Layer1"]
+material = SubResource("ShaderMaterial_yhfn3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Layer2" type="CanvasLayer" parent="PostProcessing"]
+layer = 2
+
+[node name="ColorCorect" type="ColorRect" parent="PostProcessing/Layer2"]
+material = SubResource("ShaderMaterial_lijpr")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Layer3" type="CanvasLayer" parent="PostProcessing"]
+layer = 3
+
+[node name="Pixelisation" type="ColorRect" parent="PostProcessing/Layer3"]
+material = SubResource("ShaderMaterial_dbb5f")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Layer10" type="CanvasLayer" parent="PostProcessing"]
+layer = 10
+
+[node name="PsxDithering" type="ColorRect" parent="PostProcessing/Layer10"]
+material = SubResource("ShaderMaterial_5hjbe")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Player" parent="." instance=ExtResource("1_5to7w")]
+input_enabled = {
+"camera": false,
+"movement": false
+}
+mouse_sensitivity = 0.03
+viewbobbing_frequency = 0.5
+viewbobbing_force = 0.05
+use_jump = false
+speed = 1.2
+
+[node name="UserInterface" parent="Player" index="2"]
+visible = false
+
+[node name="RustedMetro" parent="." instance=ExtResource("3_a65x8")]
+
+[node name="CinematicPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ji4se")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="Credits" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_ji4se")
+
+[node name="CreditsRichLabel" type="RichTextLabel" parent="CanvasLayer/Credits"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 667.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "Code
+[b]Selaries Raphaël[/b]
+
+Mise en scène
+[b]Selaries Raphaël[/b]
+
+Écriture
+[b]Selaries Raphaël[/b]
+
+Modèles 3D et animations
+[b]Selaries Raphaël[/b]
+
+
+Assets 3D
+Railway track train - [b]Mehdi Shahsavan[/b]
+psx vending machine - [b]Brainsick Games[/b]
+pipisi - [b]Slepskiy[/b]
+Trash can - [b]Artyom[/b]
+trash bag - [b]Erythro[/b]
+Pile of Trash-1 - [b]Soph[/b]
+Metro Bench Model - [b]Wille Evensson[/b]
+Industrial Light - [b]ConhuirParker[/b]
+Door - [b]Zian[/b]
+
+Assets Sonores
+[b]BBC Sound Effects[/b]
+
+Fontes
+[b]Fontesk[/b]"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[editable path="Player"]

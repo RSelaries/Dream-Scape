@@ -1,0 +1,185 @@
+[gd_resource type="Resource" script_class="ConsoleTotalOutput" load_steps=18 format=3 uid="uid://ddmvuvijlqlyi"]
+
+[ext_resource type="Script" uid="uid://bc7224yldj8rj" path="res://idk_honestly/console/console_total_output.gd" id="1_bd5pa"]
+[ext_resource type="Script" uid="uid://b574fic1f1qfi" path="res://idk_honestly/console/console_output.gd" id="2_coto1"]
+
+[sub_resource type="Resource" id="Resource_bd5pa"]
+script = ExtResource("2_coto1")
+text = "HypnOS(C) v6.21.23589  
+SolarisCorp(TM)  
+--------------------------  "
+display_wait = 0.1
+line_wait = 0.04
+metadata/_custom_type_script = ExtResource("2_coto1")
+
+[sub_resource type="Resource" id="Resource_coto1"]
+script = ExtResource("2_coto1")
+text = "
+/!\\ UNFORSEEN ERROR CRASH /!\\  
+------  
+Memory overload  
+> \"HypnOS://general/singletones/global.hyn\" Line 652  
+    - An error occurred while in 'get_user_life_values' function.  
+> \"HypnOS://general/singletones/settings.hyn\" Line 652  
+    - Could not resolve 'reality.glm'.  
+> \"HypnOS://general/singletones/cookies.hyn\" Line 652  
+    - Could not find 'user_values/happiness'.  
+> \"HypnOS://general/singletones/existential.hyn\" Line 42  
+    - Missing parameter: 'self_purpose'.  
+> \"HypnOS://memory/autobiographical.lmn\" Line 211  
+    - Inconsistent timestamps detected. Memory rollback required."
+display_wait = 0.1
+line_wait = 0.04
+metadata/_custom_type_script = ExtResource("2_coto1")
+
+[sub_resource type="Resource" id="Resource_wxj7g"]
+script = ExtResource("2_coto1")
+text = "
+/!\\ SYSTEM STABILITY COMPROMISED /!\\  
+------  
+> \"HypnOS://vision/render_pipeline.hyn\" Line 129  
+    - Shader compilation failed. Unexpected token '∞' in '.hyn' script.  
+> \"HypnOS://core/runtime.ovr\"  
+    - Stack overflow in spatial reconstruction. Flushing cache... [FAILED]  
+> \"HypnOS://drivers/input_tracking.syn\"  
+    - Hand tracking lost. Recalibration attempt... [TIMEOUT]  
+> \"HypnOS://memory/stack.ovr\"  
+    - Recursive call detected in 'self_perception.lmn'.  
+    - Kernel buffer overflow. Resetting neural clock... [UNRESPONSIVE]  
+> \"HypnOS://subconscious/dream_collapse.glm\"  
+    - Undefined behavior encountered. Executing failsafe... [FAILSAFE NOT FOUND] "
+display_wait = 0.1
+line_wait = 0.04
+metadata/_custom_type_script = ExtResource("2_coto1")
+
+[sub_resource type="Resource" id="Resource_vyxir"]
+script = ExtResource("2_coto1")
+text = "
+/!\\ CRITICAL FAILURE DETECTED /!\\  
+------  
+> \"HypnOS://network/connection.hyn\" Line 404  
+    - Attempting to reach SolarisCorp(TM) servers... [CONNECTION REFUSED]  
+> \"HypnOS://system/persistence.lmn\"  
+    - Ghost frame retention detected. Reality buffer corruption imminent.  
+> \"HypnOS://user/sensory_data.hyn\"  
+    - Invalid response from 'vision.reality_check()'. Expected 'TRUE', got '???'.  
+> \"HypnOS://user/time_perception.ovr\"  
+    - Temporal desynchronization detected. Expected present timestamp, received [UNDEFINED].  
+> \"HypnOS://self_identity/kernel.hyn\"  
+    - Corruption detected. Fallback to previous instance... [NO BACKUP FOUND] "
+display_wait = 0.1
+line_wait = 0.04
+metadata/_custom_type_script = ExtResource("2_coto1")
+
+[sub_resource type="Resource" id="Resource_rit05"]
+script = ExtResource("2_coto1")
+text = "
+/!\\ MEMORY LEAK DETECTED /!\\  
+------  
+> Memory fragmentation in 'short_term/critical_thoughts.mem'.  
+> Excessive data in 'long_term/emotional_residues.hyn'.  
+> Involuntary recall of suppressed memories... [TERMINATION FAILED]  
+> Overwriting recent experiences with NULL values... [PARTIAL SUCCESS] "
+display_wait = 0.1
+line_wait = 0.04
+metadata/_custom_type_script = ExtResource("2_coto1")
+
+[sub_resource type="Resource" id="Resource_m7uhf"]
+script = ExtResource("2_coto1")
+text = "
+/!\\ FATAL ERROR: CORE DUMP INITIATED /!\\  
+------  
+> Dumping active memory to \"HypnOS://crash_logs/last_moment.mem\" ... [INCOMPLETE]  
+> Dumping user perception state... [FAILED]  
+> Reconstructing internal model of reality... [CORRUPT]  
+> Attempting failsafe reboot... [LOOP DETECTED]  
+> Kernel panic threshold exceeded. Aborting sequence. "
+display_wait = 0.1
+line_wait = 0.04
+metadata/_custom_type_script = ExtResource("2_coto1")
+
+[sub_resource type="Resource" id="Resource_lt5sw"]
+script = ExtResource("2_coto1")
+text = "
+/!\\ SYSTEM SHUTDOWN IN PROGRESS /!\\  
+------  
+> Releasing neural link... [FAILED]  
+> Disconnecting user consciousness... [FAILED]  
+> Manual override detected. Interrupting shutdown...  
+> Warning: User may experience **residual fragmentation** upon exit.  
+> Proceeding anyway...  "
+display_wait = 0.1
+line_wait = 0.04
+metadata/_custom_type_script = ExtResource("2_coto1")
+
+[sub_resource type="Resource" id="Resource_bynsi"]
+script = ExtResource("2_coto1")
+text = "
+[UNKNOWN PROCESS ACTIVE]  
+> \"HypnOS://?????/observation.hyn\"  
+    - File not recognized. Attempting execution... [ACCESS GRANTED]  "
+display_wait = 0.1
+line_wait = 0.04
+metadata/_custom_type_script = ExtResource("2_coto1")
+
+[sub_resource type="Resource" id="Resource_upcun"]
+script = ExtResource("2_coto1")
+text = "
+."
+display_wait = 0.1
+line_wait = 0.04
+metadata/_custom_type_script = ExtResource("2_coto1")
+
+[sub_resource type="Resource" id="Resource_64pbt"]
+script = ExtResource("2_coto1")
+text = ".."
+display_wait = 0.1
+line_wait = 0.04
+metadata/_custom_type_script = ExtResource("2_coto1")
+
+[sub_resource type="Resource" id="Resource_8yhqd"]
+script = ExtResource("2_coto1")
+text = "..."
+display_wait = 0.1
+line_wait = 0.04
+metadata/_custom_type_script = ExtResource("2_coto1")
+
+[sub_resource type="Resource" id="Resource_rq15v"]
+script = ExtResource("2_coto1")
+text = "...."
+display_wait = 0.1
+line_wait = 0.04
+metadata/_custom_type_script = ExtResource("2_coto1")
+
+[sub_resource type="Resource" id="Resource_wqkdf"]
+script = ExtResource("2_coto1")
+text = "....."
+display_wait = 0.1
+line_wait = 0.04
+metadata/_custom_type_script = ExtResource("2_coto1")
+
+[sub_resource type="Resource" id="Resource_5qsvy"]
+script = ExtResource("2_coto1")
+text = "[NO FURTHER LOGS AVAILABLE] "
+display_wait = 0.1
+line_wait = 0.04
+metadata/_custom_type_script = ExtResource("2_coto1")
+
+[sub_resource type="Resource" id="Resource_7ji5a"]
+script = ExtResource("2_coto1")
+text = "
+
+===============================
+/!\\ EMERGENCY DECONNECTION /!\\
+/!\\ EMERGENCY DECONNECTION /!\\
+===============================
+
+"
+display_wait = 0.1
+line_wait = 0.04
+metadata/_custom_type_script = ExtResource("2_coto1")
+
+[resource]
+script = ExtResource("1_bd5pa")
+outputs = Array[ExtResource("2_coto1")]([SubResource("Resource_bd5pa"), SubResource("Resource_coto1"), SubResource("Resource_wxj7g"), SubResource("Resource_vyxir"), SubResource("Resource_rit05"), SubResource("Resource_m7uhf"), SubResource("Resource_lt5sw"), SubResource("Resource_bynsi"), SubResource("Resource_upcun"), SubResource("Resource_64pbt"), SubResource("Resource_8yhqd"), SubResource("Resource_rq15v"), SubResource("Resource_wqkdf"), SubResource("Resource_5qsvy"), SubResource("Resource_7ji5a")])
+metadata/_custom_type_script = ExtResource("1_bd5pa")

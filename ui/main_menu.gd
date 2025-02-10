@@ -13,6 +13,8 @@ extends Control
 func _ready() -> void:
 	if not Engine.is_embedded_in_editor():
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 
 func _on_quit_button_pressed() -> void:

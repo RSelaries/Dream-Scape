@@ -6,6 +6,7 @@ extends Node
 @export var packed_scenes: Dictionary[String, PackedScene] = {
 	"AwakeScene": preload("res://scenes/awake/awake_scene.tscn"),
 	"AsleepScene": preload("res://scenes/asleep/asleep_scene.tscn"),
+	"AwakeScene2": preload("res://scenes/awake_2/awake_scene_2.tscn"),
 }
 
 

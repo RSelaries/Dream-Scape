@@ -1,7 +1,13 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c8prbfapem2ta"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://c8prbfapem2ta"]
 
 [ext_resource type="FontFile" uid="uid://uc3fhopw3jfp" path="res://themes/fonts/Paint/TMT-Paint-Regular.otf" id="1_6wa4e"]
+[ext_resource type="FontFile" uid="uid://c3uqqt3f7tvm8" path="res://themes/fonts/Chno_Pixel_Code_Po/CHNOPixelCodePro-Regular.ttf" id="1_gbub7"]
 
 [resource]
+CodeEdit/colors/background_color = Color(0, 0, 0, 1)
+CodeEdit/colors/font_color = Color(1, 1, 1, 1)
+CodeEdit/colors/font_readonly_color = Color(1, 1, 1, 1)
+CodeEdit/fonts/font = ExtResource("1_gbub7")
 Label/font_sizes/font_size = 12
 Label/fonts/font = ExtResource("1_6wa4e")
+RichTextLabel/fonts/normal_font = ExtResource("1_gbub7")

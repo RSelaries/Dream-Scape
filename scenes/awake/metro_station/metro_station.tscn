@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://byanlewo006y"]
+[gd_scene load_steps=51 format=3 uid="uid://byanlewo006y"]
 
 [ext_resource type="PackedScene" uid="uid://crbeset88l65x" path="res://scenes/awake/metro_station/metro_station.glb" id="1_pl28k"]
 [ext_resource type="PackedScene" uid="uid://cihudioipsyhq" path="res://global_assets/objects/rail_tracks.glb" id="3_7xbpy"]
@@ -3376,6 +3376,34 @@ shader_parameter/luminosity_2 = 19.685
 shader_parameter/glow_threshold = -3.255
 shader_parameter/glow_mult = -30.105
 
+[sub_resource type="Resource" id="Resource_dpypf"]
+script = ExtResource("15_oae8g")
+text = "Qu'est-ce que tu fais dans mon rêve ?!"
+next_char_time = 0.02
+next_speech_time = 0.5
+metadata/_custom_type_script = ExtResource("15_oae8g")
+
+[sub_resource type="Resource" id="Resource_hktm2"]
+script = ExtResource("15_oae8g")
+text = ". . ."
+next_char_time = 0.5
+next_speech_time = 1.0
+metadata/_custom_type_script = ExtResource("15_oae8g")
+
+[sub_resource type="Resource" id="Resource_c7wd8"]
+script = ExtResource("15_oae8g")
+text = ". . ."
+next_char_time = 0.5
+next_speech_time = 1.0
+metadata/_custom_type_script = ExtResource("15_oae8g")
+
+[sub_resource type="Resource" id="Resource_cmj7h"]
+script = ExtResource("15_oae8g")
+text = "C'est la réalité ?"
+next_char_time = 0.02
+next_speech_time = 1.0
+metadata/_custom_type_script = ExtResource("15_oae8g")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oae8g"]
 render_priority = 0
 shader = ExtResource("13_oae8g")
@@ -5941,6 +5969,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_k140j")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.533934, 1.31433, -0.335868)
 animation_player = NodePath("../Positions")
 base_animation = "sat2"
+speech = Array[ExtResource("15_oae8g")]([SubResource("Resource_dpypf"), SubResource("Resource_hktm2"), SubResource("Resource_c7wd8"), SubResource("Resource_cmj7h")])
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="character_2/TalkArea"]
 transform = Transform3D(1, 1.13671e-08, 1.50388e-09, -1.13671e-08, 0.965595, 0.26005, 1.50388e-09, -0.26005, 0.965595, 0.0143414, -0.593965, 0.280677)

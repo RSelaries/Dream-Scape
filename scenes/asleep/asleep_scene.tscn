@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bdgg64gsfnru"]
+[gd_scene load_steps=30 format=3 uid="uid://bdgg64gsfnru"]
 
 [ext_resource type="Script" uid="uid://glflxtb3ommi" path="res://scenes/asleep/asleep_scene.gd" id="1_sdt8w"]
 [ext_resource type="PackedScene" uid="uid://5m1g178ubchd" path="res://global_assets/fps_controller/fps_player_character.tscn" id="2_46cu2"]
@@ -8,9 +8,11 @@
 [ext_resource type="Shader" uid="uid://ciqanqlgg7uv4" path="res://shaders/glitch_effect.gdshader" id="3_gb5bf"]
 [ext_resource type="PackedScene" uid="uid://dq3njnvokihyy" path="res://scenes/asleep/metro/metros.tscn" id="4_wcggm"]
 [ext_resource type="Texture2D" uid="uid://dhwp3bx3nokjl" path="res://shaders/ascii_characters.png" id="4_yxn7d"]
+[ext_resource type="FontFile" uid="uid://c06oyevglmwt0" path="res://themes/fonts/Poppins/Poppins-ExtraBold.ttf" id="7_by0d6"]
 [ext_resource type="PackedScene" uid="uid://baf11qcmyrgar" path="res://global_assets/objects/door.glb" id="9_k8w74"]
 [ext_resource type="Material" uid="uid://cima0hix3fgwx" path="res://global_assets/materials/stop_wall_dream.tres" id="10_6n480"]
 [ext_resource type="Script" uid="uid://tw0w8lw1346b" path="res://scenes/asleep/walls_texts.gd" id="11_1ctn8"]
+[ext_resource type="PackedScene" uid="uid://cii67opi6cu56" path="res://idk_honestly/console/console_animated.tscn" id="12_yxn7d"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wh8ij"]
 sky_top_color = Color(0.330808, 0.394582, 0.483296, 1)
@@ -196,10 +198,33 @@ tracks/10/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CanvasLayer/ConsoleAnimated:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "bezier"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CanvasLayer/SplashScreen/Label:theme_override_colors/font_color:a")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_gb5bf"]
 resource_name = "glitch"
-length = 12.0
+length = 20.0
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -209,7 +234,7 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
 "points": PackedFloat32Array(0.03, -0.25, 0, 2.203, 0, 2, -0.266666, -0.543192, 0, -0.0320789, 0, -6.96667, -0.0254184, 0.25, 0, 0, -6.96667, -0.0254184, 0.25, 0, 0, -0.266666, -0.543192, 0, -0.0320789),
-"times": PackedFloat32Array(5.43333, 8.83333, 8.86667, 9.11938, 9.13333)
+"times": PackedFloat32Array(7.56667, 10.9667, 11, 11.2527, 11.2667)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -220,7 +245,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 6.801, 0, 1.5, -0.566667, -0.903564, 0.25, 0, 1.5, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 8.63333, 8.83333, 8.86667, 9.11938, 9.13333)
+"times": PackedFloat32Array(2.13334, 10.7667, 10.9667, 11, 11.2527, 11.2667)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -231,7 +256,7 @@ tracks/2/loop_wrap = true
 tracks/2/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(5, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(2.13334)
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
@@ -242,7 +267,7 @@ tracks/3/loop_wrap = true
 tracks/3/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
 "points": PackedFloat32Array(0.01, -0.25, 0, 5.66667, 0.00534534, 0.152328, -2.06666, -0.0920892, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -2.06666, -0.0920892, 0.25, 0),
-"times": PackedFloat32Array(0, 8.83333, 8.86667, 9.11938, 9.13333)
+"times": PackedFloat32Array(2.13334, 10.9667, 11, 11.2527, 11.2667)
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -251,7 +276,7 @@ tracks/4/path = NodePath("PostProcessing/Layer3/AsciiArt:material:shader_paramet
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 9.13333, 9.43333, 9.5, 9.91604, 10.2333, 10.6126, 10.7, 10.8),
+"times": PackedFloat32Array(0, 10.9, 11.2, 11.2667, 11.6827, 12, 12.3793, 12.4667, 12.5667),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [true, true, false, true, false, true, false, true, false]
@@ -276,7 +301,7 @@ tracks/6/loop_wrap = true
 tracks/6/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 1, 0, 1, 0, -1, 0.25, 0),
-"times": PackedFloat32Array(3, 4.13333)
+"times": PackedFloat32Array(1.73334, 2.86667)
 }
 tracks/7/type = "bezier"
 tracks/7/imported = false
@@ -287,7 +312,7 @@ tracks/7/loop_wrap = true
 tracks/7/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 1, 0, 1, 0, -1, 0.25, 0),
-"times": PackedFloat32Array(3, 4.13333)
+"times": PackedFloat32Array(1.73334, 2.86667)
 }
 tracks/8/type = "bezier"
 tracks/8/imported = false
@@ -298,7 +323,7 @@ tracks/8/loop_wrap = true
 tracks/8/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 1, 0, 1, 0, -1, 0.25, 0),
-"times": PackedFloat32Array(3, 4.13333)
+"times": PackedFloat32Array(1.73334, 2.86667)
 }
 tracks/9/type = "bezier"
 tracks/9/imported = false
@@ -309,7 +334,7 @@ tracks/9/loop_wrap = true
 tracks/9/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.493, 0, 6, -0.0238657, -2.44342, 0.25, 0),
-"times": PackedFloat32Array(4, 4.53333)
+"times": PackedFloat32Array(2.73334, 3.26667)
 }
 tracks/10/type = "bezier"
 tracks/10/imported = false
@@ -320,12 +345,38 @@ tracks/10/loop_wrap = true
 tracks/10/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.156231, -0.661038, 0, -0.177102, 0.553556, 0.25, 0),
-"times": PackedFloat32Array(11.2333, 11.4333)
+"times": PackedFloat32Array(13.1333, 13.3333)
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CanvasLayer/ConsoleAnimated:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(13.6, 13.8667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CanvasLayer/ConsoleAnimated")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(13.8667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_update_text_anim"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_wcggm"]
 resource_name = "starting_cinematic"
-length = 3.0
+length = 8.0
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -333,9 +384,9 @@ tracks/0/path = NodePath("PostProcessing/Layer1/GammaCorrection:material:shader_
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.9, 1.42802, 0.703648, -0.666667, -0.588554, 0.5, 0.286731, 1, -0.633333, -0.854724, 0.25, 0),
-"times": PackedFloat32Array(0, 1.5, 3)
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.9, 0, 0, -0.25, 0, 0.9, 1.42802, 0.703648, -0.666667, -0.588554, 0.5, 0.286731, 1, -0.633333, -0.854724, 0.25, 0),
+"times": PackedFloat32Array(0, 4.96667, 6.46667, 7.96667)
 }
 tracks/1/type = "method"
 tracks/1/imported = false
@@ -344,12 +395,35 @@ tracks/1/path = NodePath("Metros/AnimatableBody3D/DreamMetro")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(2.96667),
+"times": PackedFloat32Array(7.93334),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"open_metro_left_doors"
 }]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Walls/WallsTexts:mesh:material:uv1_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/SplashScreen/Label:theme_override_colors/font_color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 1.23333, 1.78477, 0, -2.03333, 0.82618, 0.25, 0),
+"times": PackedFloat32Array(0, 4.96667)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f81i8"]
@@ -411,6 +485,36 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="ConsoleAnimated" parent="CanvasLayer" instance=ExtResource("12_yxn7d")]
+unique_name_in_owner = true
+visible = false
+
+[node name="SplashScreen" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/SplashScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0)
+theme_override_fonts/font = ExtResource("7_by0d6")
+theme_override_font_sizes/font_size = 30
+text = "HypnOS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Player" parent="." instance=ExtResource("2_46cu2")]
 unique_name_in_owner = true
 mouse_sensitivity = 0.1
@@ -420,7 +524,7 @@ shake_oscillation_speed = 0.0
 shake_oscillation_amplitude = 0.0
 viewbobbing_frequency = 0.365
 viewbobbing_force = 0.02
-speed = 10.0
+speed = 6.0
 
 [node name="door" parent="." instance=ExtResource("9_k8w74")]
 transform = Transform3D(-0.804854, 0, -0.890062, 0, 1.2, 0, 0.890062, 0, -0.804854, 95.0602, 0.892333, -130.992)

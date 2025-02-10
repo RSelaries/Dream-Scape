@@ -24,7 +24,6 @@ debug_color = Color(0.786, 0, 0.212, 1)
 
 [node name="InteractInfos" type="CanvasLayer" parent="."]
 layer = 20
-visible = false
 
 [node name="Control" type="Control" parent="InteractInfos"]
 layout_mode = 3
@@ -83,13 +82,14 @@ alignment = 1
 custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
 bbcode_enabled = true
-text = "[indent][/indent][b]50e anniversaire de l'assombrissement.[/b]
+text = "[indent][/indent][b]Bonne année 50 ![/b]
 [color=#999] [fill]
-Nous a cette date, 50 annees jour pour jour de l'assombrissement, cet evenement cataclysmique que nous avons reussi a survivre en se cachant sous terre.
+Nous fêtons en ce jour le 50me anniversaire de l'extinction inévitable de notre soleil.
+Mais il n'est pas l'heure de se morfondre ! Graçe a NameCorp, nous pouvons aujourd'hui jouir d'une vie aussi, si ce n'est meilleure qu'avant l'assombrissement.
 
-Blah blah blah, trouver des trucs a dire pour raconter l'histoire et le background et tout ca.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id enim id nunc vestibulum accumsan a eu dolor. Nam et elementum lorem. Praesent eu enim condimentum, volutpat urna at, pharetra felis. Fusce sagittis sagittis tempor. Phasellus quis ligula egestas, placerat orci auctor, gravida enim. Nullam a convallis diam. Phasellus eu urna lorem."
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel metus eros. Curabitur eleifend eros tellus, et vehicula ante ultricies in. Praesent vel elit tincidunt, ultrices neque id, ullamcorper magna."
 fit_content = true
+justification_flags = 35
 
 [node name="InputsTextures" type="CanvasLayer" parent="."]
 layer = 20
