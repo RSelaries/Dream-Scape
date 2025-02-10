@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bdgg64gsfnru"]
+[gd_scene load_steps=28 format=3 uid="uid://bdgg64gsfnru"]
 
 [ext_resource type="Script" uid="uid://glflxtb3ommi" path="res://scenes/asleep/asleep_scene.gd" id="1_sdt8w"]
 [ext_resource type="PackedScene" uid="uid://5m1g178ubchd" path="res://global_assets/fps_controller/fps_player_character.tscn" id="2_46cu2"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dhwp3bx3nokjl" path="res://shaders/ascii_characters.png" id="4_yxn7d"]
 [ext_resource type="PackedScene" uid="uid://baf11qcmyrgar" path="res://global_assets/objects/door.glb" id="9_k8w74"]
 [ext_resource type="Material" uid="uid://cima0hix3fgwx" path="res://global_assets/materials/stop_wall_dream.tres" id="10_6n480"]
+[ext_resource type="Script" uid="uid://tw0w8lw1346b" path="res://scenes/asleep/walls_texts.gd" id="11_1ctn8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wh8ij"]
 sky_top_color = Color(0.330808, 0.394582, 0.483296, 1)
@@ -54,18 +55,22 @@ size = Vector2(1024, 1024)
 subdivide_width = 2048
 subdivide_depth = 2048
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k8w74"]
-cull_mode = 2
-albedo_color = Color(1, 1, 1, 0)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6n480"]
+albedo_color = Color(0.173403, 0.489696, 0.791116, 1)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_k8w74"]
-material = SubResource("StandardMaterial3D_k8w74")
-size = Vector2(300, 300)
+[sub_resource type="QuadMesh" id="QuadMesh_6n480"]
+material = SubResource("StandardMaterial3D_6n480")
+size = Vector2(8000, 8000)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k8w74"]
 size = Vector3(191.14, 32.12, 12.4672)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_k8w74"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_k8w74"]
+material = ExtResource("10_6n480")
+flip_faces = true
+size = Vector3(183.015, 10000, 167.11)
 
 [sub_resource type="Animation" id="Animation_f81i8"]
 length = 0.001
@@ -147,10 +152,54 @@ tracks/6/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Walls/WallsTexts:mesh:material:uv1_scale:x")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Walls/WallsTexts:mesh:material:uv1_scale:y")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Walls/WallsTexts:mesh:material:uv1_scale:z")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.0005, 0, 0.0005, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Walls/WallsTexts:slide_speed")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_gb5bf"]
 resource_name = "glitch"
-length = 15.0
+length = 12.0
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -217,6 +266,61 @@ tracks/5/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 9.03333, 9.06667)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Walls/WallsTexts:mesh:material:uv1_scale:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 1, 0, 1, 0, -1, 0.25, 0),
+"times": PackedFloat32Array(3, 4.13333)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Walls/WallsTexts:mesh:material:uv1_scale:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 1, 0, 1, 0, -1, 0.25, 0),
+"times": PackedFloat32Array(3, 4.13333)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Walls/WallsTexts:mesh:material:uv1_scale:z")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 1, 0, 1, 0, -1, 0.25, 0),
+"times": PackedFloat32Array(3, 4.13333)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Walls/WallsTexts:slide_speed")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.493, 0, 6, -0.0238657, -2.44342, 0.25, 0),
+"times": PackedFloat32Array(4, 4.53333)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("PostProcessing/Layer1/GammaCorrection:material:shader_parameter/gamma")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.156231, -0.661038, 0, -0.177102, 0.553556, 0.25, 0),
+"times": PackedFloat32Array(11.2333, 11.4333)
 }
 
 [sub_resource type="Animation" id="Animation_wcggm"]
@@ -326,34 +430,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12506, 0)
 mesh = SubResource("PlaneMesh_oueue")
 metadata/_edit_lock_ = true
 
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_6n480")
+
 [node name="Metros" parent="." instance=ExtResource("4_wcggm")]
 
 [node name="Walls" type="Node3D" parent="."]
 transform = Transform3D(0.898557, 0, -0.438857, 0, 1, 0, 0.438857, 0, 0.898557, 11.185, 0, -19.5892)
-
-[node name="Wall" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(1, 0, -1.77636e-15, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 41.237, 122.904, -87.4102)
-material_override = ExtResource("10_6n480")
-mesh = SubResource("PlaneMesh_k8w74")
-skeleton = NodePath("../..")
-
-[node name="Wall2" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(-1, -8.9407e-08, 7.10543e-15, 0, -4.37114e-08, -1, 1.49012e-07, -1, 4.37114e-08, 53.4048, 122.904, 77.7754)
-material_override = ExtResource("10_6n480")
-mesh = SubResource("PlaneMesh_k8w74")
-skeleton = NodePath("../..")
-
-[node name="Wall3" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(-1.49012e-07, 1, -4.37114e-08, -1.05879e-22, -4.37114e-08, -1, -1, -5.96046e-08, 7.10543e-15, -36.2575, 122.904, -10.7327)
-material_override = ExtResource("10_6n480")
-mesh = SubResource("PlaneMesh_k8w74")
-skeleton = NodePath("../..")
-
-[node name="Wall4" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(2.98023e-08, -1, 4.37114e-08, -6.35275e-22, -4.37114e-08, -1, 1, -5.96046e-08, -3.55271e-15, 143.468, 122.904, -6.63337)
-material_override = ExtResource("10_6n480")
-mesh = SubResource("PlaneMesh_k8w74")
-skeleton = NodePath("../..")
 
 [node name="NearWallsArea" type="Area3D" parent="Walls"]
 
@@ -400,6 +484,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.5944, 0, -6.81889)
 shape = SubResource("WorldBoundaryShape3D_k8w74")
 
 [node name="Mesh" type="Node3D" parent="Walls"]
+
+[node name="WallsTexts" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.8219, 7.62939e-06, -4.3677)
+mesh = SubResource("BoxMesh_k8w74")
+script = ExtResource("11_1ctn8")
+slide_speed = 0.0
 
 [node name="CinematicPlayer" type="AnimationPlayer" parent="."]
 libraries = {

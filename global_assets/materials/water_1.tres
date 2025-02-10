@@ -40,7 +40,7 @@ seamless_blend_skirt = 1.0
 noise = SubResource("FastNoiseLite_6n480")
 
 [resource]
-render_priority = 0
+render_priority = -1
 shader = ExtResource("1_j6utn")
 shader_parameter/depth_fade_distance = 1.0
 shader_parameter/absorbance = 2.0

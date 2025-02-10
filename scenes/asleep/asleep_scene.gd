@@ -6,6 +6,9 @@ extends Scene
 @onready var glitch_shader: ShaderMaterial = glitch_node.get_material()
 
 
+var glitched := false
+
+
 func _ready() -> void:
 	super()
 	
@@ -17,5 +20,6 @@ func _handle_glitch() -> void:
 
 
 func _on_near_walls_area_body_entered(body: Node3D) -> void:
-	if body is FpsPlayer:
+	if body is FpsPlayer and !glitched:
 		_handle_glitch()
+		glitched = true
