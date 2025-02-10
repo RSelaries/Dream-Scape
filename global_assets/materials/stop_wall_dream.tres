@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cima0hix3fgwx"]
+
+[ext_resource type="Texture2D" uid="uid://b2vcoimeggrx7" path="res://global_assets/textures/stop_wall.png" id="1_rjw75"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_rjw75")
+emission_enabled = true
+emission_texture = ExtResource("1_rjw75")
+uv1_scale = Vector3(79.655, 79.655, 79.655)
+uv1_triplanar_sharpness = 24.2514
+uv1_world_triplanar = true

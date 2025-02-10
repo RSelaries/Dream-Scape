@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bdgg64gsfnru"]
+[gd_scene load_steps=26 format=3 uid="uid://bdgg64gsfnru"]
 
 [ext_resource type="Script" uid="uid://glflxtb3ommi" path="res://scenes/asleep/asleep_scene.gd" id="1_sdt8w"]
 [ext_resource type="PackedScene" uid="uid://5m1g178ubchd" path="res://global_assets/fps_controller/fps_player_character.tscn" id="2_46cu2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dq3njnvokihyy" path="res://scenes/asleep/metro/metros.tscn" id="4_wcggm"]
 [ext_resource type="Texture2D" uid="uid://dhwp3bx3nokjl" path="res://shaders/ascii_characters.png" id="4_yxn7d"]
 [ext_resource type="PackedScene" uid="uid://baf11qcmyrgar" path="res://global_assets/objects/door.glb" id="9_k8w74"]
+[ext_resource type="Material" uid="uid://cima0hix3fgwx" path="res://global_assets/materials/stop_wall_dream.tres" id="10_6n480"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wh8ij"]
 sky_top_color = Color(0.330808, 0.394582, 0.483296, 1)
@@ -53,13 +54,18 @@ size = Vector2(1024, 1024)
 subdivide_width = 2048
 subdivide_depth = 2048
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k8w74"]
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_k8w74"]
+material = SubResource("StandardMaterial3D_k8w74")
+size = Vector2(300, 300)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_k8w74"]
 size = Vector3(191.14, 32.12, 12.4672)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_k8w74"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yeif6"]
-albedo_color = Color(0.37559, 0.574228, 0.543286, 1)
 
 [sub_resource type="Animation" id="Animation_f81i8"]
 length = 0.001
@@ -133,32 +139,10 @@ tracks/5/keys = {
 tracks/6/type = "bezier"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("PostProcessing/Layer3/AsciiArt:material:shader_parameter/character_pixel_size")
+tracks/6/path = NodePath("PostProcessing/Layer3/AsciiArt:material:shader_parameter/opacity")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(8, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("PostProcessing/Layer3/AsciiArt:material:shader_parameter/nbr_of_lum_values")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(10, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/8/type = "bezier"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("PostProcessing/Layer3/AsciiArt:material:shader_parameter/opacity")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
@@ -174,9 +158,9 @@ tracks/0/path = NodePath("PostProcessing/Layer2/Glitch:material:shader_parameter
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.03, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.03, -0.25, 0, 2.203, 0, 2, -0.266666, -0.543192, 0, -0.0320789, 0, -6.96667, -0.0254184, 0.25, 0, 0, -6.96667, -0.0254184, 0.25, 0, 0, -0.266666, -0.543192, 0, -0.0320789),
+"times": PackedFloat32Array(5.43333, 8.83333, 8.86667, 9.11938, 9.13333)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
@@ -185,9 +169,9 @@ tracks/1/path = NodePath("PostProcessing/Layer2/Glitch:material:shader_parameter
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 6.801, 0, 1, -0.1, -0.0776475, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 8.43333, 8.83333, 8.84)
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 6.801, 0, 1.5, -0.566667, -0.903564, 0.25, 0, 1.5, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 8.63333, 8.83333, 8.86667, 9.11938, 9.13333)
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
@@ -207,9 +191,9 @@ tracks/3/path = NodePath("PostProcessing/Layer2/Glitch:material:shader_parameter
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(0.01, -0.25, 0, 2.5, 0.00422781, 0.102458, -0.533334, -0.00174522, 0, 0, 0.102458, 0, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 3.73333, 8.83333, 8.86667)
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.01, -0.25, 0, 5.66667, 0.00534534, 0.152328, -2.06666, -0.0920892, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -2.06666, -0.0920892, 0.25, 0),
+"times": PackedFloat32Array(0, 8.83333, 8.86667, 9.11938, 9.13333)
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -218,43 +202,21 @@ tracks/4/path = NodePath("PostProcessing/Layer3/AsciiArt:material:shader_paramet
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 9.13333, 9.43333, 9.5, 9.91604, 10.2333, 10.6126, 10.7, 10.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [true]
+"values": [true, true, false, true, false, true, false, true, false]
 }
 tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("PostProcessing/Layer3/AsciiArt:material:shader_parameter/character_pixel_size")
+tracks/5/path = NodePath("PostProcessing/Layer3/AsciiArt:material:shader_parameter/opacity")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(8, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("PostProcessing/Layer3/AsciiArt:material:shader_parameter/nbr_of_lum_values")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(10, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("PostProcessing/Layer3/AsciiArt:material:shader_parameter/opacity")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 9.03333, 9.06667)
 }
 
 [sub_resource type="Animation" id="Animation_wcggm"]
@@ -354,6 +316,7 @@ shake_oscillation_speed = 0.0
 shake_oscillation_amplitude = 0.0
 viewbobbing_frequency = 0.365
 viewbobbing_force = 0.02
+speed = 10.0
 
 [node name="door" parent="." instance=ExtResource("9_k8w74")]
 transform = Transform3D(-0.804854, 0, -0.890062, 0, 1.2, 0, 0.890062, 0, -0.804854, 95.0602, 0.892333, -130.992)
@@ -365,59 +328,84 @@ metadata/_edit_lock_ = true
 
 [node name="Metros" parent="." instance=ExtResource("4_wcggm")]
 
-[node name="Invisible Walls" type="StaticBody3D" parent="."]
+[node name="Walls" type="Node3D" parent="."]
 transform = Transform3D(0.898557, 0, -0.438857, 0, 1, 0, 0.438857, 0, 0.898557, 11.185, 0, -19.5892)
 
-[node name="NearWallsArea" type="Area3D" parent="Invisible Walls"]
+[node name="Wall" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1, 0, -1.77636e-15, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 41.237, 122.904, -87.4102)
+material_override = ExtResource("10_6n480")
+mesh = SubResource("PlaneMesh_k8w74")
+skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Invisible Walls/NearWallsArea"]
+[node name="Wall2" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-1, -8.9407e-08, 7.10543e-15, 0, -4.37114e-08, -1, 1.49012e-07, -1, 4.37114e-08, 53.4048, 122.904, 77.7754)
+material_override = ExtResource("10_6n480")
+mesh = SubResource("PlaneMesh_k8w74")
+skeleton = NodePath("../..")
+
+[node name="Wall3" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(-1.49012e-07, 1, -4.37114e-08, -1.05879e-22, -4.37114e-08, -1, -1, -5.96046e-08, 7.10543e-15, -36.2575, 122.904, -10.7327)
+material_override = ExtResource("10_6n480")
+mesh = SubResource("PlaneMesh_k8w74")
+skeleton = NodePath("../..")
+
+[node name="Wall4" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(2.98023e-08, -1, 4.37114e-08, -6.35275e-22, -4.37114e-08, -1, 1, -5.96046e-08, -3.55271e-15, 143.468, 122.904, -6.63337)
+material_override = ExtResource("10_6n480")
+mesh = SubResource("PlaneMesh_k8w74")
+skeleton = NodePath("../..")
+
+[node name="NearWallsArea" type="Area3D" parent="Walls"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/NearWallsArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.051, 13.3513, -81.077)
 shape = SubResource("BoxShape3D_k8w74")
 debug_color = Color(1, 1, 1, 1)
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Invisible Walls/NearWallsArea"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Walls/NearWallsArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.7604, 13.3513, 72.2381)
 shape = SubResource("BoxShape3D_k8w74")
 debug_color = Color(1, 1, 1, 1)
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Invisible Walls/NearWallsArea"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Walls/NearWallsArea"]
 transform = Transform3D(-2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, 138.816, 13.3513, -2.63198)
 shape = SubResource("BoxShape3D_k8w74")
 debug_color = Color(1, 1, 1, 1)
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Invisible Walls/NearWallsArea"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Walls/NearWallsArea"]
 transform = Transform3D(-2.98023e-08, 0, -1, 0, 1, 0, 1, 0, -2.98023e-08, -31.0166, 13.3513, -7.4874)
 shape = SubResource("BoxShape3D_k8w74")
 debug_color = Color(1, 1, 1, 1)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Invisible Walls"]
+[node name="Invisible Walls" type="StaticBody3D" parent="Walls"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/Invisible Walls"]
 transform = Transform3D(4.37114e-08, -1, -8.9407e-08, -1, -4.37114e-08, 0, -3.55271e-15, 8.9407e-08, -1, 143.556, 0, 5.32264)
 shape = SubResource("WorldBoundaryShape3D_k8w74")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Invisible Walls"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Walls/Invisible Walls"]
 transform = Transform3D(-4.37114e-08, 1, 1.78814e-07, -1, -4.37114e-08, 0, 1.06581e-14, -1.78814e-07, 1, -35.975, 0, -5.58876)
 shape = SubResource("WorldBoundaryShape3D_k8w74")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Invisible Walls"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Walls/Invisible Walls"]
 transform = Transform3D(1.06581e-14, -2.68221e-07, 1, -1, -4.37114e-08, 0, 4.37114e-08, -1, -2.68221e-07, 41.0903, 0, 77.0999)
 shape = SubResource("WorldBoundaryShape3D_k8w74")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Invisible Walls"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Walls/Invisible Walls"]
 transform = Transform3D(-3.55271e-15, 1.78814e-07, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, 1.78814e-07, 46.9452, 0, -87.3674)
 shape = SubResource("WorldBoundaryShape3D_k8w74")
 
-[node name="Floor" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.299072, 0)
-use_collision = true
-size = Vector3(1462.85, 0.379883, 2095.19)
-material = SubResource("StandardMaterial3D_yeif6")
-metadata/_edit_lock_ = true
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Walls/Invisible Walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.5944, 0, -6.81889)
+shape = SubResource("WorldBoundaryShape3D_k8w74")
+
+[node name="Mesh" type="Node3D" parent="Walls"]
 
 [node name="CinematicPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_f81i8")
 }
 
-[connection signal="body_entered" from="Invisible Walls/NearWallsArea" to="." method="_on_near_walls_area_body_entered"]
+[connection signal="body_entered" from="Walls/NearWallsArea" to="." method="_on_near_walls_area_body_entered"]
 
 [editable path="Metros"]
