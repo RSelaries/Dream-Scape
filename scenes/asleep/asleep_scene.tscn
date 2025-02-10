@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://bdgg64gsfnru"]
+[gd_scene load_steps=20 format=3 uid="uid://bdgg64gsfnru"]
 
 [ext_resource type="Script" uid="uid://glflxtb3ommi" path="res://scenes/asleep/asleep_scene.gd" id="1_sdt8w"]
 [ext_resource type="PackedScene" uid="uid://5m1g178ubchd" path="res://global_assets/fps_controller/fps_player_character.tscn" id="2_46cu2"]
 [ext_resource type="Shader" uid="uid://ban6fk30se87r" path="res://shaders/gamma_correction.gdshader" id="2_gb5bf"]
 [ext_resource type="Shader" uid="uid://xu4i8s8v7j1g" path="res://shaders/ascii_bw.gdshader" id="3_1ctn8"]
 [ext_resource type="Material" uid="uid://8uhkt4s13tna" path="res://global_assets/materials/water_1.tres" id="3_f81i8"]
+[ext_resource type="Shader" uid="uid://ciqanqlgg7uv4" path="res://shaders/glitch_effect.gdshader" id="3_gb5bf"]
 [ext_resource type="PackedScene" uid="uid://dq3njnvokihyy" path="res://scenes/asleep/metro/metros.tscn" id="4_wcggm"]
 [ext_resource type="Texture2D" uid="uid://dhwp3bx3nokjl" path="res://shaders/ascii_characters.png" id="4_yxn7d"]
 
@@ -28,6 +29,14 @@ glow_bloom = 0.11
 resource_local_to_scene = true
 shader = ExtResource("2_gb5bf")
 shader_parameter/gamma = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k8w74"]
+shader = ExtResource("3_gb5bf")
+shader_parameter/shake_power = 0.03
+shader_parameter/shake_rate = 0.0
+shader_parameter/shake_speed = 5.0
+shader_parameter/shake_block_size = 96.725
+shader_parameter/shake_color_rate = 0.024
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_by0d6"]
 shader = ExtResource("3_1ctn8")
@@ -109,9 +118,21 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Layer2" type="CanvasLayer" parent="PostProcessing"]
+
+[node name="Glitch" type="ColorRect" parent="PostProcessing/Layer2"]
+material = SubResource("ShaderMaterial_k8w74")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Layer3" type="CanvasLayer" parent="PostProcessing"]
+layer = 3
 visible = false
 
-[node name="AsciiArt" type="ColorRect" parent="PostProcessing/Layer2"]
+[node name="AsciiArt" type="ColorRect" parent="PostProcessing/Layer3"]
 material = SubResource("ShaderMaterial_by0d6")
 anchors_preset = 15
 anchor_right = 1.0
