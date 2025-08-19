@@ -11,6 +11,7 @@ extends Scene
 
 
 var metro_departed := false
+var f6: bool = false
 
 
 func _ready() -> void:
@@ -22,6 +23,12 @@ func _ready() -> void:
 		_set_sound_effect_audio_bus_volume(sound_effect_volume_db)
 		_open_metro_doors()
 		cinematic_player.play("for_f6")
+		f6 = true
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("quit_f6") and f6:
+		get_tree().quit()
 
 
 func _open_metro_doors() -> void:

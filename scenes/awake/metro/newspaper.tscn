@@ -24,6 +24,7 @@ debug_color = Color(0.786, 0, 0.212, 1)
 
 [node name="InteractInfos" type="CanvasLayer" parent="."]
 layer = 20
+visible = false
 
 [node name="Control" type="Control" parent="InteractInfos"]
 layout_mode = 3

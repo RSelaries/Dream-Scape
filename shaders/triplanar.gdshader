@@ -203,4 +203,3 @@ AO_LIGHT_AFFECT = ao_light_effect;
 //for testing what the normals look like uncomment the next line
 //ALBEDO = my_normal.rgb;
 }
-

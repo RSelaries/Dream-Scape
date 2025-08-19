@@ -1,11 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://di1732j3c2wpf"]
+[gd_scene load_steps=16 format=3 uid="uid://di1732j3c2wpf"]
 
 [ext_resource type="Theme" uid="uid://bwa01eckmt4sl" path="res://themes/menus.tres" id="1_0dkrt"]
 [ext_resource type="Texture2D" uid="uid://d4loq3a6j33cd" path="res://ui/2025-01-23T20-12-43.png" id="2_0dkrt"]
 [ext_resource type="Script" uid="uid://cy7ekq5m27cfw" path="res://ui/main_menu.gd" id="2_rmr83"]
 [ext_resource type="Shader" uid="uid://dwbirewc5ltfu" path="res://shaders/pixelate_shader.gdshader" id="2_wk0pr"]
 [ext_resource type="PackedScene" uid="uid://bhwhimthqi25b" path="res://scenes/Game.tscn" id="3_8uxxo"]
-[ext_resource type="Shader" uid="uid://ban6fk30se87r" path="res://shaders/gamma_correction.gdshader" id="6_ei257"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ei257"]
 
@@ -53,8 +52,6 @@ shader = ExtResource("2_wk0pr")
 shader_parameter/pixel_size = 2.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5klac"]
-shader = ExtResource("6_ei257")
-shader_parameter/gamma = 1.0
 
 [sub_resource type="Animation" id="Animation_p8ri8"]
 length = 0.001
